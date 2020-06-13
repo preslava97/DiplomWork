@@ -9,3 +9,15 @@ C:\Users\ACER\source\repos\PiersDCS\PiersDCS\obj\Debug\PiersDCS.exe
 C:\Users\ACER\source\repos\PiersDCS\PiersDCS\obj\Debug\PiersDCS.pdb
 C:\Users\ACER\source\repos\PiersDCS\PiersDCS\obj\Debug\PiersDCS.Flights.resources
 C:\Users\ACER\source\repos\PiersDCS\PiersDCS\obj\Debug\PiersDCS.SignInForm.resources
+C:\Users\ACER\source\repos\preslava97\DiplomWork\PiersDCS\obj\Debug\PiersDCS.csprojAssemblyReference.cache
+C:\Users\ACER\source\repos\preslava97\DiplomWork\PiersDCS\obj\Debug\PiersDCS.Flights.resources
+C:\Users\ACER\source\repos\preslava97\DiplomWork\PiersDCS\obj\Debug\PiersDCS.SignInForm.resources
+C:\Users\ACER\source\repos\preslava97\DiplomWork\PiersDCS\obj\Debug\PiersDCS.Properties.Resources.resources
+C:\Users\ACER\source\repos\preslava97\DiplomWork\PiersDCS\obj\Debug\PiersDCS.SeatMap.resources
+C:\Users\ACER\source\repos\preslava97\DiplomWork\PiersDCS\obj\Debug\PiersDCS.csproj.GenerateResource.cache
+C:\Users\ACER\source\repos\preslava97\DiplomWork\PiersDCS\obj\Debug\PiersDCS.csproj.CoreCompileInputs.cache
+C:\Users\ACER\source\repos\preslava97\DiplomWork\PiersDCS\obj\Debug\PiersDCS.exe
+C:\Users\ACER\source\repos\preslava97\DiplomWork\PiersDCS\obj\Debug\PiersDCS.pdb
+C:\Users\ACER\source\repos\preslava97\DiplomWork\PiersDCS\bin\Debug\PiersDCS.exe.config
+C:\Users\ACER\source\repos\preslava97\DiplomWork\PiersDCS\bin\Debug\PiersDCS.exe
+C:\Users\ACER\source\repos\preslava97\DiplomWork\PiersDCS\bin\Debug\PiersDCS.pdb

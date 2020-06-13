@@ -21,5 +21,10 @@ namespace PiersDCS
         {
 
         }
+
+        private void SeatMap_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

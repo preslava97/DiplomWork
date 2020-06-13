@@ -58,10 +58,10 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="PiersDCSdatabaseDataSet.Designer.cs">
+    <Compile Include="PiersDCSdatabaseDataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>PiersDCSdatabaseDataSet.xsd</DependentUpon>
+      <DependentUpon>PiersDCSdatabaseDataSet1.xsd</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -90,16 +90,16 @@
     <EmbeddedResource Include="SeatMap.resx">
       <DependentUpon>SeatMap.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="PiersDCSdatabaseDataSet.xsc">
-      <DependentUpon>PiersDCSdatabaseDataSet.xsd</DependentUpon>
+    <None Include="PiersDCSdatabaseDataSet1.xsc">
+      <DependentUpon>PiersDCSdatabaseDataSet1.xsd</DependentUpon>
     </None>
-    <None Include="PiersDCSdatabaseDataSet.xsd">
+    <None Include="PiersDCSdatabaseDataSet1.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>PiersDCSdatabaseDataSet.Designer.cs</LastGenOutput>
+      <LastGenOutput>PiersDCSdatabaseDataSet1.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="PiersDCSdatabaseDataSet.xss">
-      <DependentUpon>PiersDCSdatabaseDataSet.xsd</DependentUpon>
+    <None Include="PiersDCSdatabaseDataSet1.xss">
+      <DependentUpon>PiersDCSdatabaseDataSet1.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

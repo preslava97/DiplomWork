@@ -34,6 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -58,10 +59,32 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Passenger.cs" />
+    <Compile Include="PiersDCSdatabaseDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PiersDCSdatabaseDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="PiersDCSdatabaseDataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>PiersDCSdatabaseDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PiersDCSdatabaseDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PiersDCSdatabaseDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PiersDCSdatabaseDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PiersDCSdatabaseDataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Preview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Preview.Designer.cs">
+      <DependentUpon>Preview.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -77,6 +100,9 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Preview.resx">
+      <DependentUpon>Preview.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -90,6 +116,17 @@
     <EmbeddedResource Include="SeatMap.resx">
       <DependentUpon>SeatMap.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="PiersDCSdatabaseDataSet.xsc">
+      <DependentUpon>PiersDCSdatabaseDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="PiersDCSdatabaseDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PiersDCSdatabaseDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PiersDCSdatabaseDataSet.xss">
+      <DependentUpon>PiersDCSdatabaseDataSet.xsd</DependentUpon>
+    </None>
     <None Include="PiersDCSdatabaseDataSet1.xsc">
       <DependentUpon>PiersDCSdatabaseDataSet1.xsd</DependentUpon>
     </None>
@@ -100,6 +137,28 @@
     </None>
     <None Include="PiersDCSdatabaseDataSet1.xss">
       <DependentUpon>PiersDCSdatabaseDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="PiersDCSdatabaseDataSet2.xsc">
+      <DependentUpon>PiersDCSdatabaseDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="PiersDCSdatabaseDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PiersDCSdatabaseDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PiersDCSdatabaseDataSet2.xss">
+      <DependentUpon>PiersDCSdatabaseDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="PiersDCSdatabaseDataSet3.xsc">
+      <DependentUpon>PiersDCSdatabaseDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="PiersDCSdatabaseDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PiersDCSdatabaseDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PiersDCSdatabaseDataSet3.xss">
+      <DependentUpon>PiersDCSdatabaseDataSet3.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -12,17 +12,34 @@ namespace PiersDCS
 {
     public partial class SeatMap : Form
     {
+        public static List<Passenger> passengers;
+        private Passenger passenger;
         public SeatMap()
         {
             InitializeComponent();
+            passenger = new Passenger();
+            passengers = new List<Passenger>();
+
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+      
+
+        private void SeatMap_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void SeatMap_Load(object sender, EventArgs e)
+        private void btnADD_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDEL_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSHOW_Click(object sender, EventArgs e)
         {
 
         }

@@ -8,6 +8,8 @@ namespace PiersDCS
 {
    public class Passenger
     {
+        private bool v;
+
         public String Name { get; set; }
         public String SeatRow { get; set; }
         public String SeatColumn { get; set; }
@@ -21,15 +23,23 @@ namespace PiersDCS
         public bool ISOnWaitingList { get; set; }
         public static String ErrorMessage { get; set; }
 
-        public Passenger(string Name, string seatRow, string seatcolumn) {
+        public Passenger(string Name, string seatRow, string seatcolumn, string gender, string document, string nationality, string birth, string bagpiece, string bagweight, string remark) {
             Name = Name;
             SeatRow = Convert.ToInt32(seatRow);
             SeatColumn = seatcolumn;
+            Gender = gender;
+            Document = document;
+            Nationality = nationality;
+            Birth = birth;
+            BaggagePiece = bagpiece;
+            BaggageWeight = bagweight;
+            Remarks = remark;
         }
 
-        public Passenger(String name)
+        public Passenger(String name, string seatcolumn)
         {
             Name = name;
+
         }
 
         public Passenger(String name, bool onWaitingList)
@@ -39,6 +49,15 @@ namespace PiersDCS
         }
 
         public Passenger() { }
+
+        public Passenger(string name, string seatcolumn, string document, string nationality, string birth, string remarks, bool v) : this(name, seatcolumn)
+        {
+            Document = document;
+            Nationality = nationality;
+            Birth = birth;
+            Remarks = remarks;
+         
+        }
 
         public bool IsValidPassenger(String Name,String seatrow, String seatcolumn, String gender, String document, 
             String nationality, String birth, String bagPiece, String bagWeight, String remark )

@@ -51,10 +51,10 @@
             this.btnSHOW = new System.Windows.Forms.Button();
             this.mstxtseat1 = new System.Windows.Forms.MaskedTextBox();
             this.mstxtseat2 = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.mstxtDoc = new System.Windows.Forms.MaskedTextBox();
+            this.mstxtBirth = new System.Windows.Forms.MaskedTextBox();
+            this.cmGender = new System.Windows.Forms.ComboBox();
+            this.cmSpec = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -288,42 +288,42 @@
             this.mstxtseat2.Size = new System.Drawing.Size(29, 20);
             this.mstxtseat2.TabIndex = 42;
             // 
-            // maskedTextBox1
+            // mstxtDoc
             // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(109, 175);
-            this.maskedTextBox1.Mask = "0000000000";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(111, 20);
-            this.maskedTextBox1.TabIndex = 43;
-            this.maskedTextBox1.ValidatingType = typeof(int);
+            this.mstxtDoc.Location = new System.Drawing.Point(109, 175);
+            this.mstxtDoc.Mask = "0000000000";
+            this.mstxtDoc.Name = "mstxtDoc";
+            this.mstxtDoc.Size = new System.Drawing.Size(111, 20);
+            this.mstxtDoc.TabIndex = 43;
+            this.mstxtDoc.ValidatingType = typeof(int);
             // 
-            // maskedTextBox2
+            // mstxtBirth
             // 
-            this.maskedTextBox2.Location = new System.Drawing.Point(86, 239);
-            this.maskedTextBox2.Mask = "00/00/0000";
-            this.maskedTextBox2.Name = "maskedTextBox2";
-            this.maskedTextBox2.Size = new System.Drawing.Size(111, 20);
-            this.maskedTextBox2.TabIndex = 44;
-            this.maskedTextBox2.ValidatingType = typeof(System.DateTime);
+            this.mstxtBirth.Location = new System.Drawing.Point(86, 239);
+            this.mstxtBirth.Mask = "00/00/0000";
+            this.mstxtBirth.Name = "mstxtBirth";
+            this.mstxtBirth.Size = new System.Drawing.Size(111, 20);
+            this.mstxtBirth.TabIndex = 44;
+            this.mstxtBirth.ValidatingType = typeof(System.DateTime);
             // 
-            // comboBox1
+            // cmGender
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cmGender.FormattingEnabled = true;
+            this.cmGender.Items.AddRange(new object[] {
             "Male",
             "Female"});
-            this.comboBox1.Location = new System.Drawing.Point(56, 143);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(77, 21);
-            this.comboBox1.TabIndex = 45;
+            this.cmGender.Location = new System.Drawing.Point(56, 143);
+            this.cmGender.Name = "cmGender";
+            this.cmGender.Size = new System.Drawing.Size(77, 21);
+            this.cmGender.TabIndex = 45;
             // 
-            // comboBox2
+            // cmSpec
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(103, 340);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(100, 21);
-            this.comboBox2.TabIndex = 46;
+            this.cmSpec.FormattingEnabled = true;
+            this.cmSpec.Location = new System.Drawing.Point(103, 340);
+            this.cmSpec.Name = "cmSpec";
+            this.cmSpec.Size = new System.Drawing.Size(100, 21);
+            this.cmSpec.TabIndex = 46;
             // 
             // label10
             // 
@@ -560,10 +560,10 @@
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.maskedTextBox2);
-            this.Controls.Add(this.maskedTextBox1);
+            this.Controls.Add(this.cmSpec);
+            this.Controls.Add(this.cmGender);
+            this.Controls.Add(this.mstxtBirth);
+            this.Controls.Add(this.mstxtDoc);
             this.Controls.Add(this.mstxtseat2);
             this.Controls.Add(this.mstxtseat1);
             this.Controls.Add(this.btnSHOW);
@@ -623,10 +623,10 @@
         private System.Windows.Forms.Button btnSHOW;
         private System.Windows.Forms.MaskedTextBox mstxtseat1;
         private System.Windows.Forms.MaskedTextBox mstxtseat2;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.MaskedTextBox mstxtDoc;
+        private System.Windows.Forms.MaskedTextBox mstxtBirth;
+        private System.Windows.Forms.ComboBox cmGender;
+        private System.Windows.Forms.ComboBox cmSpec;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;

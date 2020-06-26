@@ -28,49 +28,39 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.components = new System.ComponentModel.Container();
+            this.btnMap = new System.Windows.Forms.Button();
             this.btnFlights = new System.Windows.Forms.Button();
             this.FlightdataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.flightTableBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.piersDCSdatabaseDataSet = new PiersDCS.PiersDCSdatabaseDataSet();
+            this.flightTableBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.btnLogout = new System.Windows.Forms.Button();
+            this.btnHome = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.flightTableTableAdapter1 = new PiersDCS.PiersDCSdatabaseDataSetTableAdapters.FlightTableTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.FlightdataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.flightTableBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.piersDCSdatabaseDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.flightTableBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
-            // button5
+            // btnMap
             // 
-            this.button5.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.button5.Font = new System.Drawing.Font("Modern No. 20", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(256, 0);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(84, 37);
-            this.button5.TabIndex = 22;
-            this.button5.Text = "Boarding";
-            this.button5.UseVisualStyleBackColor = false;
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.button4.Font = new System.Drawing.Font("Modern No. 20", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(178, 0);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(82, 37);
-            this.button4.TabIndex = 21;
-            this.button4.Text = "Manifest";
-            this.button4.UseVisualStyleBackColor = false;
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.button3.Font = new System.Drawing.Font("Modern No. 20", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(102, 0);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(79, 37);
-            this.button3.TabIndex = 20;
-            this.button3.Text = "Seatmap";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnMap.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.btnMap.Font = new System.Drawing.Font("Modern No. 20", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMap.Location = new System.Drawing.Point(102, 0);
+            this.btnMap.Name = "btnMap";
+            this.btnMap.Size = new System.Drawing.Size(79, 37);
+            this.btnMap.TabIndex = 20;
+            this.btnMap.Text = "Seatmap";
+            this.btnMap.UseVisualStyleBackColor = false;
             // 
             // btnFlights
             // 
@@ -87,71 +77,162 @@
             // FlightdataGridView1
             // 
             this.FlightdataGridView1.AllowUserToOrderColumns = true;
+            this.FlightdataGridView1.AutoGenerateColumns = false;
             this.FlightdataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.FlightdataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumn8,
+            this.dataGridViewTextBoxColumn9,
+            this.dataGridViewTextBoxColumn10,
+            this.dataGridViewTextBoxColumn11});
+            this.FlightdataGridView1.DataSource = this.flightTableBindingSource;
             this.FlightdataGridView1.Location = new System.Drawing.Point(12, 66);
             this.FlightdataGridView1.Name = "FlightdataGridView1";
-            this.FlightdataGridView1.Size = new System.Drawing.Size(737, 231);
+            this.FlightdataGridView1.Size = new System.Drawing.Size(643, 231);
             this.FlightdataGridView1.TabIndex = 24;
             // 
-            // button6
+            // dataGridViewTextBoxColumn6
             // 
-            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.button6.BackgroundImage = global::PiersDCS.Properties.Resources.катинар1;
-            this.button6.Location = new System.Drawing.Point(335, 0);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(31, 37);
-            this.button6.TabIndex = 23;
-            this.button6.UseVisualStyleBackColor = false;
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "Flight Number";
+            this.dataGridViewTextBoxColumn6.HeaderText = "Flight Number";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             // 
-            // button1
+            // dataGridViewTextBoxColumn7
             // 
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.BackgroundImage = global::PiersDCS.Properties.Resources.final;
-            this.button1.Location = new System.Drawing.Point(-2, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(38, 37);
-            this.button1.TabIndex = 18;
-            this.button1.UseVisualStyleBackColor = false;
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "Destination";
+            this.dataGridViewTextBoxColumn7.HeaderText = "Destination";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "City";
+            this.dataGridViewTextBoxColumn8.HeaderText = "City";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "Time";
+            this.dataGridViewTextBoxColumn9.HeaderText = "Time";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.DataPropertyName = "Check In Desk";
+            this.dataGridViewTextBoxColumn10.HeaderText = "Check In Desk";
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            // 
+            // dataGridViewTextBoxColumn11
+            // 
+            this.dataGridViewTextBoxColumn11.DataPropertyName = "Gate";
+            this.dataGridViewTextBoxColumn11.HeaderText = "Gate";
+            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            // 
+            // flightTableBindingSource
+            // 
+            this.flightTableBindingSource.DataMember = "FlightTable";
+            this.flightTableBindingSource.DataSource = this.piersDCSdatabaseDataSet;
+            // 
+            // piersDCSdatabaseDataSet
+            // 
+            this.piersDCSdatabaseDataSet.DataSetName = "PiersDCSdatabaseDataSet";
+            this.piersDCSdatabaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // flightTableBindingSource1
+            // 
+            this.flightTableBindingSource1.DataMember = "FlightTable";
+            // 
+            // btnLogout
+            // 
+            this.btnLogout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnLogout.BackgroundImage = global::PiersDCS.Properties.Resources.катинар1;
+            this.btnLogout.Location = new System.Drawing.Point(178, 0);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(31, 37);
+            this.btnLogout.TabIndex = 23;
+            this.btnLogout.UseVisualStyleBackColor = false;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
+            // 
+            // btnHome
+            // 
+            this.btnHome.BackColor = System.Drawing.Color.Transparent;
+            this.btnHome.BackgroundImage = global::PiersDCS.Properties.Resources.final;
+            this.btnHome.Location = new System.Drawing.Point(-2, 0);
+            this.btnHome.Name = "btnHome";
+            this.btnHome.Size = new System.Drawing.Size(38, 37);
+            this.btnHome.TabIndex = 18;
+            this.btnHome.UseVisualStyleBackColor = false;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(808, 119);
+            this.button2.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.button2.Font = new System.Drawing.Font("Pangolin", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button2.Location = new System.Drawing.Point(25, 338);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(156, 42);
             this.button2.TabIndex = 25;
             this.button2.Text = "GET Flight";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // flightTableTableAdapter1
+            // 
+            this.flightTableTableAdapter1.ClearBeforeFill = true;
             // 
             // Flights
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(900, 450);
+            this.BackColor = System.Drawing.Color.LightCyan;
+            this.BackgroundImage = global::PiersDCS.Properties.Resources.airplane_plane_flight_900;
+            this.ClientSize = new System.Drawing.Size(686, 407);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.FlightdataGridView1);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.btnLogout);
+            this.Controls.Add(this.btnMap);
             this.Controls.Add(this.btnFlights);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnHome);
             this.Name = "Flights";
             this.Text = "Flights";
+            this.Load += new System.EventHandler(this.Flights_Load);
             ((System.ComponentModel.ISupportInitialize)(this.FlightdataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.flightTableBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.piersDCSdatabaseDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.flightTableBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnLogout;
+        private System.Windows.Forms.Button btnMap;
         private System.Windows.Forms.Button btnFlights;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnHome;
         private System.Windows.Forms.DataGridView FlightdataGridView1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.BindingSource flightTableBindingSource1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn flightNumberDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn destinationDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cityDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn timeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn gateDataGridViewTextBoxColumn;
+        private PiersDCSdatabaseDataSet1 piersDCSdatabaseDataSet1;
+        private PiersDCSdatabaseDataSet1TableAdapters.FlightTableTableAdapter flightTableTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn checkInDeskDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private PiersDCSdatabaseDataSet piersDCSdatabaseDataSet;
+        private System.Windows.Forms.BindingSource flightTableBindingSource;
+        private PiersDCSdatabaseDataSetTableAdapters.FlightTableTableAdapter flightTableTableAdapter1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
     }
 }

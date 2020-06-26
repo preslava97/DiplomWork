@@ -279,6 +279,8 @@ namespace PiersDCS {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class PassengerTableDataTable : global::System.Data.TypedTableBase<PassengerTableRow> {
             
+            private global::System.Data.DataColumn columnDestination;
+            
             private global::System.Data.DataColumn columnName;
             
             private global::System.Data.DataColumn columnSeatRow;
@@ -330,6 +332,14 @@ namespace PiersDCS {
             protected PassengerTableDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn DestinationColumn {
+                get {
+                    return this.columnDestination;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -449,9 +459,10 @@ namespace PiersDCS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public PassengerTableRow AddPassengerTableRow(string Name, int SeatRow, string SeatColumn, string Gender, string Document_Number, string Nationality, System.DateTime Date_of_birth, string Bag_Pieces, string Bag_Weight, string Special) {
+            public PassengerTableRow AddPassengerTableRow(string Destination, string Name, int SeatRow, string SeatColumn, string Gender, string Document_Number, string Nationality, System.DateTime Date_of_birth, string Bag_Pieces, string Bag_Weight, string Special) {
                 PassengerTableRow rowPassengerTableRow = ((PassengerTableRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
+                        Destination,
                         Name,
                         SeatRow,
                         SeatColumn,
@@ -484,6 +495,7 @@ namespace PiersDCS {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             internal void InitVars() {
+                this.columnDestination = base.Columns["Destination"];
                 this.columnName = base.Columns["Name"];
                 this.columnSeatRow = base.Columns["SeatRow"];
                 this.columnSeatColumn = base.Columns["SeatColumn"];
@@ -499,6 +511,8 @@ namespace PiersDCS {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             private void InitClass() {
+                this.columnDestination = new global::System.Data.DataColumn("Destination", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDestination);
                 this.columnName = new global::System.Data.DataColumn("Name", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnName);
                 this.columnSeatRow = new global::System.Data.DataColumn("SeatRow", typeof(int), null, global::System.Data.MappingType.Element);
@@ -519,23 +533,14 @@ namespace PiersDCS {
                 base.Columns.Add(this.columnBag_Weight);
                 this.columnSpecial = new global::System.Data.DataColumn("Special", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSpecial);
-                this.columnName.AllowDBNull = false;
+                this.columnDestination.MaxLength = 10;
                 this.columnName.MaxLength = 2147483647;
-                this.columnSeatRow.AllowDBNull = false;
-                this.columnSeatColumn.AllowDBNull = false;
                 this.columnSeatColumn.MaxLength = 50;
-                this.columnGender.AllowDBNull = false;
                 this.columnGender.MaxLength = 50;
-                this.columnDocument_Number.AllowDBNull = false;
                 this.columnDocument_Number.MaxLength = 50;
-                this.columnNationality.AllowDBNull = false;
                 this.columnNationality.MaxLength = 10;
-                this.columnDate_of_birth.AllowDBNull = false;
-                this.columnBag_Pieces.AllowDBNull = false;
                 this.columnBag_Pieces.MaxLength = 10;
-                this.columnBag_Weight.AllowDBNull = false;
                 this.columnBag_Weight.MaxLength = 10;
-                this.columnSpecial.AllowDBNull = false;
                 this.columnSpecial.MaxLength = 10;
             }
             
@@ -679,9 +684,30 @@ namespace PiersDCS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string Destination {
+                get {
+                    try {
+                        return ((string)(this[this.tablePassengerTable.DestinationColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Destination\' in table \'PassengerTable\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablePassengerTable.DestinationColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string Name {
                 get {
-                    return ((string)(this[this.tablePassengerTable.NameColumn]));
+                    try {
+                        return ((string)(this[this.tablePassengerTable.NameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Name\' in table \'PassengerTable\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tablePassengerTable.NameColumn] = value;
@@ -692,7 +718,12 @@ namespace PiersDCS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public int SeatRow {
                 get {
-                    return ((int)(this[this.tablePassengerTable.SeatRowColumn]));
+                    try {
+                        return ((int)(this[this.tablePassengerTable.SeatRowColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'SeatRow\' in table \'PassengerTable\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tablePassengerTable.SeatRowColumn] = value;
@@ -703,7 +734,12 @@ namespace PiersDCS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string SeatColumn {
                 get {
-                    return ((string)(this[this.tablePassengerTable.SeatColumnColumn]));
+                    try {
+                        return ((string)(this[this.tablePassengerTable.SeatColumnColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'SeatColumn\' in table \'PassengerTable\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tablePassengerTable.SeatColumnColumn] = value;
@@ -714,7 +750,12 @@ namespace PiersDCS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string Gender {
                 get {
-                    return ((string)(this[this.tablePassengerTable.GenderColumn]));
+                    try {
+                        return ((string)(this[this.tablePassengerTable.GenderColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Gender\' in table \'PassengerTable\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tablePassengerTable.GenderColumn] = value;
@@ -725,7 +766,12 @@ namespace PiersDCS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string Document_Number {
                 get {
-                    return ((string)(this[this.tablePassengerTable.Document_NumberColumn]));
+                    try {
+                        return ((string)(this[this.tablePassengerTable.Document_NumberColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Document Number\' in table \'PassengerTable\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tablePassengerTable.Document_NumberColumn] = value;
@@ -736,7 +782,12 @@ namespace PiersDCS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string Nationality {
                 get {
-                    return ((string)(this[this.tablePassengerTable.NationalityColumn]));
+                    try {
+                        return ((string)(this[this.tablePassengerTable.NationalityColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Nationality\' in table \'PassengerTable\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tablePassengerTable.NationalityColumn] = value;
@@ -747,7 +798,12 @@ namespace PiersDCS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public System.DateTime Date_of_birth {
                 get {
-                    return ((global::System.DateTime)(this[this.tablePassengerTable.Date_of_birthColumn]));
+                    try {
+                        return ((global::System.DateTime)(this[this.tablePassengerTable.Date_of_birthColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Date of birth\' in table \'PassengerTable\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tablePassengerTable.Date_of_birthColumn] = value;
@@ -758,7 +814,12 @@ namespace PiersDCS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string Bag_Pieces {
                 get {
-                    return ((string)(this[this.tablePassengerTable.Bag_PiecesColumn]));
+                    try {
+                        return ((string)(this[this.tablePassengerTable.Bag_PiecesColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Bag Pieces\' in table \'PassengerTable\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tablePassengerTable.Bag_PiecesColumn] = value;
@@ -769,7 +830,12 @@ namespace PiersDCS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string Bag_Weight {
                 get {
-                    return ((string)(this[this.tablePassengerTable.Bag_WeightColumn]));
+                    try {
+                        return ((string)(this[this.tablePassengerTable.Bag_WeightColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Bag Weight\' in table \'PassengerTable\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tablePassengerTable.Bag_WeightColumn] = value;
@@ -780,11 +846,148 @@ namespace PiersDCS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string Special {
                 get {
-                    return ((string)(this[this.tablePassengerTable.SpecialColumn]));
+                    try {
+                        return ((string)(this[this.tablePassengerTable.SpecialColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Special\' in table \'PassengerTable\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tablePassengerTable.SpecialColumn] = value;
                 }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsDestinationNull() {
+                return this.IsNull(this.tablePassengerTable.DestinationColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetDestinationNull() {
+                this[this.tablePassengerTable.DestinationColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsNameNull() {
+                return this.IsNull(this.tablePassengerTable.NameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetNameNull() {
+                this[this.tablePassengerTable.NameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsSeatRowNull() {
+                return this.IsNull(this.tablePassengerTable.SeatRowColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetSeatRowNull() {
+                this[this.tablePassengerTable.SeatRowColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsSeatColumnNull() {
+                return this.IsNull(this.tablePassengerTable.SeatColumnColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetSeatColumnNull() {
+                this[this.tablePassengerTable.SeatColumnColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsGenderNull() {
+                return this.IsNull(this.tablePassengerTable.GenderColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetGenderNull() {
+                this[this.tablePassengerTable.GenderColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsDocument_NumberNull() {
+                return this.IsNull(this.tablePassengerTable.Document_NumberColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetDocument_NumberNull() {
+                this[this.tablePassengerTable.Document_NumberColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsNationalityNull() {
+                return this.IsNull(this.tablePassengerTable.NationalityColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetNationalityNull() {
+                this[this.tablePassengerTable.NationalityColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsDate_of_birthNull() {
+                return this.IsNull(this.tablePassengerTable.Date_of_birthColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetDate_of_birthNull() {
+                this[this.tablePassengerTable.Date_of_birthColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsBag_PiecesNull() {
+                return this.IsNull(this.tablePassengerTable.Bag_PiecesColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetBag_PiecesNull() {
+                this[this.tablePassengerTable.Bag_PiecesColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsBag_WeightNull() {
+                return this.IsNull(this.tablePassengerTable.Bag_WeightColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetBag_WeightNull() {
+                this[this.tablePassengerTable.Bag_WeightColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsSpecialNull() {
+                return this.IsNull(this.tablePassengerTable.SpecialColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetSpecialNull() {
+                this[this.tablePassengerTable.SpecialColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -947,6 +1150,7 @@ namespace PiersDCS.PiersDCSdatabaseDataSet3TableAdapters {
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "PassengerTable";
+            tableMapping.ColumnMappings.Add("Destination", "Destination");
             tableMapping.ColumnMappings.Add("Name", "Name");
             tableMapping.ColumnMappings.Add("SeatRow", "SeatRow");
             tableMapping.ColumnMappings.Add("SeatColumn", "SeatColumn");
@@ -958,20 +1162,6 @@ namespace PiersDCS.PiersDCSdatabaseDataSet3TableAdapters {
             tableMapping.ColumnMappings.Add("Bag Weight", "Bag Weight");
             tableMapping.ColumnMappings.Add("Special", "Special");
             this._adapter.TableMappings.Add(tableMapping);
-            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[PassengerTable] ([Name], [SeatRow], [SeatColumn], [Gender], [Document Number], [Nationality], [Date of birth], [Bag Pieces], [Bag Weight], [Special]) VALUES (@Name, @SeatRow, @SeatColumn, @Gender, @Document_Number, @Nationality, @Date_of_birth, @Bag_Pieces, @Bag_Weight, @Special)";
-            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SeatRow", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SeatRow", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SeatColumn", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SeatColumn", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Gender", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Gender", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Document_Number", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Document Number", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nationality", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nationality", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Date_of_birth", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date of birth", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Bag_Pieces", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Bag Pieces", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Bag_Weight", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Bag Weight", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Special", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Special", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -987,8 +1177,9 @@ namespace PiersDCS.PiersDCSdatabaseDataSet3TableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Name, SeatRow, SeatColumn, Gender, [Document Number], Nationality, [Date o" +
-                "f birth], [Bag Pieces], [Bag Weight], Special FROM dbo.PassengerTable";
+            this._commandCollection[0].CommandText = "SELECT Destination, Name, SeatRow, SeatColumn, Gender, [Document Number], Nationa" +
+                "lity, [Date of birth], [Bag Pieces], [Bag Weight], Special FROM dbo.PassengerTab" +
+                "le";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -1015,106 +1206,6 @@ namespace PiersDCS.PiersDCSdatabaseDataSet3TableAdapters {
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(PiersDCSdatabaseDataSet3.PassengerTableDataTable dataTable) {
-            return this.Adapter.Update(dataTable);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(PiersDCSdatabaseDataSet3 dataSet) {
-            return this.Adapter.Update(dataSet, "PassengerTable");
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow dataRow) {
-            return this.Adapter.Update(new global::System.Data.DataRow[] {
-                        dataRow});
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow[] dataRows) {
-            return this.Adapter.Update(dataRows);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Name, int SeatRow, string SeatColumn, string Gender, string Document_Number, string Nationality, System.DateTime Date_of_birth, string Bag_Pieces, string Bag_Weight, string Special) {
-            if ((Name == null)) {
-                throw new global::System.ArgumentNullException("Name");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(Name));
-            }
-            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(SeatRow));
-            if ((SeatColumn == null)) {
-                throw new global::System.ArgumentNullException("SeatColumn");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(SeatColumn));
-            }
-            if ((Gender == null)) {
-                throw new global::System.ArgumentNullException("Gender");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(Gender));
-            }
-            if ((Document_Number == null)) {
-                throw new global::System.ArgumentNullException("Document_Number");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(Document_Number));
-            }
-            if ((Nationality == null)) {
-                throw new global::System.ArgumentNullException("Nationality");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(Nationality));
-            }
-            this.Adapter.InsertCommand.Parameters[6].Value = ((System.DateTime)(Date_of_birth));
-            if ((Bag_Pieces == null)) {
-                throw new global::System.ArgumentNullException("Bag_Pieces");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(Bag_Pieces));
-            }
-            if ((Bag_Weight == null)) {
-                throw new global::System.ArgumentNullException("Bag_Weight");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[8].Value = ((string)(Bag_Weight));
-            }
-            if ((Special == null)) {
-                throw new global::System.ArgumentNullException("Special");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[9].Value = ((string)(Special));
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
-            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.InsertCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.InsertCommand.Connection.Close();
-                }
-            }
-        }
     }
     
     /// <summary>
@@ -1129,8 +1220,6 @@ namespace PiersDCS.PiersDCSdatabaseDataSet3TableAdapters {
         
         private UpdateOrderOption _updateOrder;
         
-        private PassengerTableTableAdapter _passengerTableTableAdapter;
-        
         private bool _backupDataSetBeforeUpdate;
         
         private global::System.Data.IDbConnection _connection;
@@ -1143,20 +1232,6 @@ namespace PiersDCS.PiersDCSdatabaseDataSet3TableAdapters {
             }
             set {
                 this._updateOrder = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
-            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
-            "a", "System.Drawing.Design.UITypeEditor")]
-        public PassengerTableTableAdapter PassengerTableTableAdapter {
-            get {
-                return this._passengerTableTableAdapter;
-            }
-            set {
-                this._passengerTableTableAdapter = value;
             }
         }
         
@@ -1179,10 +1254,6 @@ namespace PiersDCS.PiersDCSdatabaseDataSet3TableAdapters {
                 if ((this._connection != null)) {
                     return this._connection;
                 }
-                if (((this._passengerTableTableAdapter != null) 
-                            && (this._passengerTableTableAdapter.Connection != null))) {
-                    return this._passengerTableTableAdapter.Connection;
-                }
                 return null;
             }
             set {
@@ -1196,9 +1267,6 @@ namespace PiersDCS.PiersDCSdatabaseDataSet3TableAdapters {
         public int TableAdapterInstanceCount {
             get {
                 int count = 0;
-                if ((this._passengerTableTableAdapter != null)) {
-                    count = (count + 1);
-                }
                 return count;
             }
         }
@@ -1210,15 +1278,6 @@ namespace PiersDCS.PiersDCSdatabaseDataSet3TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private int UpdateUpdatedRows(PiersDCSdatabaseDataSet3 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._passengerTableTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.PassengerTable.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._passengerTableTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             return result;
         }
         
@@ -1229,14 +1288,6 @@ namespace PiersDCS.PiersDCSdatabaseDataSet3TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private int UpdateInsertedRows(PiersDCSdatabaseDataSet3 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._passengerTableTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.PassengerTable.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._passengerTableTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             return result;
         }
         
@@ -1247,14 +1298,6 @@ namespace PiersDCS.PiersDCSdatabaseDataSet3TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private int UpdateDeletedRows(PiersDCSdatabaseDataSet3 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._passengerTableTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.PassengerTable.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._passengerTableTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
             return result;
         }
         
@@ -1294,11 +1337,6 @@ namespace PiersDCS.PiersDCSdatabaseDataSet3TableAdapters {
             if ((dataSet.HasChanges() == false)) {
                 return 0;
             }
-            if (((this._passengerTableTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._passengerTableTableAdapter.Connection) == false))) {
-                throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
-                        "tring.");
-            }
             global::System.Data.IDbConnection workConnection = this.Connection;
             if ((workConnection == null)) {
                 throw new global::System.ApplicationException("TableAdapterManager contains no connection information. Set each TableAdapterMana" +
@@ -1331,15 +1369,6 @@ namespace PiersDCS.PiersDCSdatabaseDataSet3TableAdapters {
             try {
                 // ---- Prepare for update -----------
                 //
-                if ((this._passengerTableTableAdapter != null)) {
-                    revertConnections.Add(this._passengerTableTableAdapter, this._passengerTableTableAdapter.Connection);
-                    this._passengerTableTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._passengerTableTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._passengerTableTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._passengerTableTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._passengerTableTableAdapter.Adapter);
-                    }
-                }
                 // 
                 //---- Perform updates -----------
                 //
@@ -1397,10 +1426,6 @@ namespace PiersDCS.PiersDCSdatabaseDataSet3TableAdapters {
             finally {
                 if (workConnOpened) {
                     workConnection.Close();
-                }
-                if ((this._passengerTableTableAdapter != null)) {
-                    this._passengerTableTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._passengerTableTableAdapter]));
-                    this._passengerTableTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];

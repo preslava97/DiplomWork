@@ -43,5 +43,20 @@ namespace PiersDCS
              SeatMap frm = new SeatMap();
              frm.Show();
         }
+
+        private void Flights_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'piersDCSdatabaseDataSet.FlightTable' table. You can move, or remove it, as needed.
+            this.flightTableTableAdapter1.Fill(this.piersDCSdatabaseDataSet.FlightTable);
+            // TODO: This line of code loads data into the 'piersDCSdatabaseDataSet1.FlightTable' table. You can move, or remove it, as needed.
+
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            SignInForm ss = new SignInForm();
+            ss.Show();
+        }
     }
 }

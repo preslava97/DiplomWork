@@ -60,6 +60,12 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Passenger.cs" />
+    <Compile Include="PassengerInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PassengerInfo.Designer.cs">
+      <DependentUpon>PassengerInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="PiersDCSdatabaseDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -80,6 +86,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>PiersDCSdatabaseDataSet3.xsd</DependentUpon>
     </Compile>
+    <Compile Include="PiersDCSdatabaseDataSet4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PiersDCSdatabaseDataSet4.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Preview.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,6 +110,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PassengerInfo.resx">
+      <DependentUpon>PassengerInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Preview.resx">
       <DependentUpon>Preview.cs</DependentUpon>
@@ -160,6 +174,17 @@
     <None Include="PiersDCSdatabaseDataSet3.xss">
       <DependentUpon>PiersDCSdatabaseDataSet3.xsd</DependentUpon>
     </None>
+    <None Include="PiersDCSdatabaseDataSet4.xsc">
+      <DependentUpon>PiersDCSdatabaseDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="PiersDCSdatabaseDataSet4.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PiersDCSdatabaseDataSet4.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PiersDCSdatabaseDataSet4.xss">
+      <DependentUpon>PiersDCSdatabaseDataSet4.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -208,6 +233,9 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\airplane-plane-flight-900.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

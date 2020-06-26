@@ -1,11 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PiersDCS
@@ -13,6 +9,7 @@ namespace PiersDCS
     public partial class SeatMap : Form
     {
         public static List<Passenger> passengers;
+        public static List<Passenger> foundPassengers;
         private Passenger passenger;
         public SeatMap()
         {
@@ -28,40 +25,7 @@ namespace PiersDCS
         {
 
         }
-
-        private void btnADD_Click(object sender, EventArgs e)
-        {
-            if (!passenger.IsValidPassenger(txtName.Text, mstxtseat1.Text, mstxtseat2.Text, cmGender.Text, mstxtDoc.Text, txtNat.Text, mstxtBirth.Text, txtBagP.Text, txtBagW.Text, cmSpec.Text))
-            {
-                MessageBox.Show(Passenger.ErrorMessage, "Invalid input", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            //if input is correct, create a passenger object
-            passenger = new Passenger(txtName.Text, mstxtseat1.Text, mstxtseat2.Text, cmGender.Text, mstxtDoc.Text, txtNat.Text, mstxtBirth.Text, txtBagP.Text, txtBagW.Text, cmSpec.Text);
-
-            if(passenger.NumberOfSeatedPassengers()== 90)
-            {
-                var msg = MessageBox.Show("The plane is full.Place passenger on the waiting list!","Full plane", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-
-                if (msg == DialogResult.Yes)
-                    passenger.AddPassenger(new Passenger(passenger.Name,passenger.Gender,passenger.Document, passenger.Nationality, passenger.Birth, passenger.Remarks, true));
-                return;
-            }
-
-            if(passenger.IsSeatTaken(passenger.SeatRow.ToString(), passenger.SeatColumn))
-            {
-                MessageBox.Show("Seat is taken. Please select a different seat", "Taken seat", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
-
-            passenger.AddPassenger(passenger);
-            PopulateAirplane();
-        }
-
-        private void btnDEL_Click(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void btnSHOW_Click(object sender, EventArgs e)
         {
@@ -69,21 +33,9 @@ namespace PiersDCS
             frm.ShowDialog();
         }
 
-        private void ClearForm()
-        {
-            txtName.Text = "";
-            mstxtseat1.Text = "";
-            mstxtseat2.Text = "";
-            cmGender.Text = "";
-            mstxtDoc.Text = "";
-            txtNat.Text = "";
-            mstxtBirth.Text = "";
-            txtBagP.Text = "";
-            txtBagW.Text = "";
-            cmSpec.Text = "";
-        }
+       
 
-        private void PopulateAirplane()
+      /*  private void PopulateAirplane()
         {
             lvseat.Items.Clear();
             passenger = new Passenger();
@@ -94,7 +46,7 @@ namespace PiersDCS
             {
                 var output = "";
                 var col = "";
-
+              //  var row = "";
                 for(int c = 0; c < 6; c++)
                 {
                     if (c == 0)
@@ -119,12 +71,556 @@ namespace PiersDCS
                     }
 
                     else
-                        output += " X ";
-                    output += (c == 1 ? "     " : "");
+                        output += "X";
+                    output += (c == 1 ? " " : "");
                 }
                 lvseat.Items.Add(output);
                 lvseat.Items.Add("");
             }
+        }
+        */
+       
+
+        private void Preview_btn_Click(object sender, EventArgs e)
+        {
+            Preview frm = new Preview("view");
+            frm.ShowDialog();
+        }
+
+        private void btn_logout_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            SignInForm ss = new SignInForm();
+            ss.Show();
+        }
+
+        private void btnFlights_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Flights ss = new Flights();
+            ss.Show();
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Flights ss = new Flights();
+            ss.Show();
+        }
+
+        private void mstxtDoc_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private void btn1a_Click(object sender, EventArgs e)
+        {
+            (sender as Button).BackColor = Color.Chartreuse;
+            PassengerInfo frm = new PassengerInfo();
+            frm.Show();
+        }
+
+        private void btn1b_Click(object sender, EventArgs e)
+        {
+            (sender as Button).BackColor = Color.Chartreuse;
+            PassengerInfo frm = new PassengerInfo();
+            frm.Show();
+
+        }
+
+        private void btn1c_Click(object sender, EventArgs e)
+        {
+            (sender as Button).BackColor = Color.Chartreuse;
+            PassengerInfo frm = new PassengerInfo();
+            frm.Show();
+
+        }
+
+        private void btn1d_Click(object sender, EventArgs e)
+        {
+            (sender as Button).BackColor = Color.Chartreuse;
+            PassengerInfo frm = new PassengerInfo();
+            frm.Show();
+
+        }
+
+        private void btn1e_Click(object sender, EventArgs e)
+        {
+            (sender as Button).BackColor = Color.Chartreuse;
+            PassengerInfo frm = new PassengerInfo();
+            frm.Show();
+
+        }
+
+        private void btn1f_Click(object sender, EventArgs e)
+        {
+            (sender as Button).BackColor = Color.Chartreuse;
+            PassengerInfo frm = new PassengerInfo();
+            frm.Show();
+
+        }
+
+        private void btn2a_Click(object sender, EventArgs e)
+        {
+            (sender as Button).BackColor = Color.Chartreuse;
+            PassengerInfo frm = new PassengerInfo();
+            frm.Show();
+        }
+
+        private void btn2b_Click(object sender, EventArgs e)
+        {
+            (sender as Button).BackColor = Color.Chartreuse;
+            PassengerInfo frm = new PassengerInfo();
+            frm.Show();
+        }
+
+        private void btn2c_Click(object sender, EventArgs e)
+        {
+            (sender as Button).BackColor = Color.Chartreuse;
+            PassengerInfo frm = new PassengerInfo();
+            frm.Show();
+        }
+
+        private void btn2d_Click(object sender, EventArgs e)
+        {
+            (sender as Button).BackColor = Color.Chartreuse;
+            PassengerInfo frm = new PassengerInfo();
+            frm.Show();
+        }
+
+        private void btn2e_Click(object sender, EventArgs e)
+        {
+            (sender as Button).BackColor = Color.Chartreuse;
+            PassengerInfo frm = new PassengerInfo();
+            frm.Show();
+        }
+
+        private void btn2f_Click(object sender, EventArgs e)
+
+        {
+            (sender as Button).BackColor = Color.Chartreuse;
+            PassengerInfo frm = new PassengerInfo();
+            frm.Show();
+        }
+
+        private void btn3a_Click(object sender, EventArgs e)
+        {
+            (sender as Button).BackColor = Color.Chartreuse;
+            PassengerInfo frm = new PassengerInfo();
+            frm.Show();
+        }
+
+        private void btn3b_Click(object sender, EventArgs e)
+        {
+            (sender as Button).BackColor = Color.Chartreuse;
+            PassengerInfo frm = new PassengerInfo();
+            frm.Show();
+        }
+
+        private void btn3c_Click(object sender, EventArgs e)
+        {
+            (sender as Button).BackColor = Color.Chartreuse;
+            PassengerInfo frm = new PassengerInfo();
+            frm.Show();
+        }
+
+        private void btn3d_Click(object sender, EventArgs e)
+        {
+            (sender as Button).BackColor = Color.Chartreuse;
+            PassengerInfo frm = new PassengerInfo();
+            frm.Show();
+        }
+
+        private void btn3e_Click(object sender, EventArgs e)
+        {
+            (sender as Button).BackColor = Color.Chartreuse;
+            PassengerInfo frm = new PassengerInfo();
+            frm.Show();
+        }
+
+        private void btn3f_Click(object sender, EventArgs e)
+        {
+            (sender as Button).BackColor = Color.Chartreuse;
+            PassengerInfo frm = new PassengerInfo();
+            frm.Show();
+        }
+
+        private void btn4a_Click(object sender, EventArgs e)
+        {
+            (sender as Button).BackColor = Color.Chartreuse;
+            PassengerInfo frm = new PassengerInfo();
+            frm.Show();
+        }
+
+        private void btn4b_Click(object sender, EventArgs e)
+        {
+            (sender as Button).BackColor = Color.Chartreuse;
+            PassengerInfo frm = new PassengerInfo();
+            frm.Show();
+        }
+
+        private void btn4c_Click(object sender, EventArgs e)
+        {
+            (sender as Button).BackColor = Color.Chartreuse;
+            PassengerInfo frm = new PassengerInfo();
+            frm.Show();
+        }
+
+        private void btn4d_Click(object sender, EventArgs e)
+        {
+            (sender as Button).BackColor = Color.Chartreuse;
+            PassengerInfo frm = new PassengerInfo();
+            frm.Show();
+        }
+
+        private void btn4e_Click(object sender, EventArgs e)
+        {
+            (sender as Button).BackColor = Color.Chartreuse;
+            PassengerInfo frm = new PassengerInfo();
+            frm.Show();
+        }
+
+        private void btn4f_Click(object sender, EventArgs e)
+        {
+            (sender as Button).BackColor = Color.Chartreuse;
+            PassengerInfo frm = new PassengerInfo();
+            frm.Show();
+        }
+
+        private void btn5a_Click(object sender, EventArgs e)
+        {
+            (sender as Button).BackColor = Color.Chartreuse;
+            PassengerInfo frm = new PassengerInfo();
+            frm.Show();
+        }
+
+        private void btn5b_Click(object sender, EventArgs e)
+        {
+            (sender as Button).BackColor = Color.Chartreuse;
+            PassengerInfo frm = new PassengerInfo();
+            frm.Show();
+        }
+
+        private void btn5c_Click(object sender, EventArgs e)
+        {
+            (sender as Button).BackColor = Color.Chartreuse;
+            PassengerInfo frm = new PassengerInfo();
+            frm.Show();
+        }
+
+        private void btn5d_Click(object sender, EventArgs e)
+        {
+            (sender as Button).BackColor = Color.Chartreuse;
+            PassengerInfo frm = new PassengerInfo();
+            frm.Show();
+        }
+
+        private void btn5e_Click(object sender, EventArgs e)
+        {
+            (sender as Button).BackColor = Color.Chartreuse;
+            PassengerInfo frm = new PassengerInfo();
+            frm.Show();
+        }
+
+        private void btn5f_Click(object sender, EventArgs e)
+        {
+            (sender as Button).BackColor = Color.Chartreuse;
+            PassengerInfo frm = new PassengerInfo();
+            frm.Show();
+        }
+
+        private void btn6a_Click(object sender, EventArgs e)
+        {
+            (sender as Button).BackColor = Color.Chartreuse;
+            PassengerInfo frm = new PassengerInfo();
+            frm.Show();
+        }
+
+        private void btn6b_Click(object sender, EventArgs e)
+        {
+            (sender as Button).BackColor = Color.Chartreuse;
+            PassengerInfo frm = new PassengerInfo();
+            frm.Show();
+        }
+
+        private void btn6c_Click(object sender, EventArgs e)
+        {
+            (sender as Button).BackColor = Color.Chartreuse;
+            PassengerInfo frm = new PassengerInfo();
+            frm.Show();
+        }
+
+        private void btn6d_Click(object sender, EventArgs e)
+        {
+            (sender as Button).BackColor = Color.Chartreuse;
+            PassengerInfo frm = new PassengerInfo();
+            frm.Show();
+        }
+
+        private void btn6e_Click(object sender, EventArgs e)
+        {
+            (sender as Button).BackColor = Color.Chartreuse;
+            PassengerInfo frm = new PassengerInfo();
+            frm.Show();
+        }
+
+        private void btn6f_Click(object sender, EventArgs e)
+        {
+            (sender as Button).BackColor = Color.Chartreuse;
+            PassengerInfo frm = new PassengerInfo();
+            frm.Show();
+        }
+
+        private void btn7a_Click(object sender, EventArgs e)
+        {
+            (sender as Button).BackColor = Color.Chartreuse;
+            PassengerInfo frm = new PassengerInfo();
+            frm.Show();
+        }
+
+        private void btn7b_Click(object sender, EventArgs e)
+        {
+            (sender as Button).BackColor = Color.Chartreuse;
+            PassengerInfo frm = new PassengerInfo();
+            frm.Show();
+        }
+
+        private void btn7c_Click(object sender, EventArgs e)
+        {
+            (sender as Button).BackColor = Color.Chartreuse;
+            PassengerInfo frm = new PassengerInfo();
+            frm.Show();
+        }
+
+        private void btn7d_Click(object sender, EventArgs e)
+        {
+            (sender as Button).BackColor = Color.Chartreuse;
+            PassengerInfo frm = new PassengerInfo();
+            frm.Show();
+        }
+
+        private void btn7e_Click(object sender, EventArgs e)
+        {
+            (sender as Button).BackColor = Color.Chartreuse;
+            PassengerInfo frm = new PassengerInfo();
+            frm.Show();
+        }
+
+        private void btn7f_Click(object sender, EventArgs e)
+        {
+            (sender as Button).BackColor = Color.Chartreuse;
+            PassengerInfo frm = new PassengerInfo();
+            frm.Show();
+        }
+
+        private void btn8a_Click(object sender, EventArgs e)
+        {
+            (sender as Button).BackColor = Color.Chartreuse;
+            PassengerInfo frm = new PassengerInfo();
+            frm.Show();
+        }
+
+        private void btn8b_Click(object sender, EventArgs e)
+        {
+            (sender as Button).BackColor = Color.Chartreuse;
+            PassengerInfo frm = new PassengerInfo();
+            frm.Show();
+        }
+
+        private void btn8c_Click(object sender, EventArgs e)
+        {
+            (sender as Button).BackColor = Color.Chartreuse;
+            PassengerInfo frm = new PassengerInfo();
+            frm.Show();
+        }
+
+        private void btn8d_Click(object sender, EventArgs e)
+        {
+            (sender as Button).BackColor = Color.Chartreuse;
+            PassengerInfo frm = new PassengerInfo();
+            frm.Show();
+        }
+
+        private void btn8e_Click(object sender, EventArgs e)
+        {
+            (sender as Button).BackColor = Color.Chartreuse;
+            PassengerInfo frm = new PassengerInfo();
+            frm.Show();
+        }
+
+        private void btn8f_Click(object sender, EventArgs e)
+        {
+            (sender as Button).BackColor = Color.Chartreuse;
+            PassengerInfo frm = new PassengerInfo();
+            frm.Show();
+        }
+
+        private void btn9a_Click(object sender, EventArgs e)
+        {
+            (sender as Button).BackColor = Color.Chartreuse;
+            PassengerInfo frm = new PassengerInfo();
+            frm.Show();
+        }
+
+        private void btn9b_Click(object sender, EventArgs e)
+        {
+            (sender as Button).BackColor = Color.Chartreuse;
+            PassengerInfo frm = new PassengerInfo();
+            frm.Show();
+        }
+
+        private void btn9c_Click(object sender, EventArgs e)
+        {
+            (sender as Button).BackColor = Color.Chartreuse;
+            PassengerInfo frm = new PassengerInfo();
+            frm.Show();
+        }
+
+        private void btn9d_Click(object sender, EventArgs e)
+        {
+            (sender as Button).BackColor = Color.Chartreuse;
+            PassengerInfo frm = new PassengerInfo();
+            frm.Show();
+        }
+
+        private void btn9e_Click(object sender, EventArgs e)
+        {
+            (sender as Button).BackColor = Color.Chartreuse;
+            PassengerInfo frm = new PassengerInfo();
+            frm.Show();
+        }
+
+        private void btn9f_Click(object sender, EventArgs e)
+        {
+            (sender as Button).BackColor = Color.Chartreuse;
+            PassengerInfo frm = new PassengerInfo();
+            frm.Show();
+        }
+
+        private void btn10a_Click(object sender, EventArgs e)
+        {
+            (sender as Button).BackColor = Color.Chartreuse;
+            PassengerInfo frm = new PassengerInfo();
+            frm.Show();
+        }
+
+        private void btn10b_Click(object sender, EventArgs e)
+        {
+            (sender as Button).BackColor = Color.Chartreuse;
+            PassengerInfo frm = new PassengerInfo();
+            frm.Show();
+        }
+
+        private void btn10c_Click(object sender, EventArgs e)
+        {
+            (sender as Button).BackColor = Color.Chartreuse;
+            PassengerInfo frm = new PassengerInfo();
+            frm.Show();
+        }
+
+        private void btn10d_Click(object sender, EventArgs e)
+        {
+            (sender as Button).BackColor = Color.Chartreuse;
+            PassengerInfo frm = new PassengerInfo();
+            frm.Show();
+        }
+
+        private void btn10e_Click(object sender, EventArgs e)
+        {
+            (sender as Button).BackColor = Color.Chartreuse;
+            PassengerInfo frm = new PassengerInfo();
+            frm.Show();
+        }
+
+        private void btn10f_Click(object sender, EventArgs e)
+        {
+            (sender as Button).BackColor = Color.Chartreuse;
+            PassengerInfo frm = new PassengerInfo();
+            frm.Show();
+        }
+
+        private void btn11a_Click(object sender, EventArgs e)
+        {
+            (sender as Button).BackColor = Color.Chartreuse;
+            PassengerInfo frm = new PassengerInfo();
+            frm.Show();
+        }
+
+        private void btn11b_Click(object sender, EventArgs e)
+        {
+            (sender as Button).BackColor = Color.Chartreuse;
+            PassengerInfo frm = new PassengerInfo();
+            frm.Show();
+        }
+
+        private void btn11c_Click(object sender, EventArgs e)
+        {
+            (sender as Button).BackColor = Color.Chartreuse;
+            PassengerInfo frm = new PassengerInfo();
+            frm.Show();
+        }
+
+        private void btn11d_Click(object sender, EventArgs e)
+        {
+            (sender as Button).BackColor = Color.Chartreuse;
+            PassengerInfo frm = new PassengerInfo();
+            frm.Show();
+        }
+
+        private void btn11e_Click(object sender, EventArgs e)
+        {
+            (sender as Button).BackColor = Color.Chartreuse;
+            PassengerInfo frm = new PassengerInfo();
+            frm.Show();
+        }
+
+        private void btn11f_Click(object sender, EventArgs e)
+        {
+            (sender as Button).BackColor = Color.Chartreuse;
+            PassengerInfo frm = new PassengerInfo();
+            frm.Show();
+        }
+
+        private void btn12a_Click(object sender, EventArgs e)
+        {
+            (sender as Button).BackColor = Color.Chartreuse;
+            PassengerInfo frm = new PassengerInfo();
+            frm.Show();
+        }
+
+        private void btn12b_Click(object sender, EventArgs e)
+        {
+            (sender as Button).BackColor = Color.Chartreuse;
+            PassengerInfo frm = new PassengerInfo();
+            frm.Show();
+        }
+
+        private void btn12c_Click(object sender, EventArgs e)
+        {
+            (sender as Button).BackColor = Color.Chartreuse;
+            PassengerInfo frm = new PassengerInfo();
+            frm.Show();
+        }
+
+        private void btn12d_Click(object sender, EventArgs e)
+        {
+            (sender as Button).BackColor = Color.Chartreuse;
+            PassengerInfo frm = new PassengerInfo();
+            frm.Show();
+        }
+
+        private void btn12e_Click(object sender, EventArgs e)
+        {
+            (sender as Button).BackColor = Color.Chartreuse;
+            PassengerInfo frm = new PassengerInfo();
+            frm.Show();
+        }
+
+        private void btn12f_Click(object sender, EventArgs e)
+        {
+            (sender as Button).BackColor = Color.Chartreuse;
+            PassengerInfo frm = new PassengerInfo();
+            frm.Show();
         }
     }
 }

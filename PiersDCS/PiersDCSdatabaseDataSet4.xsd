@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<xs:schema id="PiersDCSdatabaseDataSet3" targetNamespace="http://tempuri.org/PiersDCSdatabaseDataSet3.xsd" xmlns:mstns="http://tempuri.org/PiersDCSdatabaseDataSet3.xsd" xmlns="http://tempuri.org/PiersDCSdatabaseDataSet3.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+<xs:schema id="PiersDCSdatabaseDataSet4" targetNamespace="http://tempuri.org/PiersDCSdatabaseDataSet4.xsd" xmlns:mstns="http://tempuri.org/PiersDCSdatabaseDataSet4.xsd" xmlns="http://tempuri.org/PiersDCSdatabaseDataSet4.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
@@ -12,7 +12,7 @@
               <DbSource ConnectionRef="PiersDCSdatabaseConnectionString (Settings)" DbObjectName="PiersDCSdatabase.dbo.PassengerTable" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT Destination, Name, SeatRow, SeatColumn, Gender, [Document Number], Nationality, [Date of birth], [Bag Pieces], [Bag Weight], Special FROM dbo.PassengerTable</CommandText>
+                    <CommandText>SELECT Destination, Name, Seat, Gender, [Document Number], Nationality, [Date of birth], [Bag Pieces], [Bag Weight], Special FROM dbo.PassengerTable</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -21,8 +21,7 @@
             <Mappings>
               <Mapping SourceColumn="Destination" DataSetColumn="Destination" />
               <Mapping SourceColumn="Name" DataSetColumn="Name" />
-              <Mapping SourceColumn="SeatRow" DataSetColumn="SeatRow" />
-              <Mapping SourceColumn="SeatColumn" DataSetColumn="SeatColumn" />
+              <Mapping SourceColumn="Seat" DataSetColumn="Seat" />
               <Mapping SourceColumn="Gender" DataSetColumn="Gender" />
               <Mapping SourceColumn="Document Number" DataSetColumn="Document Number" />
               <Mapping SourceColumn="Nationality" DataSetColumn="Nationality" />
@@ -38,7 +37,7 @@
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="PiersDCSdatabaseDataSet3" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="PiersDCSdatabaseDataSet3" msprop:Generator_UserDSName="PiersDCSdatabaseDataSet3">
+  <xs:element name="PiersDCSdatabaseDataSet4" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="PiersDCSdatabaseDataSet4" msprop:Generator_UserDSName="PiersDCSdatabaseDataSet4">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
         <xs:element name="PassengerTable" msprop:Generator_TableClassName="PassengerTableDataTable" msprop:Generator_TableVarName="tablePassengerTable" msprop:Generator_TablePropName="PassengerTable" msprop:Generator_RowDeletingName="PassengerTableRowDeleting" msprop:Generator_RowChangingName="PassengerTableRowChanging" msprop:Generator_RowEvHandlerName="PassengerTableRowChangeEventHandler" msprop:Generator_RowDeletedName="PassengerTableRowDeleted" msprop:Generator_UserTableName="PassengerTable" msprop:Generator_RowChangedName="PassengerTableRowChanged" msprop:Generator_RowEvArgName="PassengerTableRowChangeEvent" msprop:Generator_RowClassName="PassengerTableRow">
@@ -58,14 +57,7 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="SeatRow" msprop:Generator_ColumnVarNameInTable="columnSeatRow" msprop:Generator_ColumnPropNameInRow="SeatRow" msprop:Generator_ColumnPropNameInTable="SeatRowColumn" msprop:Generator_UserColumnName="SeatRow" type="xs:int" minOccurs="0" />
-              <xs:element name="SeatColumn" msprop:Generator_ColumnVarNameInTable="columnSeatColumn" msprop:Generator_ColumnPropNameInRow="SeatColumn" msprop:Generator_ColumnPropNameInTable="SeatColumnColumn" msprop:Generator_UserColumnName="SeatColumn" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
+              <xs:element name="Seat" msprop:Generator_ColumnVarNameInTable="columnSeat" msprop:Generator_ColumnPropNameInRow="Seat" msprop:Generator_ColumnPropNameInTable="SeatColumn" msprop:Generator_UserColumnName="Seat" type="xs:int" minOccurs="0" />
               <xs:element name="Gender" msprop:Generator_ColumnVarNameInTable="columnGender" msprop:Generator_ColumnPropNameInRow="Gender" msprop:Generator_ColumnPropNameInTable="GenderColumn" msprop:Generator_UserColumnName="Gender" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">

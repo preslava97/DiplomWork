@@ -48,15 +48,21 @@ namespace PiersDCS
         {
             // TODO: This line of code loads data into the 'piersDCSdatabaseDataSet.FlightTable' table. You can move, or remove it, as needed.
             this.flightTableTableAdapter1.Fill(this.piersDCSdatabaseDataSet.FlightTable);
-            // TODO: This line of code loads data into the 'piersDCSdatabaseDataSet1.FlightTable' table. You can move, or remove it, as needed.
-
+          
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
             this.Close();
-            SignInForm ss = new SignInForm();
+            LoginForm ss = new LoginForm();
             ss.Show();
+        }
+
+        private void FlightDGV_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            PassengerInfo frm = new PassengerInfo();
+            frm.txtDest.Text = this.FlightdataGridView1.CurrentRow.Cells[2].Value.ToString();
+            frm.Show();
         }
     }
 }

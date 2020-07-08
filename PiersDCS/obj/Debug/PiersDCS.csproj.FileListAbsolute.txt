@@ -10,7 +10,6 @@ C:\Users\ACER\source\repos\PiersDCS\PiersDCS\obj\Debug\PiersDCS.pdb
 C:\Users\ACER\source\repos\PiersDCS\PiersDCS\obj\Debug\PiersDCS.Flights.resources
 C:\Users\ACER\source\repos\PiersDCS\PiersDCS\obj\Debug\PiersDCS.SignInForm.resources
 C:\Users\ACER\source\repos\preslava97\DiplomWork\PiersDCS\obj\Debug\PiersDCS.Flights.resources
-C:\Users\ACER\source\repos\preslava97\DiplomWork\PiersDCS\obj\Debug\PiersDCS.SignInForm.resources
 C:\Users\ACER\source\repos\preslava97\DiplomWork\PiersDCS\obj\Debug\PiersDCS.Properties.Resources.resources
 C:\Users\ACER\source\repos\preslava97\DiplomWork\PiersDCS\obj\Debug\PiersDCS.SeatMap.resources
 C:\Users\ACER\source\repos\preslava97\DiplomWork\PiersDCS\obj\Debug\PiersDCS.csproj.GenerateResource.cache
@@ -23,3 +22,4 @@ C:\Users\ACER\source\repos\preslava97\DiplomWork\PiersDCS\bin\Debug\PiersDCS.pdb
 C:\Users\ACER\Source\Repos\preslava97\DiplomWork\PiersDCS\obj\Debug\PiersDCS.Preview.resources
 C:\Users\ACER\Source\Repos\preslava97\DiplomWork\PiersDCS\obj\Debug\PiersDCS.csprojAssemblyReference.cache
 C:\Users\ACER\source\repos\preslava97\DiplomWork\PiersDCS\obj\Debug\PiersDCS.PassengerInfo.resources
+C:\Users\ACER\source\repos\preslava97\DiplomWork\PiersDCS\obj\Debug\PiersDCS.LoginForm.resources

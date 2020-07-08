@@ -122,6 +122,10 @@ namespace PiersDCS
         {
             PassengerInfo.passengers.Add(passenger);
         }
+        public void UpdatePassenger(Passenger passenger)
+        {
+            
+        }
         public void DeletePassenger(Passenger passenger)
         {
             Preview.passengers.Remove(passenger);
@@ -152,7 +156,7 @@ namespace PiersDCS
             catch (Exception)
             {
                
-                MessageBox.Show("Некоректни данни! Моля въведете отново!");
+                MessageBox.Show("Invalid data! Please, try again!");
             }
             finally
             {

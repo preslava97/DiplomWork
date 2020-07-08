@@ -28,7 +28,7 @@ namespace PiersDCS
         }
 
 
-        private void btnADD_Click(object sender, EventArgs e)
+       /* private void btnADD_Click(object sender, EventArgs e)
         {
            
             /*if (!passenger.IsValidPassenger(txtName.Text, mstxtseat1.Text, cmGender.Text, mstxtDoc.Text, txtNat.Text, mstxtBirth.Text, txtBagP.Text, txtBagW.Text))
@@ -54,9 +54,9 @@ namespace PiersDCS
                 return;
             }
 
-            passenger.AddPassenger(passenger);*/
+            passenger.AddPassenger(passenger);
 
-        }
+        }*/
 
         private void ClearForm()
         {
@@ -103,6 +103,35 @@ namespace PiersDCS
 
         private void mstxtseat1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
+
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            SeatMap frm = new SeatMap();
+            frm.Show();
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+
+            Passenger p = new Passenger();
+            p.Destination = txtDest.Text;
+            p.Seat = mstxtseat1.Text;
+            p.Name = txtName.Text;
+            p.Document = mstxtDoc.Text;
+            p.Gender = cmGender.Text;
+            p.Nationality = txtNat.Text;
+            p.BaggagePiece = txtBagP.Text;
+            p.BaggageWeight = txtBagW.Text;
+            p.Remarks = gboxRemark.Text;
+            b.UpdatePassenger(p);
+
+            /*DataTable dataTable = b.SelectAll();
+            BindingSource bindingSource = new BindingSource();
+            bindingSource.DataSource = dataTable;
+            dgvPreview.DataSource = bindingSource;*/
 
         }
     }

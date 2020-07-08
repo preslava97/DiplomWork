@@ -90,7 +90,7 @@ namespace PiersDCS
         private void btn_logout_Click(object sender, EventArgs e)
         {
             this.Close();
-            SignInForm ss = new SignInForm();
+            LoginForm ss = new LoginForm();
             ss.Show();
         }
 

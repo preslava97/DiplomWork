@@ -35,7 +35,6 @@
             this.piersDCSdatabaseDataSet3 = new PiersDCS.PiersDCSdatabaseDataSet3();
             this.piersDCSdatabaseDataSet = new PiersDCS.PiersDCSdatabaseDataSet();
             this.btn_Back = new System.Windows.Forms.Button();
-            this.passengerTableTableAdapter = new PiersDCS.PiersDCSdatabaseDataSetTableAdapters.PassengerTableTableAdapter();
             this.btnDEL = new System.Windows.Forms.Button();
             this.passengerTableTableAdapter1 = new PiersDCS.PiersDCSdatabaseDataSet3TableAdapters.PassengerTableTableAdapter();
             this.piersDCSdatabaseDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -131,7 +130,7 @@
             // 
             // passengerTableTableAdapter
             // 
-            this.passengerTableTableAdapter.ClearBeforeFill = true;
+            this.passengerTableTableAdapter1.ClearBeforeFill = true;
             // 
             // btnDEL
             // 
@@ -288,7 +287,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn specialDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button btn_Back;
         private PiersDCSdatabaseDataSet piersDCSdatabaseDataSet;
-        private PiersDCSdatabaseDataSetTableAdapters.PassengerTableTableAdapter passengerTableTableAdapter;
         private System.Windows.Forms.Button btnDEL;
         private PiersDCSdatabaseDataSet3 piersDCSdatabaseDataSet3;
         private System.Windows.Forms.BindingSource passengerTableBindingSource2;

@@ -35,9 +35,9 @@ namespace PiersDCS
             // TODO: This line of code loads data into the 'piersDCSdatabaseDataSet4.PassengerTable' table. You can move, or remove it, as needed.
             this.passengerTableTableAdapter2.Fill(this.piersDCSdatabaseDataSet4.PassengerTable);
             // TODO: This line of code loads data into the 'piersDCSdatabaseDataSet3.PassengerTable' table. You can move, or remove it, as needed.
-            this.passengerTableTableAdapter1.Fill(this.piersDCSdatabaseDataSet3.PassengerTable);
+            //this.passengerTableTableAdapter1.Fill(this.piersDCSdatabaseDataSet3.PassengerTable);
             // TODO: This line of code loads data into the 'piersDCSdatabaseDataSet.PassengerTable' table. You can move, or remove it, as needed.
-            this.passengerTableTableAdapter.Fill(this.piersDCSdatabaseDataSet.PassengerTable);
+           // this.passengerTableTableAdapter.Fill(this.piersDCSdatabaseDataSet.PassengerTable);
 
             foundPassengers = foundPassengers.OrderBy(c => c.Seat).ToList();
             dgvPreview.DataSource = foundPassengers;
@@ -53,7 +53,7 @@ namespace PiersDCS
 
         private void dgvPreview_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(e.RowIndex>=0)
+            /*if(e.RowIndex>=0)
             {
                 DataGridViewRow row = this.dgvPreview.Rows[e.RowIndex];
                 txtDest.Text = row.Cells[0].Value.ToString();
@@ -71,7 +71,7 @@ namespace PiersDCS
 
 
 
-            }
+            }*/
         }
 
         private void btnDEL_Click(object sender, EventArgs e)

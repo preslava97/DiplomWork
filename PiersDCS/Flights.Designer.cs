@@ -40,7 +40,6 @@
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.flightTableBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.piersDCSdatabaseDataSet = new PiersDCS.PiersDCSdatabaseDataSet();
-            this.flightTableBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.btnLogout = new System.Windows.Forms.Button();
             this.btnHome = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -48,7 +47,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.FlightdataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.flightTableBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.piersDCSdatabaseDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.flightTableBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnMap
@@ -89,8 +87,10 @@
             this.FlightdataGridView1.DataSource = this.flightTableBindingSource;
             this.FlightdataGridView1.Location = new System.Drawing.Point(12, 66);
             this.FlightdataGridView1.Name = "FlightdataGridView1";
+            this.FlightdataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.FlightdataGridView1.Size = new System.Drawing.Size(643, 231);
             this.FlightdataGridView1.TabIndex = 24;
+            this.FlightdataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.FlightDGV_CellDoubleClick);
             // 
             // dataGridViewTextBoxColumn6
             // 
@@ -137,10 +137,6 @@
             // 
             this.piersDCSdatabaseDataSet.DataSetName = "PiersDCSdatabaseDataSet";
             this.piersDCSdatabaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // flightTableBindingSource1
-            // 
-            this.flightTableBindingSource1.DataMember = "FlightTable";
             // 
             // btnLogout
             // 
@@ -198,7 +194,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.FlightdataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.flightTableBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.piersDCSdatabaseDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.flightTableBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -211,7 +206,6 @@
         private System.Windows.Forms.Button btnHome;
         private System.Windows.Forms.DataGridView FlightdataGridView1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.BindingSource flightTableBindingSource1;
         private System.Windows.Forms.DataGridViewTextBoxColumn flightNumberDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn destinationDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn cityDataGridViewTextBoxColumn;

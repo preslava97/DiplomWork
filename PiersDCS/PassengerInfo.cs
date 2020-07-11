@@ -27,6 +27,11 @@ namespace PiersDCS
 
         }
 
+        public string TextBoxValue
+        {
+            get { return mstxtseat1.Text; }
+            set { mstxtseat1.Text = value; }
+        }
 
        /* private void btnADD_Click(object sender, EventArgs e)
         {
@@ -99,6 +104,10 @@ namespace PiersDCS
             BindingSource bindingSource = new BindingSource();
             bindingSource.DataSource = dataTable;
             dgvPreview.DataSource = bindingSource;*/
+
+            ListViewItem list = new ListViewItem(txtName.Text);
+            list.SubItems.Add(mstxtseat1.Text);
+            lvPrev.Items.Add(list);
         }
 
         private void mstxtseat1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
@@ -109,8 +118,8 @@ namespace PiersDCS
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Hide();
-            SeatMap frm = new SeatMap();
-            frm.Show();
+           // SeatMap frm = new SeatMap();
+           // frm.Show();
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -132,6 +141,11 @@ namespace PiersDCS
             BindingSource bindingSource = new BindingSource();
             bindingSource.DataSource = dataTable;
             dgvPreview.DataSource = bindingSource;*/
+
+        }
+
+        private void txtDest_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }

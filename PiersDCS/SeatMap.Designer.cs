@@ -126,6 +126,7 @@
             this.label47 = new System.Windows.Forms.Label();
             this.label48 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -1226,18 +1227,31 @@
             this.groupBox1.Controls.Add(this.btn8b);
             this.groupBox1.Controls.Add(this.btn7a);
             this.groupBox1.Controls.Add(this.btn7b);
-            this.groupBox1.Location = new System.Drawing.Point(25, 56);
+            this.groupBox1.Location = new System.Drawing.Point(22, 82);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(311, 449);
             this.groupBox1.TabIndex = 389;
             this.groupBox1.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Pangolin", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(19, 51);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(53, 24);
+            this.label1.TabIndex = 391;
+            this.label1.Text = "label1";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // SeatMap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::PiersDCS.Properties.Resources.airplane_plane_flight_900;
-            this.ClientSize = new System.Drawing.Size(625, 507);
+            this.ClientSize = new System.Drawing.Size(625, 543);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnSHOW);
@@ -1252,6 +1266,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -1354,5 +1369,6 @@
         private System.Windows.Forms.Label label47;
         private System.Windows.Forms.Label label48;
         private System.Windows.Forms.GroupBox groupBox1;
+        public System.Windows.Forms.Label label1;
     }
 }

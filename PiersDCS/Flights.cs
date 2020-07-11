@@ -16,6 +16,7 @@ namespace PiersDCS
     {
         string connectionString = @"Data Source=ACER-575G\SQL2019;Initial Catalog=PiersDCSdatabase;Integrated Security=True";
 
+
         public Flights()
         {
             InitializeComponent();
@@ -53,6 +54,7 @@ namespace PiersDCS
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
+            var msg = MessageBox.Show("Do you want to Log Out?", "LogOut", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
             this.Close();
             LoginForm ss = new LoginForm();
             ss.Show();
@@ -60,9 +62,9 @@ namespace PiersDCS
 
         private void FlightDGV_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            PassengerInfo frm = new PassengerInfo();
-            frm.txtDest.Text = this.FlightdataGridView1.CurrentRow.Cells[2].Value.ToString();
-            frm.Show();
+            SeatMap frm = new SeatMap();
+            frm.label1.Text = this.FlightdataGridView1.CurrentRow.Cells[2].Value.ToString();
+            frm.ShowDialog();
         }
     }
 }

@@ -58,8 +58,9 @@
             this.chUMNR = new System.Windows.Forms.CheckBox();
             this.btnClose = new System.Windows.Forms.Button();
             this.lvPrev = new System.Windows.Forms.ListView();
-            this.Name = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Seat = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.ColumnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.ColumnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btnShAll = new System.Windows.Forms.Button();
             this.gboxRemark.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -71,6 +72,7 @@
             this.txtDest.Name = "txtDest";
             this.txtDest.Size = new System.Drawing.Size(171, 22);
             this.txtDest.TabIndex = 411;
+            this.txtDest.TextChanged += new System.EventHandler(this.txtDest_TextChanged);
             // 
             // label49
             // 
@@ -124,7 +126,7 @@
             this.mstxtseat1.Font = new System.Drawing.Font("Pangolin", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.mstxtseat1.Location = new System.Drawing.Point(328, 27);
             this.mstxtseat1.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.mstxtseat1.Mask = "###";
+            this.mstxtseat1.Mask = "##L";
             this.mstxtseat1.Name = "mstxtseat1";
             this.mstxtseat1.Size = new System.Drawing.Size(52, 22);
             this.mstxtseat1.TabIndex = 404;
@@ -269,10 +271,10 @@
             this.btnADD.FlatAppearance.BorderSize = 0;
             this.btnADD.Font = new System.Drawing.Font("Pangolin", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnADD.ForeColor = System.Drawing.Color.Black;
-            this.btnADD.Location = new System.Drawing.Point(17, 375);
+            this.btnADD.Location = new System.Drawing.Point(17, 380);
             this.btnADD.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.btnADD.Name = "btnADD";
-            this.btnADD.Size = new System.Drawing.Size(180, 41);
+            this.btnADD.Size = new System.Drawing.Size(123, 36);
             this.btnADD.TabIndex = 412;
             this.btnADD.Text = "Add Passenger";
             this.btnADD.UseVisualStyleBackColor = false;
@@ -282,9 +284,9 @@
             // 
             this.btnUpdate.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnUpdate.ForeColor = System.Drawing.Color.Black;
-            this.btnUpdate.Location = new System.Drawing.Point(205, 375);
+            this.btnUpdate.Location = new System.Drawing.Point(263, 380);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(156, 41);
+            this.btnUpdate.Size = new System.Drawing.Size(98, 36);
             this.btnUpdate.TabIndex = 413;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = false;
@@ -305,7 +307,7 @@
             this.gboxRemark.Size = new System.Drawing.Size(303, 153);
             this.gboxRemark.TabIndex = 414;
             this.gboxRemark.TabStop = false;
-            this.gboxRemark.Text = "Special remarks";
+            this.gboxRemark.Text = "  ";
             // 
             // chDEAF
             // 
@@ -388,9 +390,9 @@
             // btnClose
             // 
             this.btnClose.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnClose.Location = new System.Drawing.Point(377, 378);
+            this.btnClose.Location = new System.Drawing.Point(377, 380);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(132, 38);
+            this.btnClose.Size = new System.Drawing.Size(94, 36);
             this.btnClose.TabIndex = 415;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = false;
@@ -399,22 +401,41 @@
             // lvPrev
             // 
             this.lvPrev.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.Name,
-            this.Seat});
+            this.ColumnHeader1,
+            this.ColumnHeader2});
+            this.lvPrev.Font = new System.Drawing.Font("Pangolin", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lvPrev.GridLines = true;
             this.lvPrev.HideSelection = false;
-            this.lvPrev.Location = new System.Drawing.Point(564, 12);
+            this.lvPrev.Location = new System.Drawing.Point(564, 27);
             this.lvPrev.Name = "lvPrev";
-            this.lvPrev.Size = new System.Drawing.Size(271, 382);
+            this.lvPrev.Size = new System.Drawing.Size(263, 367);
             this.lvPrev.TabIndex = 416;
             this.lvPrev.UseCompatibleStateImageBehavior = false;
+            this.lvPrev.View = System.Windows.Forms.View.Details;
             // 
-            // Name
+            // ColumnHeader1
             // 
-            this.Name.Text = "ColumnHeader1";
+            this.ColumnHeader1.Text = "Name";
+            this.ColumnHeader1.Width = 200;
             // 
-            // Seat
+            // ColumnHeader2
             // 
-            this.Seat.Text = "ColumnHeader2";
+            this.ColumnHeader2.Text = "Seat";
+            // 
+            // btnShAll
+            // 
+            this.btnShAll.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnShAll.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnShAll.FlatAppearance.BorderSize = 0;
+            this.btnShAll.Font = new System.Drawing.Font("Pangolin", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnShAll.ForeColor = System.Drawing.Color.Black;
+            this.btnShAll.Location = new System.Drawing.Point(150, 380);
+            this.btnShAll.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.btnShAll.Name = "btnShAll";
+            this.btnShAll.Size = new System.Drawing.Size(96, 36);
+            this.btnShAll.TabIndex = 417;
+            this.btnShAll.Text = "Show All ";
+            this.btnShAll.UseVisualStyleBackColor = false;
             // 
             // PassengerInfo
             // 
@@ -422,6 +443,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::PiersDCS.Properties.Resources.airplane_plane_flight_900;
             this.ClientSize = new System.Drawing.Size(874, 431);
+            this.Controls.Add(this.btnShAll);
             this.Controls.Add(this.lvPrev);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.gboxRemark);
@@ -447,7 +469,7 @@
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Pangolin", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
- //           this.Name = "PassengerInfo";
+            this.Name = "PassengerInfo";
             this.Text = "PassengerInfo";
             this.Load += new System.EventHandler(this.PassengerInfo_Load);
             this.gboxRemark.ResumeLayout(false);
@@ -462,7 +484,6 @@
         private System.Windows.Forms.ComboBox cmGender;
         private System.Windows.Forms.MaskedTextBox mstxtBirth;
         private System.Windows.Forms.MaskedTextBox mstxtDoc;
-        private System.Windows.Forms.MaskedTextBox mstxtseat1;
         private System.Windows.Forms.TextBox txtBagW;
         private System.Windows.Forms.TextBox txtBagP;
         private System.Windows.Forms.TextBox txtNat;
@@ -487,8 +508,10 @@
         private System.Windows.Forms.CheckBox chUMNR;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.ListView lvPrev;
-        private System.Windows.Forms.ColumnHeader Name;
-        private System.Windows.Forms.ColumnHeader Seat;
+        private System.Windows.Forms.ColumnHeader ColumnHeader1;
+        private System.Windows.Forms.ColumnHeader ColumnHeader2;
         public System.Windows.Forms.TextBox txtDest;
+        private System.Windows.Forms.Button btnShAll;
+        public System.Windows.Forms.MaskedTextBox mstxtseat1;
     }
 }

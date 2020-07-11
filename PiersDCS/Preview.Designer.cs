@@ -31,19 +31,13 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvPreview = new System.Windows.Forms.DataGridView();
-            this.passengerTableBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.piersDCSdatabaseDataSet3 = new PiersDCS.PiersDCSdatabaseDataSet3();
-            this.piersDCSdatabaseDataSet = new PiersDCS.PiersDCSdatabaseDataSet();
+            this.passengerTableBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
             this.btn_Back = new System.Windows.Forms.Button();
             this.btnDEL = new System.Windows.Forms.Button();
-            this.passengerTableTableAdapter1 = new PiersDCS.PiersDCSdatabaseDataSet3TableAdapters.PassengerTableTableAdapter();
-            this.piersDCSdatabaseDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.passengerTableBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.piersDCSdatabaseDataSet4 = new PiersDCS.PiersDCSdatabaseDataSet4();
             this.passengerTableBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.passengerTableTableAdapter2 = new PiersDCS.PiersDCSdatabaseDataSet4TableAdapters.PassengerTableTableAdapter();
-            this.piersDCSdatabaseDataSet4BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.passengerTableBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
+            this.passengerTableTableAdapter = new PiersDCS.PiersDCSdatabaseDataSet4TableAdapters.PassengerTableTableAdapter();
             this.destinationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.seatDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,15 +49,10 @@
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPreview)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.passengerTableBindingSource2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.piersDCSdatabaseDataSet3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.piersDCSdatabaseDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.piersDCSdatabaseDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.passengerTableBindingSource3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.passengerTableBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.piersDCSdatabaseDataSet4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.passengerTableBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.piersDCSdatabaseDataSet4BindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.passengerTableBindingSource3)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvPreview
@@ -87,7 +76,7 @@
             this.dataGridViewTextBoxColumn6,
             this.dataGridViewTextBoxColumn7,
             this.dataGridViewTextBoxColumn8});
-            this.dgvPreview.DataSource = this.passengerTableBindingSource3;
+            this.dgvPreview.DataSource = this.passengerTableBindingSource1;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Pangolin", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -96,26 +85,11 @@
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvPreview.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvPreview.Location = new System.Drawing.Point(12, 12);
+            this.dgvPreview.Location = new System.Drawing.Point(56, 12);
             this.dgvPreview.Name = "dgvPreview";
-            this.dgvPreview.Size = new System.Drawing.Size(882, 369);
+            this.dgvPreview.Size = new System.Drawing.Size(1017, 369);
             this.dgvPreview.TabIndex = 0;
             this.dgvPreview.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPreview_CellContentClick);
-            // 
-            // passengerTableBindingSource2
-            // 
-            this.passengerTableBindingSource2.DataMember = "PassengerTable";
-            this.passengerTableBindingSource2.DataSource = this.piersDCSdatabaseDataSet3;
-            // 
-            // piersDCSdatabaseDataSet3
-            // 
-            this.piersDCSdatabaseDataSet3.DataSetName = "PiersDCSdatabaseDataSet3";
-            this.piersDCSdatabaseDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // piersDCSdatabaseDataSet
-            // 
-            this.piersDCSdatabaseDataSet.DataSetName = "PiersDCSdatabaseDataSet";
-            this.piersDCSdatabaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // btn_Back
             // 
@@ -127,10 +101,6 @@
             this.btn_Back.Text = "Back";
             this.btn_Back.UseVisualStyleBackColor = true;
             this.btn_Back.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // passengerTableTableAdapter
-            // 
-            this.passengerTableTableAdapter1.ClearBeforeFill = true;
             // 
             // btnDEL
             // 
@@ -147,20 +117,6 @@
             this.btnDEL.UseVisualStyleBackColor = false;
             this.btnDEL.Click += new System.EventHandler(this.btnDEL_Click);
             // 
-            // passengerTableTableAdapter1
-            // 
-            this.passengerTableTableAdapter1.ClearBeforeFill = true;
-            // 
-            // piersDCSdatabaseDataSetBindingSource
-            // 
-            this.piersDCSdatabaseDataSetBindingSource.DataSource = this.piersDCSdatabaseDataSet;
-            this.piersDCSdatabaseDataSetBindingSource.Position = 0;
-            // 
-            // passengerTableBindingSource
-            // 
-            this.passengerTableBindingSource.DataMember = "PassengerTable";
-            this.passengerTableBindingSource.DataSource = this.piersDCSdatabaseDataSetBindingSource;
-            // 
             // piersDCSdatabaseDataSet4
             // 
             this.piersDCSdatabaseDataSet4.DataSetName = "PiersDCSdatabaseDataSet4";
@@ -171,19 +127,9 @@
             this.passengerTableBindingSource1.DataMember = "PassengerTable";
             this.passengerTableBindingSource1.DataSource = this.piersDCSdatabaseDataSet4;
             // 
-            // passengerTableTableAdapter2
+            // passengerTableTableAdapter
             // 
-            this.passengerTableTableAdapter2.ClearBeforeFill = true;
-            // 
-            // piersDCSdatabaseDataSet4BindingSource
-            // 
-            this.piersDCSdatabaseDataSet4BindingSource.DataSource = this.piersDCSdatabaseDataSet4;
-            this.piersDCSdatabaseDataSet4BindingSource.Position = 0;
-            // 
-            // passengerTableBindingSource3
-            // 
-            this.passengerTableBindingSource3.DataMember = "PassengerTable";
-            this.passengerTableBindingSource3.DataSource = this.piersDCSdatabaseDataSet4;
+            this.passengerTableTableAdapter.ClearBeforeFill = true;
             // 
             // destinationDataGridViewTextBoxColumn
             // 
@@ -250,7 +196,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::PiersDCS.Properties.Resources.airplane_plane_flight_900;
-            this.ClientSize = new System.Drawing.Size(906, 461);
+            this.ClientSize = new System.Drawing.Size(1103, 435);
             this.Controls.Add(this.btnDEL);
             this.Controls.Add(this.btn_Back);
             this.Controls.Add(this.dgvPreview);
@@ -259,15 +205,10 @@
             this.Text = " ";
             this.Load += new System.EventHandler(this.Preview_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPreview)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.passengerTableBindingSource2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.piersDCSdatabaseDataSet3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.piersDCSdatabaseDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.piersDCSdatabaseDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.passengerTableBindingSource3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.passengerTableBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.piersDCSdatabaseDataSet4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.passengerTableBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.piersDCSdatabaseDataSet4BindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.passengerTableBindingSource3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -286,16 +227,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn bagWeightDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn specialDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button btn_Back;
-        private PiersDCSdatabaseDataSet piersDCSdatabaseDataSet;
         private System.Windows.Forms.Button btnDEL;
-        private PiersDCSdatabaseDataSet3 piersDCSdatabaseDataSet3;
-        private System.Windows.Forms.BindingSource passengerTableBindingSource2;
-        private PiersDCSdatabaseDataSet3TableAdapters.PassengerTableTableAdapter passengerTableTableAdapter1;
         private System.Windows.Forms.BindingSource passengerTableBindingSource;
-        private System.Windows.Forms.BindingSource piersDCSdatabaseDataSetBindingSource;
+        private System.Windows.Forms.BindingSource passengerTableBindingSource3;
         private PiersDCSdatabaseDataSet4 piersDCSdatabaseDataSet4;
         private System.Windows.Forms.BindingSource passengerTableBindingSource1;
-        private PiersDCSdatabaseDataSet4TableAdapters.PassengerTableTableAdapter passengerTableTableAdapter2;
+        private PiersDCSdatabaseDataSet4TableAdapters.PassengerTableTableAdapter passengerTableTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn destinationDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn seatDataGridViewTextBoxColumn;
@@ -306,7 +243,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
-        private System.Windows.Forms.BindingSource passengerTableBindingSource3;
-        private System.Windows.Forms.BindingSource piersDCSdatabaseDataSet4BindingSource;
     }
 }

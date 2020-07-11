@@ -33,11 +33,7 @@ namespace PiersDCS
         private void Preview_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'piersDCSdatabaseDataSet4.PassengerTable' table. You can move, or remove it, as needed.
-            this.passengerTableTableAdapter2.Fill(this.piersDCSdatabaseDataSet4.PassengerTable);
-            // TODO: This line of code loads data into the 'piersDCSdatabaseDataSet3.PassengerTable' table. You can move, or remove it, as needed.
-            //this.passengerTableTableAdapter1.Fill(this.piersDCSdatabaseDataSet3.PassengerTable);
-            // TODO: This line of code loads data into the 'piersDCSdatabaseDataSet.PassengerTable' table. You can move, or remove it, as needed.
-           // this.passengerTableTableAdapter.Fill(this.piersDCSdatabaseDataSet.PassengerTable);
+            this.passengerTableTableAdapter.Fill(this.piersDCSdatabaseDataSet4.PassengerTable);
 
             foundPassengers = foundPassengers.OrderBy(c => c.Seat).ToList();
             dgvPreview.DataSource = foundPassengers;
@@ -76,8 +72,8 @@ namespace PiersDCS
 
         private void btnDEL_Click(object sender, EventArgs e)
         {
-            
-               /* var name = txtName.Text.Trim();
+            /*
+                var name = txtName.Text.Trim();
                 if (name.Equals(""))
                 {
                     MessageBox.Show("Please enter passenger's name!", "Invalid input", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -127,8 +123,8 @@ namespace PiersDCS
                             "Passengers Removed/Moved", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     ClearForm();
-                }*/
-            
+                }
+            */
 
         }
     }

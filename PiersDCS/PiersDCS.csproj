@@ -47,6 +47,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AnotherSeatMap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AnotherSeatMap.Designer.cs">
+      <DependentUpon>AnotherSeatMap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Boarding.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Boarding.Designer.cs">
+      <DependentUpon>Boarding.cs</DependentUpon>
+    </Compile>
     <Compile Include="Flights.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,6 +103,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>PiersDCSdatabaseDataSet4.xsd</DependentUpon>
     </Compile>
+    <Compile Include="PiersDCSdatabaseDataSet5.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PiersDCSdatabaseDataSet5.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PiersDCSdatabaseDataSet6.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PiersDCSdatabaseDataSet6.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Preview.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,12 +121,29 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="SeatMap.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="SeatMap.Designer.cs">
       <DependentUpon>SeatMap.cs</DependentUpon>
     </Compile>
+    <Compile Include="SecondPreview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SecondPreview.Designer.cs">
+      <DependentUpon>SecondPreview.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AnotherSeatMap.resx">
+      <DependentUpon>AnotherSeatMap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Boarding.resx">
+      <DependentUpon>Boarding.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Flights.resx">
       <DependentUpon>Flights.cs</DependentUpon>
     </EmbeddedResource>
@@ -119,16 +158,14 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="SeatMap.resx">
       <DependentUpon>SeatMap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SecondPreview.resx">
+      <DependentUpon>SecondPreview.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="PiersDCSdatabaseDataSet.xsc">
       <DependentUpon>PiersDCSdatabaseDataSet.xsd</DependentUpon>
@@ -185,6 +222,28 @@
     <None Include="PiersDCSdatabaseDataSet4.xss">
       <DependentUpon>PiersDCSdatabaseDataSet4.xsd</DependentUpon>
     </None>
+    <None Include="PiersDCSdatabaseDataSet5.xsc">
+      <DependentUpon>PiersDCSdatabaseDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="PiersDCSdatabaseDataSet5.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PiersDCSdatabaseDataSet5.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PiersDCSdatabaseDataSet5.xss">
+      <DependentUpon>PiersDCSdatabaseDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="PiersDCSdatabaseDataSet6.xsc">
+      <DependentUpon>PiersDCSdatabaseDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="PiersDCSdatabaseDataSet6.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PiersDCSdatabaseDataSet6.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PiersDCSdatabaseDataSet6.xss">
+      <DependentUpon>PiersDCSdatabaseDataSet6.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -199,9 +258,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Small-Plane-Clipart-PNG-715x715.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Заснемане.PNG" />
   </ItemGroup>
   <ItemGroup>
@@ -212,9 +268,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\tp9DL2.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icon.PNG" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\катинар.PNG" />
@@ -236,6 +289,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\airplane-plane-flight-900.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Seat.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FinallyBack.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

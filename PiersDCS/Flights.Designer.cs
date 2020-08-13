@@ -44,6 +44,7 @@
             this.btnHome = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.flightTableTableAdapter1 = new PiersDCS.PiersDCSdatabaseDataSetTableAdapters.FlightTableTableAdapter();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.FlightdataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.flightTableBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.piersDCSdatabaseDataSet)).BeginInit();
@@ -75,7 +76,12 @@
             // FlightdataGridView1
             // 
             this.FlightdataGridView1.AllowUserToOrderColumns = true;
+            this.FlightdataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.FlightdataGridView1.AutoGenerateColumns = false;
+            this.FlightdataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.FlightdataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.FlightdataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.FlightdataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn6,
@@ -85,11 +91,13 @@
             this.dataGridViewTextBoxColumn10,
             this.dataGridViewTextBoxColumn11});
             this.FlightdataGridView1.DataSource = this.flightTableBindingSource;
+            this.FlightdataGridView1.GridColor = System.Drawing.Color.Turquoise;
             this.FlightdataGridView1.Location = new System.Drawing.Point(12, 66);
             this.FlightdataGridView1.Name = "FlightdataGridView1";
             this.FlightdataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.FlightdataGridView1.Size = new System.Drawing.Size(643, 231);
+            this.FlightdataGridView1.Size = new System.Drawing.Size(662, 266);
             this.FlightdataGridView1.TabIndex = 24;
+            this.FlightdataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.FlightdataGridView1_CellContentClick);
             this.FlightdataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.FlightDGV_CellDoubleClick);
             // 
             // dataGridViewTextBoxColumn6
@@ -161,9 +169,10 @@
             // 
             // button2
             // 
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.button2.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.button2.Font = new System.Drawing.Font("Pangolin", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button2.Location = new System.Drawing.Point(25, 338);
+            this.button2.Location = new System.Drawing.Point(12, 353);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(156, 42);
             this.button2.TabIndex = 25;
@@ -175,13 +184,26 @@
             // 
             this.flightTableTableAdapter1.ClearBeforeFill = true;
             // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Modern No. 20", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(533, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(57, 21);
+            this.label1.TabIndex = 26;
+            this.label1.Text = "label1";
+            // 
             // Flights
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightCyan;
-            this.BackgroundImage = global::PiersDCS.Properties.Resources.airplane_plane_flight_900;
+            this.BackgroundImage = global::PiersDCS.Properties.Resources.FinallyBack;
             this.ClientSize = new System.Drawing.Size(686, 407);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.FlightdataGridView1);
             this.Controls.Add(this.btnLogout);
@@ -189,12 +211,14 @@
             this.Controls.Add(this.btnFlights);
             this.Controls.Add(this.btnHome);
             this.Name = "Flights";
-            this.Text = "Flights";
+            this.Text = " ";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Flights_Load);
             ((System.ComponentModel.ISupportInitialize)(this.FlightdataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.flightTableBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.piersDCSdatabaseDataSet)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -228,5 +252,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
+        private System.Windows.Forms.Label label1;
     }
 }

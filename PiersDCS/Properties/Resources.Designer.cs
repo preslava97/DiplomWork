@@ -83,9 +83,9 @@ namespace PiersDCS.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icon {
+        internal static System.Drawing.Bitmap FinallyBack {
             get {
-                object obj = ResourceManager.GetObject("icon", resourceCulture);
+                object obj = ResourceManager.GetObject("FinallyBack", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -93,9 +93,9 @@ namespace PiersDCS.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Small_Plane_Clipart_PNG_715x715 {
+        internal static System.Drawing.Bitmap Seat {
             get {
-                object obj = ResourceManager.GetObject("Small-Plane-Clipart-PNG-715x715", resourceCulture);
+                object obj = ResourceManager.GetObject("Seat", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

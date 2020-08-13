@@ -29,107 +29,61 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.dgvPreview = new System.Windows.Forms.DataGridView();
-            this.passengerTableBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
-            this.btn_Back = new System.Windows.Forms.Button();
-            this.btnDEL = new System.Windows.Forms.Button();
-            this.passengerTableBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.piersDCSdatabaseDataSet4 = new PiersDCS.PiersDCSdatabaseDataSet4();
-            this.passengerTableBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.passengerTableTableAdapter = new PiersDCS.PiersDCSdatabaseDataSet4TableAdapters.PassengerTableTableAdapter();
+            this.dgvPrevPassenger = new System.Windows.Forms.DataGridView();
+            this.iDpassengerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.destinationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.seatDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPreview)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.passengerTableBindingSource3)).BeginInit();
+            this.genderDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.documentNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nationalityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.birthDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bagPiecesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bagWeightDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.specialDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.passengerTableBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.piersDCSdatabaseDataSet6 = new PiersDCS.PiersDCSdatabaseDataSet6();
+            this.btnClose = new System.Windows.Forms.Button();
+            this.passengerTableTableAdapter = new PiersDCS.PiersDCSdatabaseDataSet6TableAdapters.PassengerTableTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPrevPassenger)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.passengerTableBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.piersDCSdatabaseDataSet4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.passengerTableBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.piersDCSdatabaseDataSet6)).BeginInit();
             this.SuspendLayout();
             // 
-            // dgvPreview
+            // dgvPrevPassenger
             // 
-            this.dgvPreview.AllowUserToAddRows = false;
-            this.dgvPreview.AllowUserToOrderColumns = true;
-            this.dgvPreview.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.dgvPreview.AutoGenerateColumns = false;
-            this.dgvPreview.BackgroundColor = System.Drawing.Color.Cornsilk;
-            this.dgvPreview.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dgvPreview.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
-            this.dgvPreview.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPreview.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvPrevPassenger.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvPrevPassenger.AutoGenerateColumns = false;
+            this.dgvPrevPassenger.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvPrevPassenger.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.dgvPrevPassenger.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPrevPassenger.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.iDpassengerDataGridViewTextBoxColumn,
             this.destinationDataGridViewTextBoxColumn,
-            this.dataGridViewTextBoxColumn1,
+            this.nameDataGridViewTextBoxColumn,
             this.seatDataGridViewTextBoxColumn,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6,
-            this.dataGridViewTextBoxColumn7,
-            this.dataGridViewTextBoxColumn8});
-            this.dgvPreview.DataSource = this.passengerTableBindingSource1;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Pangolin", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPreview.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvPreview.Location = new System.Drawing.Point(56, 12);
-            this.dgvPreview.Name = "dgvPreview";
-            this.dgvPreview.Size = new System.Drawing.Size(1017, 369);
-            this.dgvPreview.TabIndex = 0;
-            this.dgvPreview.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPreview_CellContentClick);
+            this.genderDataGridViewTextBoxColumn,
+            this.documentNumberDataGridViewTextBoxColumn,
+            this.nationalityDataGridViewTextBoxColumn,
+            this.birthDataGridViewTextBoxColumn,
+            this.bagPiecesDataGridViewTextBoxColumn,
+            this.bagWeightDataGridViewTextBoxColumn,
+            this.specialDataGridViewTextBoxColumn});
+            this.dgvPrevPassenger.DataSource = this.passengerTableBindingSource;
+            this.dgvPrevPassenger.GridColor = System.Drawing.Color.Turquoise;
+            this.dgvPrevPassenger.Location = new System.Drawing.Point(28, 23);
+            this.dgvPrevPassenger.Name = "dgvPrevPassenger";
+            this.dgvPrevPassenger.Size = new System.Drawing.Size(1011, 333);
+            this.dgvPrevPassenger.TabIndex = 0;
+            this.dgvPrevPassenger.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPrevPassenger_CellContentClick);
             // 
-            // btn_Back
+            // iDpassengerDataGridViewTextBoxColumn
             // 
-            this.btn_Back.Font = new System.Drawing.Font("Pangolin", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btn_Back.Location = new System.Drawing.Point(32, 394);
-            this.btn_Back.Name = "btn_Back";
-            this.btn_Back.Size = new System.Drawing.Size(91, 36);
-            this.btn_Back.TabIndex = 1;
-            this.btn_Back.Text = "Back";
-            this.btn_Back.UseVisualStyleBackColor = true;
-            this.btn_Back.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // btnDEL
-            // 
-            this.btnDEL.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnDEL.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnDEL.FlatAppearance.BorderSize = 0;
-            this.btnDEL.Font = new System.Drawing.Font("Pangolin", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnDEL.ForeColor = System.Drawing.Color.Black;
-            this.btnDEL.Location = new System.Drawing.Point(139, 395);
-            this.btnDEL.Name = "btnDEL";
-            this.btnDEL.Size = new System.Drawing.Size(159, 35);
-            this.btnDEL.TabIndex = 39;
-            this.btnDEL.Text = "Delete Passenger";
-            this.btnDEL.UseVisualStyleBackColor = false;
-            this.btnDEL.Click += new System.EventHandler(this.btnDEL_Click);
-            // 
-            // piersDCSdatabaseDataSet4
-            // 
-            this.piersDCSdatabaseDataSet4.DataSetName = "PiersDCSdatabaseDataSet4";
-            this.piersDCSdatabaseDataSet4.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // passengerTableBindingSource1
-            // 
-            this.passengerTableBindingSource1.DataMember = "PassengerTable";
-            this.passengerTableBindingSource1.DataSource = this.piersDCSdatabaseDataSet4;
-            // 
-            // passengerTableTableAdapter
-            // 
-            this.passengerTableTableAdapter.ClearBeforeFill = true;
+            this.iDpassengerDataGridViewTextBoxColumn.DataPropertyName = "ID_passenger";
+            this.iDpassengerDataGridViewTextBoxColumn.HeaderText = "ID_passenger";
+            this.iDpassengerDataGridViewTextBoxColumn.Name = "iDpassengerDataGridViewTextBoxColumn";
             // 
             // destinationDataGridViewTextBoxColumn
             // 
@@ -137,11 +91,11 @@
             this.destinationDataGridViewTextBoxColumn.HeaderText = "Destination";
             this.destinationDataGridViewTextBoxColumn.Name = "destinationDataGridViewTextBoxColumn";
             // 
-            // dataGridViewTextBoxColumn1
+            // nameDataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "Name";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Name";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
             // 
             // seatDataGridViewTextBoxColumn
             // 
@@ -149,99 +103,109 @@
             this.seatDataGridViewTextBoxColumn.HeaderText = "Seat";
             this.seatDataGridViewTextBoxColumn.Name = "seatDataGridViewTextBoxColumn";
             // 
-            // dataGridViewTextBoxColumn2
+            // genderDataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Gender";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Gender";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.genderDataGridViewTextBoxColumn.DataPropertyName = "Gender";
+            this.genderDataGridViewTextBoxColumn.HeaderText = "Gender";
+            this.genderDataGridViewTextBoxColumn.Name = "genderDataGridViewTextBoxColumn";
             // 
-            // dataGridViewTextBoxColumn3
+            // documentNumberDataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "Document Number";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Document Number";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.documentNumberDataGridViewTextBoxColumn.DataPropertyName = "DocumentNumber";
+            this.documentNumberDataGridViewTextBoxColumn.HeaderText = "DocumentNumber";
+            this.documentNumberDataGridViewTextBoxColumn.Name = "documentNumberDataGridViewTextBoxColumn";
             // 
-            // dataGridViewTextBoxColumn4
+            // nationalityDataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "Nationality";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Nationality";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.nationalityDataGridViewTextBoxColumn.DataPropertyName = "Nationality";
+            this.nationalityDataGridViewTextBoxColumn.HeaderText = "Nationality";
+            this.nationalityDataGridViewTextBoxColumn.Name = "nationalityDataGridViewTextBoxColumn";
             // 
-            // dataGridViewTextBoxColumn5
+            // birthDataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "Date of birth";
-            this.dataGridViewTextBoxColumn5.HeaderText = "Date of birth";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.birthDataGridViewTextBoxColumn.DataPropertyName = "Birth";
+            this.birthDataGridViewTextBoxColumn.HeaderText = "Birth";
+            this.birthDataGridViewTextBoxColumn.Name = "birthDataGridViewTextBoxColumn";
             // 
-            // dataGridViewTextBoxColumn6
+            // bagPiecesDataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "Bag Pieces";
-            this.dataGridViewTextBoxColumn6.HeaderText = "Bag Pieces";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.bagPiecesDataGridViewTextBoxColumn.DataPropertyName = "BagPieces";
+            this.bagPiecesDataGridViewTextBoxColumn.HeaderText = "BagPieces";
+            this.bagPiecesDataGridViewTextBoxColumn.Name = "bagPiecesDataGridViewTextBoxColumn";
             // 
-            // dataGridViewTextBoxColumn7
+            // bagWeightDataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "Bag Weight";
-            this.dataGridViewTextBoxColumn7.HeaderText = "Bag Weight";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.bagWeightDataGridViewTextBoxColumn.DataPropertyName = "BagWeight";
+            this.bagWeightDataGridViewTextBoxColumn.HeaderText = "BagWeight";
+            this.bagWeightDataGridViewTextBoxColumn.Name = "bagWeightDataGridViewTextBoxColumn";
             // 
-            // dataGridViewTextBoxColumn8
+            // specialDataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "Special";
-            this.dataGridViewTextBoxColumn8.HeaderText = "Special";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.specialDataGridViewTextBoxColumn.DataPropertyName = "Special";
+            this.specialDataGridViewTextBoxColumn.HeaderText = "Special";
+            this.specialDataGridViewTextBoxColumn.Name = "specialDataGridViewTextBoxColumn";
+            // 
+            // passengerTableBindingSource
+            // 
+            this.passengerTableBindingSource.DataMember = "PassengerTable";
+            this.passengerTableBindingSource.DataSource = this.piersDCSdatabaseDataSet6;
+            // 
+            // piersDCSdatabaseDataSet6
+            // 
+            this.piersDCSdatabaseDataSet6.DataSetName = "PiersDCSdatabaseDataSet6";
+            this.piersDCSdatabaseDataSet6.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // btnClose
+            // 
+            this.btnClose.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnClose.Font = new System.Drawing.Font("Pangolin", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnClose.Location = new System.Drawing.Point(28, 392);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(102, 32);
+            this.btnClose.TabIndex = 1;
+            this.btnClose.Text = "Close";
+            this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // passengerTableTableAdapter
+            // 
+            this.passengerTableTableAdapter.ClearBeforeFill = true;
             // 
             // Preview
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::PiersDCS.Properties.Resources.airplane_plane_flight_900;
-            this.ClientSize = new System.Drawing.Size(1103, 435);
-            this.Controls.Add(this.btnDEL);
-            this.Controls.Add(this.btn_Back);
-            this.Controls.Add(this.dgvPreview);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.BackgroundImage = global::PiersDCS.Properties.Resources.FinallyBack;
+            this.ClientSize = new System.Drawing.Size(1051, 450);
+            this.Controls.Add(this.btnClose);
+            this.Controls.Add(this.dgvPrevPassenger);
             this.Name = "Preview";
-            this.Text = " ";
+            this.Text = "Preview";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Preview_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPreview)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.passengerTableBindingSource3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPrevPassenger)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.passengerTableBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.piersDCSdatabaseDataSet4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.passengerTableBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.piersDCSdatabaseDataSet6)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dgvPreview;
+        private System.Windows.Forms.Button btnClose;
+        public System.Windows.Forms.DataGridView dgvPrevPassenger;
+        private PiersDCSdatabaseDataSet6 piersDCSdatabaseDataSet6;
+        private System.Windows.Forms.BindingSource passengerTableBindingSource;
+        private PiersDCSdatabaseDataSet6TableAdapters.PassengerTableTableAdapter passengerTableTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDpassengerDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn destinationDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn seatRowDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn seatColumnDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn seatDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn genderDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn documentNumberDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nationalityDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dateOfBirthDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn birthDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn bagPiecesDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn bagWeightDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn specialDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Button btn_Back;
-        private System.Windows.Forms.Button btnDEL;
-        private System.Windows.Forms.BindingSource passengerTableBindingSource;
-        private System.Windows.Forms.BindingSource passengerTableBindingSource3;
-        private PiersDCSdatabaseDataSet4 piersDCSdatabaseDataSet4;
-        private System.Windows.Forms.BindingSource passengerTableBindingSource1;
-        private PiersDCSdatabaseDataSet4TableAdapters.PassengerTableTableAdapter passengerTableTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn destinationDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn seatDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
     }
 }

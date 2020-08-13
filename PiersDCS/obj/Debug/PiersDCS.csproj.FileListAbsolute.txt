@@ -23,3 +23,6 @@ C:\Users\ACER\Source\Repos\preslava97\DiplomWork\PiersDCS\obj\Debug\PiersDCS.Pre
 C:\Users\ACER\Source\Repos\preslava97\DiplomWork\PiersDCS\obj\Debug\PiersDCS.csprojAssemblyReference.cache
 C:\Users\ACER\source\repos\preslava97\DiplomWork\PiersDCS\obj\Debug\PiersDCS.PassengerInfo.resources
 C:\Users\ACER\source\repos\preslava97\DiplomWork\PiersDCS\obj\Debug\PiersDCS.LoginForm.resources
+C:\Users\ACER\source\repos\preslava97\DiplomWork\PiersDCS\obj\Debug\PiersDCS.Boarding.resources
+C:\Users\ACER\source\repos\preslava97\DiplomWork\PiersDCS\obj\Debug\PiersDCS.AnotherSeatMap.resources
+C:\Users\ACER\source\repos\preslava97\DiplomWork\PiersDCS\obj\Debug\PiersDCS.SecondPreview.resources

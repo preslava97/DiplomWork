@@ -38,7 +38,7 @@ namespace PiersDCS
                     MessageBox.Show("Login Successful!", "Valid input", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     this.Hide();
-                    Flights frm = new Flights();
+                    Flights frm = new Flights("Welcome " +txtUser.Text);
                     frm.Show();
                 }
                 else

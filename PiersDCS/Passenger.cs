@@ -25,21 +25,23 @@ namespace PiersDCS
         }
 
         private bool v;
+        public int ID { get; set; }
         public String Destination { get; set; }
         public String Name { get; set; }
         public String Seat { get; set; }
         public String Gender { get; set; }
         public String Document { get; set; }
         public String Nationality { get; set; }
-        public String Birth { get; set; }
+        public int Birth { get; set; }
         public String BaggagePiece { get; set; }
         public String BaggageWeight { get; set; }
         public String Remarks { get; set; }
         public bool ISOnWaitingList { get; set; }
         public static String ErrorMessage { get; set; }
 
-        public Passenger(string dest, string name, string seat, string gender, string document,
-            string nationality, string birth, string bagpiece, string bagweight, string remark) {
+        public Passenger(int id_psng , string dest, string name, string seat, string gender, string document,
+            string nationality, int birth, string bagpiece, string bagweight, string remark) {
+            ID = id_psng;
             Destination = dest;
             Name = name;
             Seat = seat;
@@ -80,29 +82,25 @@ namespace PiersDCS
             Name = name;
         }
 
-        public bool IsValidPassenger(String dest, String Name,String seat, String gender, String document, 
-            String nationality, String birth, String bagPiece, String bagWeight, String remark )
+        public bool IsValidPassenger(String id_psng, String dest, String Name,String seat, String gender, String document, 
+            String nationality, int birth, String bagPiece, String bagWeight, String remark )
         {
             if (Name.Trim().Equals(""))
             {
                 ErrorMessage = "Name is Required!";
                 return false;
             }
-             
-           /* int ValidRow;
-            if(!int.TryParse(row,out ValidRow) || ValidRow < 1 || ValidRow > 15)
-            {
-                ErrorMessage = "Valid Seat Row is Required!";
-                return false;
-            }
 
-            if(column.ToUpper() != "A" && column.ToUpper() !="B" && column.ToUpper() != "C" &&
-                column.ToUpper() != "D" && column.ToUpper() != "E" && column.ToUpper() != "F")
-            {
-                ErrorMessage = "Valid Seat Column is Required! ";
-                return false;
+            /* int ValidRow;
+             if(!int.TryParse(row,out ValidRow) || ValidRow < 1 || ValidRow > 15)
+             {ErrorMessage = "Valid Seat Row is Required!";
+                 return false;
+             }
+             if(column.ToUpper() != "A" && column.ToUpper() !="B" && column.ToUpper() != "C" &&
+                 column.ToUpper() != "D" && column.ToUpper() != "E" && column.ToUpper() != "F")
+             { ErrorMessage = "Valid Seat Column is Required! ";
+                 return false; }*/
 
-            }*/
             return true;
         }
 
@@ -122,14 +120,17 @@ namespace PiersDCS
         {
             PassengerInfo.passengers.Add(passenger);
         }
+
         public void UpdatePassenger(Passenger passenger)
         {
             
         }
-        public void DeletePassenger(Passenger passenger)
+      
+        
+        /* public void DeletePassenger(Passenger passenger)
         {
             Preview.passengers.Remove(passenger);
-        }
+        }*/
 
         public int NumberOfSeatedPassengers()
         {

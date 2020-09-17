@@ -24,7 +24,7 @@ namespace PiersDCS {
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
     public partial class PiersDCSdatabaseDataSet4 : global::System.Data.DataSet {
         
-        private PassengerTableDataTable tablePassengerTable;
+        private Table_MosscowDataTable tableTable_Mosscow;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -54,8 +54,8 @@ namespace PiersDCS {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["PassengerTable"] != null)) {
-                    base.Tables.Add(new PassengerTableDataTable(ds.Tables["PassengerTable"]));
+                if ((ds.Tables["Table_Mosscow"] != null)) {
+                    base.Tables.Add(new Table_MosscowDataTable(ds.Tables["Table_Mosscow"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace PiersDCS {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public PassengerTableDataTable PassengerTable {
+        public Table_MosscowDataTable Table_Mosscow {
             get {
-                return this.tablePassengerTable;
+                return this.tableTable_Mosscow;
             }
         }
         
@@ -152,8 +152,8 @@ namespace PiersDCS {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["PassengerTable"] != null)) {
-                    base.Tables.Add(new PassengerTableDataTable(ds.Tables["PassengerTable"]));
+                if ((ds.Tables["Table_Mosscow"] != null)) {
+                    base.Tables.Add(new Table_MosscowDataTable(ds.Tables["Table_Mosscow"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace PiersDCS {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tablePassengerTable = ((PassengerTableDataTable)(base.Tables["PassengerTable"]));
+            this.tableTable_Mosscow = ((Table_MosscowDataTable)(base.Tables["Table_Mosscow"]));
             if ((initTable == true)) {
-                if ((this.tablePassengerTable != null)) {
-                    this.tablePassengerTable.InitVars();
+                if ((this.tableTable_Mosscow != null)) {
+                    this.tableTable_Mosscow.InitVars();
                 }
             }
         }
@@ -204,13 +204,13 @@ namespace PiersDCS {
             this.Namespace = "http://tempuri.org/PiersDCSdatabaseDataSet4.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tablePassengerTable = new PassengerTableDataTable();
-            base.Tables.Add(this.tablePassengerTable);
+            this.tableTable_Mosscow = new Table_MosscowDataTable();
+            base.Tables.Add(this.tableTable_Mosscow);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private bool ShouldSerializePassengerTable() {
+        private bool ShouldSerializeTable_Mosscow() {
             return false;
         }
         
@@ -270,16 +270,16 @@ namespace PiersDCS {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public delegate void PassengerTableRowChangeEventHandler(object sender, PassengerTableRowChangeEvent e);
+        public delegate void Table_MosscowRowChangeEventHandler(object sender, Table_MosscowRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class PassengerTableDataTable : global::System.Data.TypedTableBase<PassengerTableRow> {
+        public partial class Table_MosscowDataTable : global::System.Data.TypedTableBase<Table_MosscowRow> {
             
-            private global::System.Data.DataColumn columnID_passenger;
+            private global::System.Data.DataColumn columnID;
             
             private global::System.Data.DataColumn columnDestination;
             
@@ -303,8 +303,8 @@ namespace PiersDCS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public PassengerTableDataTable() {
-                this.TableName = "PassengerTable";
+            public Table_MosscowDataTable() {
+                this.TableName = "Table_Mosscow";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -312,7 +312,7 @@ namespace PiersDCS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            internal PassengerTableDataTable(global::System.Data.DataTable table) {
+            internal Table_MosscowDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -329,16 +329,16 @@ namespace PiersDCS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            protected PassengerTableDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected Table_MosscowDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn ID_passengerColumn {
+            public global::System.Data.DataColumn IDColumn {
                 get {
-                    return this.columnID_passenger;
+                    return this.columnID;
                 }
             }
             
@@ -433,36 +433,36 @@ namespace PiersDCS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public PassengerTableRow this[int index] {
+            public Table_MosscowRow this[int index] {
                 get {
-                    return ((PassengerTableRow)(this.Rows[index]));
+                    return ((Table_MosscowRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event PassengerTableRowChangeEventHandler PassengerTableRowChanging;
+            public event Table_MosscowRowChangeEventHandler Table_MosscowRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event PassengerTableRowChangeEventHandler PassengerTableRowChanged;
+            public event Table_MosscowRowChangeEventHandler Table_MosscowRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event PassengerTableRowChangeEventHandler PassengerTableRowDeleting;
+            public event Table_MosscowRowChangeEventHandler Table_MosscowRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event PassengerTableRowChangeEventHandler PassengerTableRowDeleted;
+            public event Table_MosscowRowChangeEventHandler Table_MosscowRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void AddPassengerTableRow(PassengerTableRow row) {
+            public void AddTable_MosscowRow(Table_MosscowRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public PassengerTableRow AddPassengerTableRow(int ID_passenger, string Destination, string Name, int Seat, string Gender, string DocumentNumber, string Nationality, System.DateTime Birth, string BagPieces, string BagWeight, string Special) {
-                PassengerTableRow rowPassengerTableRow = ((PassengerTableRow)(this.NewRow()));
+            public Table_MosscowRow AddTable_MosscowRow(int ID, string Destination, string Name, string Seat, string Gender, int DocumentNumber, string Nationality, System.DateTime Birth, int BagPieces, int BagWeight, string Special) {
+                Table_MosscowRow rowTable_MosscowRow = ((Table_MosscowRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        ID_passenger,
+                        ID,
                         Destination,
                         Name,
                         Seat,
@@ -473,22 +473,22 @@ namespace PiersDCS {
                         BagPieces,
                         BagWeight,
                         Special};
-                rowPassengerTableRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowPassengerTableRow);
-                return rowPassengerTableRow;
+                rowTable_MosscowRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowTable_MosscowRow);
+                return rowTable_MosscowRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public PassengerTableRow FindByID_passenger(int ID_passenger) {
-                return ((PassengerTableRow)(this.Rows.Find(new object[] {
-                            ID_passenger})));
+            public Table_MosscowRow FindByID(int ID) {
+                return ((Table_MosscowRow)(this.Rows.Find(new object[] {
+                            ID})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                PassengerTableDataTable cln = ((PassengerTableDataTable)(base.Clone()));
+                Table_MosscowDataTable cln = ((Table_MosscowDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -496,13 +496,13 @@ namespace PiersDCS {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new PassengerTableDataTable();
+                return new Table_MosscowDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             internal void InitVars() {
-                this.columnID_passenger = base.Columns["ID_passenger"];
+                this.columnID = base.Columns["ID"];
                 this.columnDestination = base.Columns["Destination"];
                 this.columnName = base.Columns["Name"];
                 this.columnSeat = base.Columns["Seat"];
@@ -518,66 +518,64 @@ namespace PiersDCS {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             private void InitClass() {
-                this.columnID_passenger = new global::System.Data.DataColumn("ID_passenger", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnID_passenger);
+                this.columnID = new global::System.Data.DataColumn("ID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnID);
                 this.columnDestination = new global::System.Data.DataColumn("Destination", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDestination);
                 this.columnName = new global::System.Data.DataColumn("Name", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnName);
-                this.columnSeat = new global::System.Data.DataColumn("Seat", typeof(int), null, global::System.Data.MappingType.Element);
+                this.columnSeat = new global::System.Data.DataColumn("Seat", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSeat);
                 this.columnGender = new global::System.Data.DataColumn("Gender", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnGender);
-                this.columnDocumentNumber = new global::System.Data.DataColumn("DocumentNumber", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnDocumentNumber = new global::System.Data.DataColumn("DocumentNumber", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDocumentNumber);
                 this.columnNationality = new global::System.Data.DataColumn("Nationality", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNationality);
                 this.columnBirth = new global::System.Data.DataColumn("Birth", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnBirth);
-                this.columnBagPieces = new global::System.Data.DataColumn("BagPieces", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnBagPieces = new global::System.Data.DataColumn("BagPieces", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnBagPieces);
-                this.columnBagWeight = new global::System.Data.DataColumn("BagWeight", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnBagWeight = new global::System.Data.DataColumn("BagWeight", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnBagWeight);
                 this.columnSpecial = new global::System.Data.DataColumn("Special", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSpecial);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnID_passenger}, true));
-                this.columnID_passenger.AllowDBNull = false;
-                this.columnID_passenger.Unique = true;
-                this.columnDestination.MaxLength = 10;
+                                this.columnID}, true));
+                this.columnID.AllowDBNull = false;
+                this.columnID.Unique = true;
+                this.columnDestination.MaxLength = 50;
                 this.columnName.MaxLength = 2147483647;
+                this.columnSeat.MaxLength = 50;
                 this.columnGender.MaxLength = 50;
-                this.columnDocumentNumber.MaxLength = 50;
-                this.columnNationality.MaxLength = 10;
-                this.columnBagPieces.MaxLength = 10;
-                this.columnBagWeight.MaxLength = 10;
-                this.columnSpecial.MaxLength = 10;
+                this.columnNationality.MaxLength = 50;
+                this.columnSpecial.MaxLength = 2147483647;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public PassengerTableRow NewPassengerTableRow() {
-                return ((PassengerTableRow)(this.NewRow()));
+            public Table_MosscowRow NewTable_MosscowRow() {
+                return ((Table_MosscowRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new PassengerTableRow(builder);
+                return new Table_MosscowRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(PassengerTableRow);
+                return typeof(Table_MosscowRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.PassengerTableRowChanged != null)) {
-                    this.PassengerTableRowChanged(this, new PassengerTableRowChangeEvent(((PassengerTableRow)(e.Row)), e.Action));
+                if ((this.Table_MosscowRowChanged != null)) {
+                    this.Table_MosscowRowChanged(this, new Table_MosscowRowChangeEvent(((Table_MosscowRow)(e.Row)), e.Action));
                 }
             }
             
@@ -585,8 +583,8 @@ namespace PiersDCS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.PassengerTableRowChanging != null)) {
-                    this.PassengerTableRowChanging(this, new PassengerTableRowChangeEvent(((PassengerTableRow)(e.Row)), e.Action));
+                if ((this.Table_MosscowRowChanging != null)) {
+                    this.Table_MosscowRowChanging(this, new Table_MosscowRowChangeEvent(((Table_MosscowRow)(e.Row)), e.Action));
                 }
             }
             
@@ -594,8 +592,8 @@ namespace PiersDCS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.PassengerTableRowDeleted != null)) {
-                    this.PassengerTableRowDeleted(this, new PassengerTableRowChangeEvent(((PassengerTableRow)(e.Row)), e.Action));
+                if ((this.Table_MosscowRowDeleted != null)) {
+                    this.Table_MosscowRowDeleted(this, new Table_MosscowRowChangeEvent(((Table_MosscowRow)(e.Row)), e.Action));
                 }
             }
             
@@ -603,14 +601,14 @@ namespace PiersDCS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.PassengerTableRowDeleting != null)) {
-                    this.PassengerTableRowDeleting(this, new PassengerTableRowChangeEvent(((PassengerTableRow)(e.Row)), e.Action));
+                if ((this.Table_MosscowRowDeleting != null)) {
+                    this.Table_MosscowRowDeleting(this, new Table_MosscowRowChangeEvent(((Table_MosscowRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void RemovePassengerTableRow(PassengerTableRow row) {
+            public void RemoveTable_MosscowRow(Table_MosscowRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -637,7 +635,7 @@ namespace PiersDCS {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "PassengerTableDataTable";
+                attribute2.FixedValue = "Table_MosscowDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -681,25 +679,25 @@ namespace PiersDCS {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class PassengerTableRow : global::System.Data.DataRow {
+        public partial class Table_MosscowRow : global::System.Data.DataRow {
             
-            private PassengerTableDataTable tablePassengerTable;
+            private Table_MosscowDataTable tableTable_Mosscow;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            internal PassengerTableRow(global::System.Data.DataRowBuilder rb) : 
+            internal Table_MosscowRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tablePassengerTable = ((PassengerTableDataTable)(this.Table));
+                this.tableTable_Mosscow = ((Table_MosscowDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int ID_passenger {
+            public int ID {
                 get {
-                    return ((int)(this[this.tablePassengerTable.ID_passengerColumn]));
+                    return ((int)(this[this.tableTable_Mosscow.IDColumn]));
                 }
                 set {
-                    this[this.tablePassengerTable.ID_passengerColumn] = value;
+                    this[this.tableTable_Mosscow.IDColumn] = value;
                 }
             }
             
@@ -708,14 +706,14 @@ namespace PiersDCS {
             public string Destination {
                 get {
                     try {
-                        return ((string)(this[this.tablePassengerTable.DestinationColumn]));
+                        return ((string)(this[this.tableTable_Mosscow.DestinationColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Destination\' in table \'PassengerTable\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Destination\' in table \'Table_Mosscow\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablePassengerTable.DestinationColumn] = value;
+                    this[this.tableTable_Mosscow.DestinationColumn] = value;
                 }
             }
             
@@ -724,30 +722,30 @@ namespace PiersDCS {
             public string Name {
                 get {
                     try {
-                        return ((string)(this[this.tablePassengerTable.NameColumn]));
+                        return ((string)(this[this.tableTable_Mosscow.NameColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Name\' in table \'PassengerTable\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Name\' in table \'Table_Mosscow\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablePassengerTable.NameColumn] = value;
+                    this[this.tableTable_Mosscow.NameColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int Seat {
+            public string Seat {
                 get {
                     try {
-                        return ((int)(this[this.tablePassengerTable.SeatColumn]));
+                        return ((string)(this[this.tableTable_Mosscow.SeatColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Seat\' in table \'PassengerTable\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Seat\' in table \'Table_Mosscow\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablePassengerTable.SeatColumn] = value;
+                    this[this.tableTable_Mosscow.SeatColumn] = value;
                 }
             }
             
@@ -756,30 +754,30 @@ namespace PiersDCS {
             public string Gender {
                 get {
                     try {
-                        return ((string)(this[this.tablePassengerTable.GenderColumn]));
+                        return ((string)(this[this.tableTable_Mosscow.GenderColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Gender\' in table \'PassengerTable\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Gender\' in table \'Table_Mosscow\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablePassengerTable.GenderColumn] = value;
+                    this[this.tableTable_Mosscow.GenderColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string DocumentNumber {
+            public int DocumentNumber {
                 get {
                     try {
-                        return ((string)(this[this.tablePassengerTable.DocumentNumberColumn]));
+                        return ((int)(this[this.tableTable_Mosscow.DocumentNumberColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'DocumentNumber\' in table \'PassengerTable\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'DocumentNumber\' in table \'Table_Mosscow\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablePassengerTable.DocumentNumberColumn] = value;
+                    this[this.tableTable_Mosscow.DocumentNumberColumn] = value;
                 }
             }
             
@@ -788,14 +786,14 @@ namespace PiersDCS {
             public string Nationality {
                 get {
                     try {
-                        return ((string)(this[this.tablePassengerTable.NationalityColumn]));
+                        return ((string)(this[this.tableTable_Mosscow.NationalityColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Nationality\' in table \'PassengerTable\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Nationality\' in table \'Table_Mosscow\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablePassengerTable.NationalityColumn] = value;
+                    this[this.tableTable_Mosscow.NationalityColumn] = value;
                 }
             }
             
@@ -804,46 +802,46 @@ namespace PiersDCS {
             public System.DateTime Birth {
                 get {
                     try {
-                        return ((global::System.DateTime)(this[this.tablePassengerTable.BirthColumn]));
+                        return ((global::System.DateTime)(this[this.tableTable_Mosscow.BirthColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Birth\' in table \'PassengerTable\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Birth\' in table \'Table_Mosscow\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablePassengerTable.BirthColumn] = value;
+                    this[this.tableTable_Mosscow.BirthColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string BagPieces {
+            public int BagPieces {
                 get {
                     try {
-                        return ((string)(this[this.tablePassengerTable.BagPiecesColumn]));
+                        return ((int)(this[this.tableTable_Mosscow.BagPiecesColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'BagPieces\' in table \'PassengerTable\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'BagPieces\' in table \'Table_Mosscow\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablePassengerTable.BagPiecesColumn] = value;
+                    this[this.tableTable_Mosscow.BagPiecesColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string BagWeight {
+            public int BagWeight {
                 get {
                     try {
-                        return ((string)(this[this.tablePassengerTable.BagWeightColumn]));
+                        return ((int)(this[this.tableTable_Mosscow.BagWeightColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'BagWeight\' in table \'PassengerTable\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'BagWeight\' in table \'Table_Mosscow\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablePassengerTable.BagWeightColumn] = value;
+                    this[this.tableTable_Mosscow.BagWeightColumn] = value;
                 }
             }
             
@@ -852,135 +850,135 @@ namespace PiersDCS {
             public string Special {
                 get {
                     try {
-                        return ((string)(this[this.tablePassengerTable.SpecialColumn]));
+                        return ((string)(this[this.tableTable_Mosscow.SpecialColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Special\' in table \'PassengerTable\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Special\' in table \'Table_Mosscow\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablePassengerTable.SpecialColumn] = value;
+                    this[this.tableTable_Mosscow.SpecialColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsDestinationNull() {
-                return this.IsNull(this.tablePassengerTable.DestinationColumn);
+                return this.IsNull(this.tableTable_Mosscow.DestinationColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetDestinationNull() {
-                this[this.tablePassengerTable.DestinationColumn] = global::System.Convert.DBNull;
+                this[this.tableTable_Mosscow.DestinationColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsNameNull() {
-                return this.IsNull(this.tablePassengerTable.NameColumn);
+                return this.IsNull(this.tableTable_Mosscow.NameColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetNameNull() {
-                this[this.tablePassengerTable.NameColumn] = global::System.Convert.DBNull;
+                this[this.tableTable_Mosscow.NameColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsSeatNull() {
-                return this.IsNull(this.tablePassengerTable.SeatColumn);
+                return this.IsNull(this.tableTable_Mosscow.SeatColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetSeatNull() {
-                this[this.tablePassengerTable.SeatColumn] = global::System.Convert.DBNull;
+                this[this.tableTable_Mosscow.SeatColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsGenderNull() {
-                return this.IsNull(this.tablePassengerTable.GenderColumn);
+                return this.IsNull(this.tableTable_Mosscow.GenderColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetGenderNull() {
-                this[this.tablePassengerTable.GenderColumn] = global::System.Convert.DBNull;
+                this[this.tableTable_Mosscow.GenderColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsDocumentNumberNull() {
-                return this.IsNull(this.tablePassengerTable.DocumentNumberColumn);
+                return this.IsNull(this.tableTable_Mosscow.DocumentNumberColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetDocumentNumberNull() {
-                this[this.tablePassengerTable.DocumentNumberColumn] = global::System.Convert.DBNull;
+                this[this.tableTable_Mosscow.DocumentNumberColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsNationalityNull() {
-                return this.IsNull(this.tablePassengerTable.NationalityColumn);
+                return this.IsNull(this.tableTable_Mosscow.NationalityColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetNationalityNull() {
-                this[this.tablePassengerTable.NationalityColumn] = global::System.Convert.DBNull;
+                this[this.tableTable_Mosscow.NationalityColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsBirthNull() {
-                return this.IsNull(this.tablePassengerTable.BirthColumn);
+                return this.IsNull(this.tableTable_Mosscow.BirthColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetBirthNull() {
-                this[this.tablePassengerTable.BirthColumn] = global::System.Convert.DBNull;
+                this[this.tableTable_Mosscow.BirthColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsBagPiecesNull() {
-                return this.IsNull(this.tablePassengerTable.BagPiecesColumn);
+                return this.IsNull(this.tableTable_Mosscow.BagPiecesColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetBagPiecesNull() {
-                this[this.tablePassengerTable.BagPiecesColumn] = global::System.Convert.DBNull;
+                this[this.tableTable_Mosscow.BagPiecesColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsBagWeightNull() {
-                return this.IsNull(this.tablePassengerTable.BagWeightColumn);
+                return this.IsNull(this.tableTable_Mosscow.BagWeightColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetBagWeightNull() {
-                this[this.tablePassengerTable.BagWeightColumn] = global::System.Convert.DBNull;
+                this[this.tableTable_Mosscow.BagWeightColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsSpecialNull() {
-                return this.IsNull(this.tablePassengerTable.SpecialColumn);
+                return this.IsNull(this.tableTable_Mosscow.SpecialColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetSpecialNull() {
-                this[this.tablePassengerTable.SpecialColumn] = global::System.Convert.DBNull;
+                this[this.tableTable_Mosscow.SpecialColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -988,22 +986,22 @@ namespace PiersDCS {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public class PassengerTableRowChangeEvent : global::System.EventArgs {
+        public class Table_MosscowRowChangeEvent : global::System.EventArgs {
             
-            private PassengerTableRow eventRow;
+            private Table_MosscowRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public PassengerTableRowChangeEvent(PassengerTableRow row, global::System.Data.DataRowAction action) {
+            public Table_MosscowRowChangeEvent(Table_MosscowRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public PassengerTableRow Row {
+            public Table_MosscowRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -1031,7 +1029,7 @@ namespace PiersDCS.PiersDCSdatabaseDataSet4TableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class PassengerTableTableAdapter : global::System.ComponentModel.Component {
+    public partial class Table_MosscowTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -1045,7 +1043,7 @@ namespace PiersDCS.PiersDCSdatabaseDataSet4TableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public PassengerTableTableAdapter() {
+        public Table_MosscowTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -1142,8 +1140,8 @@ namespace PiersDCS.PiersDCSdatabaseDataSet4TableAdapters {
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "PassengerTable";
-            tableMapping.ColumnMappings.Add("ID_passenger", "ID_passenger");
+            tableMapping.DataSetTable = "Table_Mosscow";
+            tableMapping.ColumnMappings.Add("ID", "ID");
             tableMapping.ColumnMappings.Add("Destination", "Destination");
             tableMapping.ColumnMappings.Add("Name", "Name");
             tableMapping.ColumnMappings.Add("Seat", "Seat");
@@ -1157,78 +1155,74 @@ namespace PiersDCS.PiersDCSdatabaseDataSet4TableAdapters {
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[PassengerTable] WHERE (([ID_passenger] = @Original_ID_passenger) AND ((@IsNull_Destination = 1 AND [Destination] IS NULL) OR ([Destination] = @Original_Destination)) AND ((@IsNull_Seat = 1 AND [Seat] IS NULL) OR ([Seat] = @Original_Seat)) AND ((@IsNull_Gender = 1 AND [Gender] IS NULL) OR ([Gender] = @Original_Gender)) AND ((@IsNull_DocumentNumber = 1 AND [DocumentNumber] IS NULL) OR ([DocumentNumber] = @Original_DocumentNumber)) AND ((@IsNull_Nationality = 1 AND [Nationality] IS NULL) OR ([Nationality] = @Original_Nationality)) AND ((@IsNull_Birth = 1 AND [Birth] IS NULL) OR ([Birth] = @Original_Birth)) AND ((@IsNull_BagPieces = 1 AND [BagPieces] IS NULL) OR ([BagPieces] = @Original_BagPieces)) AND ((@IsNull_BagWeight = 1 AND [BagWeight] IS NULL) OR ([BagWeight] = @Original_BagWeight)) AND ((@IsNull_Special = 1 AND [Special] IS NULL) OR ([Special] = @Original_Special)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Table_Mosscow] WHERE (([ID] = @Original_ID) AND ((@IsNull_Destination = 1 AND [Destination] IS NULL) OR ([Destination] = @Original_Destination)) AND ((@IsNull_Seat = 1 AND [Seat] IS NULL) OR ([Seat] = @Original_Seat)) AND ((@IsNull_Gender = 1 AND [Gender] IS NULL) OR ([Gender] = @Original_Gender)) AND ((@IsNull_DocumentNumber = 1 AND [DocumentNumber] IS NULL) OR ([DocumentNumber] = @Original_DocumentNumber)) AND ((@IsNull_Nationality = 1 AND [Nationality] IS NULL) OR ([Nationality] = @Original_Nationality)) AND ((@IsNull_Birth = 1 AND [Birth] IS NULL) OR ([Birth] = @Original_Birth)) AND ((@IsNull_BagPieces = 1 AND [BagPieces] IS NULL) OR ([BagPieces] = @Original_BagPieces)) AND ((@IsNull_BagWeight = 1 AND [BagWeight] IS NULL) OR ([BagWeight] = @Original_BagWeight)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_passenger", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_passenger", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Destination", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Destination", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Destination", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Destination", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Destination", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Destination", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Seat", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Seat", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Seat", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Seat", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Seat", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Seat", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Gender", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Gender", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Gender", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Gender", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_DocumentNumber", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DocumentNumber", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DocumentNumber", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DocumentNumber", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DocumentNumber", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DocumentNumber", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Nationality", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nationality", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Nationality", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nationality", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Nationality", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nationality", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Birth", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Birth", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Birth", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Birth", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Birth", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Birth", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_BagPieces", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BagPieces", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_BagPieces", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BagPieces", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_BagPieces", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BagPieces", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_BagWeight", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BagWeight", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_BagWeight", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BagWeight", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Special", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Special", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Special", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Special", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_BagWeight", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BagWeight", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[PassengerTable] ([ID_passenger], [Destination], [Name], [Seat], [Gender], [DocumentNumber], [Nationality], [Birth], [BagPieces], [BagWeight], [Special]) VALUES (@ID_passenger, @Destination, @Name, @Seat, @Gender, @DocumentNumber, @Nationality, @Birth, @BagPieces, @BagWeight, @Special);
-SELECT ID_passenger, Destination, Name, Seat, Gender, DocumentNumber, Nationality, Birth, BagPieces, BagWeight, Special FROM PassengerTable WHERE (ID_passenger = @ID_passenger)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Table_Mosscow] ([ID], [Destination], [Name], [Seat], [Gender], [DocumentNumber], [Nationality], [Birth], [BagPieces], [BagWeight], [Special]) VALUES (@ID, @Destination, @Name, @Seat, @Gender, @DocumentNumber, @Nationality, @Birth, @BagPieces, @BagWeight, @Special);
+SELECT ID, Destination, Name, Seat, Gender, DocumentNumber, Nationality, Birth, BagPieces, BagWeight, Special FROM Table_Mosscow WHERE (ID = @ID)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_passenger", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_passenger", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Destination", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Destination", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Destination", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Destination", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Seat", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Seat", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Seat", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Seat", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Gender", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Gender", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DocumentNumber", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DocumentNumber", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nationality", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nationality", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Birth", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Birth", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BagPieces", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BagPieces", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BagWeight", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BagWeight", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Special", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Special", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DocumentNumber", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DocumentNumber", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nationality", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nationality", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Birth", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Birth", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BagPieces", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BagPieces", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BagWeight", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BagWeight", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Special", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Special", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[PassengerTable] SET [ID_passenger] = @ID_passenger, [Destination] = @Destination, [Name] = @Name, [Seat] = @Seat, [Gender] = @Gender, [DocumentNumber] = @DocumentNumber, [Nationality] = @Nationality, [Birth] = @Birth, [BagPieces] = @BagPieces, [BagWeight] = @BagWeight, [Special] = @Special WHERE (([ID_passenger] = @Original_ID_passenger) AND ((@IsNull_Destination = 1 AND [Destination] IS NULL) OR ([Destination] = @Original_Destination)) AND ((@IsNull_Seat = 1 AND [Seat] IS NULL) OR ([Seat] = @Original_Seat)) AND ((@IsNull_Gender = 1 AND [Gender] IS NULL) OR ([Gender] = @Original_Gender)) AND ((@IsNull_DocumentNumber = 1 AND [DocumentNumber] IS NULL) OR ([DocumentNumber] = @Original_DocumentNumber)) AND ((@IsNull_Nationality = 1 AND [Nationality] IS NULL) OR ([Nationality] = @Original_Nationality)) AND ((@IsNull_Birth = 1 AND [Birth] IS NULL) OR ([Birth] = @Original_Birth)) AND ((@IsNull_BagPieces = 1 AND [BagPieces] IS NULL) OR ([BagPieces] = @Original_BagPieces)) AND ((@IsNull_BagWeight = 1 AND [BagWeight] IS NULL) OR ([BagWeight] = @Original_BagWeight)) AND ((@IsNull_Special = 1 AND [Special] IS NULL) OR ([Special] = @Original_Special)));
-SELECT ID_passenger, Destination, Name, Seat, Gender, DocumentNumber, Nationality, Birth, BagPieces, BagWeight, Special FROM PassengerTable WHERE (ID_passenger = @ID_passenger)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Table_Mosscow] SET [ID] = @ID, [Destination] = @Destination, [Name] = @Name, [Seat] = @Seat, [Gender] = @Gender, [DocumentNumber] = @DocumentNumber, [Nationality] = @Nationality, [Birth] = @Birth, [BagPieces] = @BagPieces, [BagWeight] = @BagWeight, [Special] = @Special WHERE (([ID] = @Original_ID) AND ((@IsNull_Destination = 1 AND [Destination] IS NULL) OR ([Destination] = @Original_Destination)) AND ((@IsNull_Seat = 1 AND [Seat] IS NULL) OR ([Seat] = @Original_Seat)) AND ((@IsNull_Gender = 1 AND [Gender] IS NULL) OR ([Gender] = @Original_Gender)) AND ((@IsNull_DocumentNumber = 1 AND [DocumentNumber] IS NULL) OR ([DocumentNumber] = @Original_DocumentNumber)) AND ((@IsNull_Nationality = 1 AND [Nationality] IS NULL) OR ([Nationality] = @Original_Nationality)) AND ((@IsNull_Birth = 1 AND [Birth] IS NULL) OR ([Birth] = @Original_Birth)) AND ((@IsNull_BagPieces = 1 AND [BagPieces] IS NULL) OR ([BagPieces] = @Original_BagPieces)) AND ((@IsNull_BagWeight = 1 AND [BagWeight] IS NULL) OR ([BagWeight] = @Original_BagWeight)));
+SELECT ID, Destination, Name, Seat, Gender, DocumentNumber, Nationality, Birth, BagPieces, BagWeight, Special FROM Table_Mosscow WHERE (ID = @ID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_passenger", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_passenger", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Destination", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Destination", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Destination", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Destination", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Seat", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Seat", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Seat", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Seat", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Gender", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Gender", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DocumentNumber", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DocumentNumber", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nationality", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nationality", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Birth", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Birth", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BagPieces", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BagPieces", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BagWeight", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BagWeight", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Special", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Special", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_passenger", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_passenger", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DocumentNumber", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DocumentNumber", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nationality", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nationality", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Birth", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Birth", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BagPieces", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BagPieces", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BagWeight", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BagWeight", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Special", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Special", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Destination", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Destination", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Destination", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Destination", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Destination", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Destination", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Seat", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Seat", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Seat", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Seat", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Seat", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Seat", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Gender", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Gender", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Gender", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Gender", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_DocumentNumber", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DocumentNumber", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DocumentNumber", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DocumentNumber", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DocumentNumber", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DocumentNumber", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Nationality", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nationality", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Nationality", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nationality", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Nationality", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nationality", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Birth", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Birth", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Birth", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Birth", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Birth", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Birth", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_BagPieces", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BagPieces", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_BagPieces", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BagPieces", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_BagPieces", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BagPieces", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_BagWeight", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BagWeight", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_BagWeight", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BagWeight", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Special", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Special", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Special", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Special", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_BagWeight", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BagWeight", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1244,8 +1238,8 @@ SELECT ID_passenger, Destination, Name, Seat, Gender, DocumentNumber, Nationalit
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT ID_passenger, Destination, Name, Seat, Gender, DocumentNumber, Nationality" +
-                ", Birth, BagPieces, BagWeight, Special FROM dbo.PassengerTable";
+            this._commandCollection[0].CommandText = "SELECT ID, Destination, Name, Seat, Gender, DocumentNumber, Nationality, Birth, B" +
+                "agPieces, BagWeight, Special FROM dbo.Table_Mosscow";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -1253,7 +1247,7 @@ SELECT ID_passenger, Destination, Name, Seat, Gender, DocumentNumber, Nationalit
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(PiersDCSdatabaseDataSet4.PassengerTableDataTable dataTable) {
+        public virtual int Fill(PiersDCSdatabaseDataSet4.Table_MosscowDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -1266,9 +1260,9 @@ SELECT ID_passenger, Destination, Name, Seat, Gender, DocumentNumber, Nationalit
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual PiersDCSdatabaseDataSet4.PassengerTableDataTable GetData() {
+        public virtual PiersDCSdatabaseDataSet4.Table_MosscowDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            PiersDCSdatabaseDataSet4.PassengerTableDataTable dataTable = new PiersDCSdatabaseDataSet4.PassengerTableDataTable();
+            PiersDCSdatabaseDataSet4.Table_MosscowDataTable dataTable = new PiersDCSdatabaseDataSet4.Table_MosscowDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -1276,7 +1270,7 @@ SELECT ID_passenger, Destination, Name, Seat, Gender, DocumentNumber, Nationalit
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(PiersDCSdatabaseDataSet4.PassengerTableDataTable dataTable) {
+        public virtual int Update(PiersDCSdatabaseDataSet4.Table_MosscowDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
@@ -1284,7 +1278,7 @@ SELECT ID_passenger, Destination, Name, Seat, Gender, DocumentNumber, Nationalit
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual int Update(PiersDCSdatabaseDataSet4 dataSet) {
-            return this.Adapter.Update(dataSet, "PassengerTable");
+            return this.Adapter.Update(dataSet, "Table_Mosscow");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1306,8 +1300,8 @@ SELECT ID_passenger, Destination, Name, Seat, Gender, DocumentNumber, Nationalit
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_ID_passenger, string Original_Destination, global::System.Nullable<int> Original_Seat, string Original_Gender, string Original_DocumentNumber, string Original_Nationality, global::System.Nullable<global::System.DateTime> Original_Birth, string Original_BagPieces, string Original_BagWeight, string Original_Special) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_ID_passenger));
+        public virtual int Delete(int Original_ID, string Original_Destination, string Original_Seat, string Original_Gender, global::System.Nullable<int> Original_DocumentNumber, string Original_Nationality, global::System.Nullable<global::System.DateTime> Original_Birth, global::System.Nullable<int> Original_BagPieces, global::System.Nullable<int> Original_BagWeight) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_ID));
             if ((Original_Destination == null)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
@@ -1316,13 +1310,13 @@ SELECT ID_passenger, Destination, Name, Seat, Gender, DocumentNumber, Nationalit
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
                 this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_Destination));
             }
-            if ((Original_Seat.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((int)(Original_Seat.Value));
-            }
-            else {
+            if ((Original_Seat == null)) {
                 this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_Seat));
             }
             if ((Original_Gender == null)) {
                 this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
@@ -1332,13 +1326,13 @@ SELECT ID_passenger, Destination, Name, Seat, Gender, DocumentNumber, Nationalit
                 this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
                 this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_Gender));
             }
-            if ((Original_DocumentNumber == null)) {
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
+            if ((Original_DocumentNumber.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((int)(Original_DocumentNumber.Value));
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((string)(Original_DocumentNumber));
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
             if ((Original_Nationality == null)) {
                 this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(1));
@@ -1356,29 +1350,21 @@ SELECT ID_passenger, Destination, Name, Seat, Gender, DocumentNumber, Nationalit
                 this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
-            if ((Original_BagPieces == null)) {
+            if ((Original_BagPieces.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[14].Value = ((int)(Original_BagPieces.Value));
+            }
+            else {
                 this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[14].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[14].Value = ((string)(Original_BagPieces));
+            if ((Original_BagWeight.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[16].Value = ((int)(Original_BagWeight.Value));
             }
-            if ((Original_BagWeight == null)) {
+            else {
                 this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[16].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[16].Value = ((string)(Original_BagWeight));
-            }
-            if ((Original_Special == null)) {
-                this.Adapter.DeleteCommand.Parameters[17].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[18].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[17].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[18].Value = ((string)(Original_Special));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1400,8 +1386,8 @@ SELECT ID_passenger, Destination, Name, Seat, Gender, DocumentNumber, Nationalit
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int ID_passenger, string Destination, string Name, global::System.Nullable<int> Seat, string Gender, string DocumentNumber, string Nationality, global::System.Nullable<global::System.DateTime> Birth, string BagPieces, string BagWeight, string Special) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(ID_passenger));
+        public virtual int Insert(int ID, string Destination, string Name, string Seat, string Gender, global::System.Nullable<int> DocumentNumber, string Nationality, global::System.Nullable<global::System.DateTime> Birth, global::System.Nullable<int> BagPieces, global::System.Nullable<int> BagWeight, string Special) {
+            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(ID));
             if ((Destination == null)) {
                 this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
@@ -1414,11 +1400,11 @@ SELECT ID_passenger, Destination, Name, Seat, Gender, DocumentNumber, Nationalit
             else {
                 this.Adapter.InsertCommand.Parameters[2].Value = ((string)(Name));
             }
-            if ((Seat.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((int)(Seat.Value));
+            if ((Seat == null)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(Seat));
             }
             if ((Gender == null)) {
                 this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
@@ -1426,11 +1412,11 @@ SELECT ID_passenger, Destination, Name, Seat, Gender, DocumentNumber, Nationalit
             else {
                 this.Adapter.InsertCommand.Parameters[4].Value = ((string)(Gender));
             }
-            if ((DocumentNumber == null)) {
-                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
+            if ((DocumentNumber.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[5].Value = ((int)(DocumentNumber.Value));
             }
             else {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(DocumentNumber));
+                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             if ((Nationality == null)) {
                 this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
@@ -1444,17 +1430,17 @@ SELECT ID_passenger, Destination, Name, Seat, Gender, DocumentNumber, Nationalit
             else {
                 this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
-            if ((BagPieces == null)) {
+            if ((BagPieces.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[8].Value = ((int)(BagPieces.Value));
+            }
+            else {
                 this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.InsertCommand.Parameters[8].Value = ((string)(BagPieces));
+            if ((BagWeight.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[9].Value = ((int)(BagWeight.Value));
             }
-            if ((BagWeight == null)) {
+            else {
                 this.Adapter.InsertCommand.Parameters[9].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[9].Value = ((string)(BagWeight));
             }
             if ((Special == null)) {
                 this.Adapter.InsertCommand.Parameters[10].Value = global::System.DBNull.Value;
@@ -1483,28 +1469,27 @@ SELECT ID_passenger, Destination, Name, Seat, Gender, DocumentNumber, Nationalit
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(
-                    int ID_passenger, 
+                    int ID, 
                     string Destination, 
                     string Name, 
-                    global::System.Nullable<int> Seat, 
+                    string Seat, 
                     string Gender, 
-                    string DocumentNumber, 
+                    global::System.Nullable<int> DocumentNumber, 
                     string Nationality, 
                     global::System.Nullable<global::System.DateTime> Birth, 
-                    string BagPieces, 
-                    string BagWeight, 
+                    global::System.Nullable<int> BagPieces, 
+                    global::System.Nullable<int> BagWeight, 
                     string Special, 
-                    int Original_ID_passenger, 
+                    int Original_ID, 
                     string Original_Destination, 
-                    global::System.Nullable<int> Original_Seat, 
+                    string Original_Seat, 
                     string Original_Gender, 
-                    string Original_DocumentNumber, 
+                    global::System.Nullable<int> Original_DocumentNumber, 
                     string Original_Nationality, 
                     global::System.Nullable<global::System.DateTime> Original_Birth, 
-                    string Original_BagPieces, 
-                    string Original_BagWeight, 
-                    string Original_Special) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(ID_passenger));
+                    global::System.Nullable<int> Original_BagPieces, 
+                    global::System.Nullable<int> Original_BagWeight) {
+            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(ID));
             if ((Destination == null)) {
                 this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
@@ -1517,11 +1502,11 @@ SELECT ID_passenger, Destination, Name, Seat, Gender, DocumentNumber, Nationalit
             else {
                 this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Name));
             }
-            if ((Seat.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Seat.Value));
+            if ((Seat == null)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Seat));
             }
             if ((Gender == null)) {
                 this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
@@ -1529,11 +1514,11 @@ SELECT ID_passenger, Destination, Name, Seat, Gender, DocumentNumber, Nationalit
             else {
                 this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Gender));
             }
-            if ((DocumentNumber == null)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
+            if ((DocumentNumber.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(DocumentNumber.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(DocumentNumber));
+                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             if ((Nationality == null)) {
                 this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
@@ -1547,17 +1532,17 @@ SELECT ID_passenger, Destination, Name, Seat, Gender, DocumentNumber, Nationalit
             else {
                 this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
-            if ((BagPieces == null)) {
+            if ((BagPieces.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(BagPieces.Value));
+            }
+            else {
                 this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(BagPieces));
+            if ((BagWeight.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(BagWeight.Value));
             }
-            if ((BagWeight == null)) {
+            else {
                 this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(BagWeight));
             }
             if ((Special == null)) {
                 this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
@@ -1565,7 +1550,7 @@ SELECT ID_passenger, Destination, Name, Seat, Gender, DocumentNumber, Nationalit
             else {
                 this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Special));
             }
-            this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(Original_ID_passenger));
+            this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(Original_ID));
             if ((Original_Destination == null)) {
                 this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
@@ -1574,13 +1559,13 @@ SELECT ID_passenger, Destination, Name, Seat, Gender, DocumentNumber, Nationalit
                 this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
                 this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Original_Destination));
             }
-            if ((Original_Seat.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((int)(Original_Seat.Value));
-            }
-            else {
+            if ((Original_Seat == null)) {
                 this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(Original_Seat));
             }
             if ((Original_Gender == null)) {
                 this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(1));
@@ -1590,13 +1575,13 @@ SELECT ID_passenger, Destination, Name, Seat, Gender, DocumentNumber, Nationalit
                 this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(0));
                 this.Adapter.UpdateCommand.Parameters[17].Value = ((string)(Original_Gender));
             }
-            if ((Original_DocumentNumber == null)) {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
+            if ((Original_DocumentNumber.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((int)(Original_DocumentNumber.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((string)(Original_DocumentNumber));
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
             }
             if ((Original_Nationality == null)) {
                 this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(1));
@@ -1614,29 +1599,21 @@ SELECT ID_passenger, Destination, Name, Seat, Gender, DocumentNumber, Nationalit
                 this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[23].Value = global::System.DBNull.Value;
             }
-            if ((Original_BagPieces == null)) {
+            if ((Original_BagPieces.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((int)(Original_BagPieces.Value));
+            }
+            else {
                 this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[25].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[25].Value = ((string)(Original_BagPieces));
+            if ((Original_BagWeight.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[26].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[27].Value = ((int)(Original_BagWeight.Value));
             }
-            if ((Original_BagWeight == null)) {
+            else {
                 this.Adapter.UpdateCommand.Parameters[26].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[27].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[26].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[27].Value = ((string)(Original_BagWeight));
-            }
-            if ((Original_Special == null)) {
-                this.Adapter.UpdateCommand.Parameters[28].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[29].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[28].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[29].Value = ((string)(Original_Special));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1661,25 +1638,24 @@ SELECT ID_passenger, Destination, Name, Seat, Gender, DocumentNumber, Nationalit
         public virtual int Update(
                     string Destination, 
                     string Name, 
-                    global::System.Nullable<int> Seat, 
+                    string Seat, 
                     string Gender, 
-                    string DocumentNumber, 
+                    global::System.Nullable<int> DocumentNumber, 
                     string Nationality, 
                     global::System.Nullable<global::System.DateTime> Birth, 
-                    string BagPieces, 
-                    string BagWeight, 
+                    global::System.Nullable<int> BagPieces, 
+                    global::System.Nullable<int> BagWeight, 
                     string Special, 
-                    int Original_ID_passenger, 
+                    int Original_ID, 
                     string Original_Destination, 
-                    global::System.Nullable<int> Original_Seat, 
+                    string Original_Seat, 
                     string Original_Gender, 
-                    string Original_DocumentNumber, 
+                    global::System.Nullable<int> Original_DocumentNumber, 
                     string Original_Nationality, 
                     global::System.Nullable<global::System.DateTime> Original_Birth, 
-                    string Original_BagPieces, 
-                    string Original_BagWeight, 
-                    string Original_Special) {
-            return this.Update(Original_ID_passenger, Destination, Name, Seat, Gender, DocumentNumber, Nationality, Birth, BagPieces, BagWeight, Special, Original_ID_passenger, Original_Destination, Original_Seat, Original_Gender, Original_DocumentNumber, Original_Nationality, Original_Birth, Original_BagPieces, Original_BagWeight, Original_Special);
+                    global::System.Nullable<int> Original_BagPieces, 
+                    global::System.Nullable<int> Original_BagWeight) {
+            return this.Update(Original_ID, Destination, Name, Seat, Gender, DocumentNumber, Nationality, Birth, BagPieces, BagWeight, Special, Original_ID, Original_Destination, Original_Seat, Original_Gender, Original_DocumentNumber, Original_Nationality, Original_Birth, Original_BagPieces, Original_BagWeight);
         }
     }
     
@@ -1695,7 +1671,7 @@ SELECT ID_passenger, Destination, Name, Seat, Gender, DocumentNumber, Nationalit
         
         private UpdateOrderOption _updateOrder;
         
-        private PassengerTableTableAdapter _passengerTableTableAdapter;
+        private Table_MosscowTableAdapter _table_MosscowTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -1717,12 +1693,12 @@ SELECT ID_passenger, Destination, Name, Seat, Gender, DocumentNumber, Nationalit
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public PassengerTableTableAdapter PassengerTableTableAdapter {
+        public Table_MosscowTableAdapter Table_MosscowTableAdapter {
             get {
-                return this._passengerTableTableAdapter;
+                return this._table_MosscowTableAdapter;
             }
             set {
-                this._passengerTableTableAdapter = value;
+                this._table_MosscowTableAdapter = value;
             }
         }
         
@@ -1745,9 +1721,9 @@ SELECT ID_passenger, Destination, Name, Seat, Gender, DocumentNumber, Nationalit
                 if ((this._connection != null)) {
                     return this._connection;
                 }
-                if (((this._passengerTableTableAdapter != null) 
-                            && (this._passengerTableTableAdapter.Connection != null))) {
-                    return this._passengerTableTableAdapter.Connection;
+                if (((this._table_MosscowTableAdapter != null) 
+                            && (this._table_MosscowTableAdapter.Connection != null))) {
+                    return this._table_MosscowTableAdapter.Connection;
                 }
                 return null;
             }
@@ -1762,7 +1738,7 @@ SELECT ID_passenger, Destination, Name, Seat, Gender, DocumentNumber, Nationalit
         public int TableAdapterInstanceCount {
             get {
                 int count = 0;
-                if ((this._passengerTableTableAdapter != null)) {
+                if ((this._table_MosscowTableAdapter != null)) {
                     count = (count + 1);
                 }
                 return count;
@@ -1776,12 +1752,12 @@ SELECT ID_passenger, Destination, Name, Seat, Gender, DocumentNumber, Nationalit
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private int UpdateUpdatedRows(PiersDCSdatabaseDataSet4 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._passengerTableTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.PassengerTable.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._table_MosscowTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Table_Mosscow.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._passengerTableTableAdapter.Update(updatedRows));
+                    result = (result + this._table_MosscowTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -1795,11 +1771,11 @@ SELECT ID_passenger, Destination, Name, Seat, Gender, DocumentNumber, Nationalit
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private int UpdateInsertedRows(PiersDCSdatabaseDataSet4 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._passengerTableTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.PassengerTable.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._table_MosscowTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Table_Mosscow.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._passengerTableTableAdapter.Update(addedRows));
+                    result = (result + this._table_MosscowTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -1813,11 +1789,11 @@ SELECT ID_passenger, Destination, Name, Seat, Gender, DocumentNumber, Nationalit
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private int UpdateDeletedRows(PiersDCSdatabaseDataSet4 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._passengerTableTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.PassengerTable.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._table_MosscowTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Table_Mosscow.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._passengerTableTableAdapter.Update(deletedRows));
+                    result = (result + this._table_MosscowTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -1860,8 +1836,8 @@ SELECT ID_passenger, Destination, Name, Seat, Gender, DocumentNumber, Nationalit
             if ((dataSet.HasChanges() == false)) {
                 return 0;
             }
-            if (((this._passengerTableTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._passengerTableTableAdapter.Connection) == false))) {
+            if (((this._table_MosscowTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._table_MosscowTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
@@ -1897,13 +1873,13 @@ SELECT ID_passenger, Destination, Name, Seat, Gender, DocumentNumber, Nationalit
             try {
                 // ---- Prepare for update -----------
                 //
-                if ((this._passengerTableTableAdapter != null)) {
-                    revertConnections.Add(this._passengerTableTableAdapter, this._passengerTableTableAdapter.Connection);
-                    this._passengerTableTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._passengerTableTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._passengerTableTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._passengerTableTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._passengerTableTableAdapter.Adapter);
+                if ((this._table_MosscowTableAdapter != null)) {
+                    revertConnections.Add(this._table_MosscowTableAdapter, this._table_MosscowTableAdapter.Connection);
+                    this._table_MosscowTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._table_MosscowTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._table_MosscowTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._table_MosscowTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._table_MosscowTableAdapter.Adapter);
                     }
                 }
                 // 
@@ -1964,9 +1940,9 @@ SELECT ID_passenger, Destination, Name, Seat, Gender, DocumentNumber, Nationalit
                 if (workConnOpened) {
                     workConnection.Close();
                 }
-                if ((this._passengerTableTableAdapter != null)) {
-                    this._passengerTableTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._passengerTableTableAdapter]));
-                    this._passengerTableTableAdapter.Transaction = null;
+                if ((this._table_MosscowTableAdapter != null)) {
+                    this._table_MosscowTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._table_MosscowTableAdapter]));
+                    this._table_MosscowTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];

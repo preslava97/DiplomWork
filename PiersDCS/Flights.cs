@@ -109,5 +109,11 @@ namespace PiersDCS
 
 
             }
+
+        private void btnMap_Click(object sender, EventArgs e)
+        {
+           Preview pr = new Preview();
+            pr.Show();
+        }
     }
 }

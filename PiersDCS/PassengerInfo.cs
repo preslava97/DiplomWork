@@ -8,11 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Text.RegularExpressions;
+using System.Globalization;
 
 namespace PiersDCS
 {
     public partial class PassengerInfo : Form
     {
+        
         SqlConnection con = new SqlConnection(@"Data Source=ACER-575G\SQL2019;Initial Catalog=PiersDCSdatabase;Integrated Security=True");
         SqlCommand cmd;
         SqlDataAdapter sda;
@@ -21,11 +24,21 @@ namespace PiersDCS
         public static List<Passenger> passengers;
         public static List<Passenger> foundPassengers;
         private Passenger passenger;
-        public PassengerInfo()
+
+
+        public PassengerInfo(string Destination)
         {
+
             InitializeComponent();
             passenger = new Passenger();
             passengers = new List<Passenger>();
+
+            label10.Text = Destination;
+
+        }
+
+        public PassengerInfo()
+        {
         }
 
         string Special;
@@ -33,18 +46,53 @@ namespace PiersDCS
 
         private void PassengerInfo_Load(object sender, EventArgs e)
         {
-            if (txtDestMap.Text == "Vienna")
+            con.Open();
+            string selectQuery = "SELECT MAX(ID) FROM PassengerTable";
+            cmd = new SqlCommand(selectQuery,con);
+            SqlDataReader sdr;
+            sdr = cmd.ExecuteReader();
+            if (sdr.Read())
             {
-                txtDest.Text = SeatMap.passText;
+                int val = int.Parse(sdr[0].ToString()) + 1;
+                txtID.Text = val.ToString();
 
-            }
-            else if(txtAnotherDest.Text == "Mosscow Domodedovo") {
-                txtDest.Text = AnotherSeatMap.passAntText;
-
+                
             }
 
+            con.Close();
 
         }
+
+     /*   private void RetrieveID()
+        {
+            try
+            {
+                string query = " Select * from PassengerTable where ID=@ID ";
+
+                if (con.State == ConnectionState.Closed)
+                {
+                    con.Open();
+                }
+                cmd = new SqlCommand(query, con);
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    int value = int.Parse(reader[0].ToString()) + 1;
+                    txtID.Text = value.ToString();
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally {
+                if (con.State == ConnectionState.Open)
+                {
+                    con.Close();
+                }
+            }
+        }*/
+
 
         public string TextBoxValue
         {
@@ -54,83 +102,56 @@ namespace PiersDCS
 
         public static string dateString { get; private set; }
 
-       // System.ComponentModel.Browsable(false)
         public Type ValidatingType { get; set; }
 
         private void ClearForm()
         {
+            
+           
+        }
+
+
+
+        Passenger b = new Passenger();
+
+        private void btnADD_Click_1(object sender, EventArgs e)
+        {   con.Open();
+
+           if (txtID.Text == null) { MessageBox.Show("Please input identification number !"); }
+           
+
+            if (mstxtDoc.Text.Length == 8) { }
+            else { MessageBox.Show("Please enter 8 digit Document Number"); }
+
+           
+
+           
+
+            cmd = new SqlCommand(
+                  @"insert into PassengerTable (ID, Destination, Name, Seat, Gender, DocumentNumber, Nationality, Birth, BagPieces, BagWeight, Special) 
+            values('" + txtID.Text + "','" + label10.Text+ "', '" + txtName.Text + "', '" + mstxtseat1.Text + "', '" + cmGender.Text + "', '" + mstxtDoc.Text + "', '" +txtNat.Text+ "', '" + textBox1.Text+ "', '" + txtBagP.Text + "', '" + txtBagW.Text + "',  '"+Special+"')", con);
+             int i = cmd.ExecuteNonQuery();
+            if (i != 0) { MessageBox.Show("Data has saved in Data Base !"); }
+            else {
+                MessageBox.Show("Error !");
+            }
+
             txtID.Text = "";
-            txtDest.Text = "";
             txtName.Text = "";
             mstxtseat1.Text = "";
             cmGender.Text = "";
             mstxtDoc.Text = "";
             txtNat.Text = "";
-            mstxtBirth.Text = "";
+            textBox1.Text = "";
             txtBagP.Text = "";
             txtBagW.Text = "";
             gboxRemark.Text = "";
-           
-        }
 
+            showdata();
 
-    //    DateTime date = DateTime.Parse(dateString);
-
-        Passenger b = new Passenger();
-
-        private void btnADD_Click_1(object sender, EventArgs e)
-        {
-           // Preview pp = new Preview();
-
-            con.Open();
-
-              cmd = new SqlCommand(
-                  @"insert into PassengerTable (ID_passenger, Destination, Name, Seat, Gender, DocumentNumber, Nationality, Birth, BagPieces, BagWeight, Special) 
-            values('" + txtID.Text + "','" + txtDest.Text+ "', '" + txtName.Text + "', '" + mstxtseat1.Text + "', '" + cmGender.Text + "', '" + mstxtDoc.Text + "', '" +txtNat.Text+ "', '" + mstxtBirth.Text + "', '" + txtBagP.Text + "', '" + txtBagW.Text + "',  '"+Special+"')", con);
-             int i = cmd.ExecuteNonQuery();
-            if (i != 0) { MessageBox.Show("Data has saved in DataBase !"); }
-            else {
-                MessageBox.Show("Error !");
-            }
-
-            /*  SqlConnection con = new SqlConnection();
-                con.Open();
-                SqlCommand cmd = new SqlCommand();
-                con.ConnectionString = (@"Data Source=ACER-575G\SQL2019;Initial Catalog=PiersDCSdatabase;Integrated Security=True");
-                cmd.Connection = con; 
-                cmd.CommandText = (@"INSERT INTO PassengerTable (Destination, Name, Seat, Gender, Document Number, Nationality, Date of birth, Bag Pieces, Bag Weight, Special) VALUES ('" + txtDest.Text + "', '" + txtName.Text + "', '" + mstxtseat1.Text + "', '" + cmGender.Text + "', '" + mstxtDoc.Text + "', '" + txtNat.Text + "','" + mstxtBirth.Text + "', '" + txtBagP.Text + "', '" + txtBagW.Text + "', '" + gboxRemark.Text + "');");
-                cmd.ExecuteNonQuery();
-                con.Close();*/
-            //Adding passenger directly to listview
-
-            ListViewItem list = new ListViewItem(txtID.Text);
-            list.SubItems.Add(txtName.Text);
-            list.SubItems.Add(mstxtseat1.Text);
-            lvPrev.Items.Add(list);
 
             con.Close();
-            showdata();
             
-            
-            //pp.ShowDialog();
-
-           /* Passenger p = new Passenger();
-             p.Destination = txtDest.Text;
-             p.Seat = mstxtseat1.Text;
-             p.Name = txtName.Text;
-             p.Document = mstxtDoc.Text;
-             p.Gender = cmGender.Text;
-             p.Nationality = txtNat.Text;
-             p.BaggagePiece = txtBagP.Text;
-             p.BaggageWeight = txtBagW.Text;
-             p.Remarks = gboxRemark.Text;
-             b.AddPassenger(p);*/
-            
-          //  DataTable dataTable = b.SelectAll();
-          //   BindingSource bindingSource = new BindingSource();
-          //   bindingSource.DataSource = dataTable;
-            // dgvPrevPassenger.DataSource = bindingSource;
-             
         }
 
        public void showdata()
@@ -138,8 +159,7 @@ namespace PiersDCS
             sda = new SqlDataAdapter("Select * from PassengerTable", con);
             DataTable dt = new DataTable();
 
-           // sda.Fill(dt);
-           // dgvPrevPassenger.DataSource = dt;
+           
         }
 
         private void mstxtseat1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
@@ -154,27 +174,7 @@ namespace PiersDCS
            // frm.Show();
         }
 
-        private void btnUpdate_Click(object sender, EventArgs e)
-        {
-
-            Passenger p = new Passenger();
-            p.Destination = txtDest.Text;
-            p.Seat = mstxtseat1.Text;
-            p.Name = txtName.Text;
-            p.Document = mstxtDoc.Text;
-            p.Gender = cmGender.Text;
-            p.Nationality = txtNat.Text;
-            p.BaggagePiece = txtBagP.Text;
-            p.BaggageWeight = txtBagW.Text;
-            p.Remarks = gboxRemark.Text;
-            b.UpdatePassenger(p);
-
-          /*  DataTable dataTable = b.SelectAll();
-            BindingSource bindingSource = new BindingSource();
-            bindingSource.DataSource = dataTable;
-            dgvPrevPassenger.DataSource = bindingSource;*/
-
-        }
+        
 
         private void txtDest_TextChanged(object sender, EventArgs e)
         {
@@ -187,13 +187,13 @@ namespace PiersDCS
         {
             DataTable dt = new DataTable();
 
-           var Destination = txtDest.Text;
+           var Destination = label10.Text;
              var Seat = mstxtseat1.Text;
              var Name = txtName.Text;
              var Gender = cmGender.Text;
              var Document = mstxtDoc.Text;
              var Nationality = txtNat.Text;
-             var Birth = mstxtBirth.Text;
+             var Birth = textBox1.Text;
              var BagPiece = txtBagP.Text;
              var BagWeight = txtBagW.Text;
              var Remark = gboxRemark.Text;
@@ -273,6 +273,10 @@ namespace PiersDCS
         {
             Special = "Deaf";
         }
+        private void checkVisa_CheckedChanged(object sender, EventArgs e)
+        {
+            Special = "Visa";
+        }
 
         private void mstxtBirth_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
@@ -290,5 +294,151 @@ namespace PiersDCS
             this.Close();
             frm.Show();
         }
+
+        private void txtID_TextChanged(object sender, EventArgs e)
+        {
+            
+            /*if(txtID.Text != "")
+            {
+
+               // con.Open();
+                cmd = new SqlCommand("Select Destination, Seat, Name, Gender, DocumentNumber, Nationality, Birth, BagPieces, BagWeight, Special from PassengerTable where ID=@ID", con);
+                cmd.Parameters.AddWithValue("@ID", int.Parse(txtID.Text));
+
+                
+                SqlDataReader sda = cmd.ExecuteReader();
+                 
+                while (sda.Read())
+                {
+                    label10.Text = sda.GetValue(0).ToString();
+                    mstxtseat1.Text = sda.GetValue(1).ToString();
+                    txtName.Text = sda.GetValue(2).ToString();
+                    cmGender.Text = sda.GetValue(3).ToString();
+                    mstxtDoc.Text = sda.GetValue(4).ToString();
+                    txtNat.Text = sda.GetValue(5).ToString();
+                    textBox1.Text = sda.GetValue(6).ToString();
+                    txtBagP.Text = sda.GetValue(7).ToString();
+                    txtBagW.Text = sda.GetValue(8).ToString();
+                    gboxRemark.Text = sda.GetValue(9).ToString();
+
+                }
+
+               
+               
+           }*/
+            //con.Close();
+        }
+
+        private void btn_Update_Click(object sender, EventArgs e)
+        {
+           /* Regex regex = new Regex(@" (((0|1)[0-9]|2[0-9]|3[0-1])\/(0[1-9]|1[0-2])\/((19|20)\d\d)) $");
+            bool isValid = regex.IsMatch(textBox1.Text.Trim());
+            DateTime date;
+           // DateTime date = DateTime.Parse(dateString);
+
+            isValid = DateTime.TryParseExact(textBox1.Text, "dd/MM/yyyy", new CultureInfo("en"), DateTimeStyles.None, out date);
+            if (!isValid) { MessageBox.Show("Valid date"); }
+            else { MessageBox.Show("Invalid Date !"); }*/
+
+            con.Open();
+            cmd = new SqlCommand("UPDATE PassengerTable SET Destination= '"+label10.Text+ "', Name= '" + txtName.Text + "', Seat= '" + mstxtseat1.Text + "', Gender= '" + cmGender.Text + "', DocumentNumber= '" + mstxtDoc.Text + "', Nationality= '" + txtNat.Text + "', Birth= '" + textBox1.Text + "', BagPieces= '" + txtBagP.Text + "', BagWeight= '" + txtBagW.Text + "', Special= '" +Special+ "' where ID = '" + txtID.Text + "' ", con);
+
+            if (mstxtDoc.Text.Length == 8) { }
+            else { MessageBox.Show("Please enter 8 digit Document Number"); }
+
+            
+
+            cmd.ExecuteNonQuery();
+
+            
+            con.Close();
+            MessageBox.Show("Data is Updated!");
+        }
+
+        private void btn_Delete_Click(object sender, EventArgs e)
+        {
+            con.Open();
+   
+
+            string message = "Do you want to Delete Passenger ?";
+            string title = "Delete";
+            MessageBoxButtons btn = MessageBoxButtons.YesNo;
+            DialogResult res = MessageBox.Show(message, title, btn);
+            if (res == DialogResult.Yes)
+            {
+                cmd = new SqlCommand("DELETE from PassengerTable where ID= '" + txtID.Text + "'", con);
+                cmd.ExecuteNonQuery();
+            }
+            else if (res == DialogResult.No)
+            {
+
+            }
+            con.Close();
+
+            txtID.Text = "";
+            label10.Text = "";
+            txtName.Text = "";
+            mstxtseat1.Text = "";
+            cmGender.Text = "";
+            mstxtDoc.Text = "";
+            txtNat.Text = "";
+            textBox1.Text = "";
+            txtBagP.Text = "";
+            txtBagW.Text = "";
+            gboxRemark.Text = "";
+        }
+
+        private void mstxtDoc_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+                MessageBox.Show("Allow only digit !");
+            }
+        }
+
+        private void textBox1_Validating(object sender, CancelEventArgs e)
+        {
+            Regex regex = new Regex(@"^(\d{1,2})/(\d{1,2})/(\d{4})$");
+            Match m = regex.Match(textBox1.Text);
+            if (m.Success)
+            {
+                int dd = int.Parse(m.Groups[1].Value);
+                int mm = int.Parse(m.Groups[2].Value);
+                int yyyy = int.Parse(m.Groups[3].Value);
+                e.Cancel = dd < 1 || dd > 31 || mm < 1 || mm > 12 || yyyy < 1900 || yyyy > 2020;
+
+            }
+            else e.Cancel = true;
+            if (e.Cancel)
+            {
+                if(MessageBox.Show("Wrong date format. The correct format is dd/mm/yyyy\n+ dd should be between 1 and 31.\n+ mm should be between 1 and 12.", "Invalid date", MessageBoxButtons.OKCancel, MessageBoxIcon.Error) == DialogResult.Cancel)
+                    e.Cancel = false;
+            }
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            con.Open();
+            String query = "SELECT * FROM PassengerTable WHERE ID = "+ int.Parse(txtID.Text);
+            SqlCommand command = new SqlCommand(query, con);
+            SqlDataReader dr = command.ExecuteReader();
+            if (dr.Read())
+            {
+                label10.Text = (dr["Destination"].ToString());
+                mstxtseat1.Text = (dr["Seat"].ToString());
+                txtName.Text = (dr["Name"].ToString());
+                cmGender.Text = (dr["Gender"].ToString());
+                mstxtDoc.Text = (dr["DocumentNumber"].ToString());
+                txtNat.Text = (dr["Nationality"].ToString());
+                textBox1.Text = (dr["Birth"].ToString());
+                txtBagP.Text = (dr["BagPieces"].ToString());
+                txtBagW.Text = (dr["BagWeight"].ToString());
+                gboxRemark.Text = (dr["Special"].ToString());
+            }
+
+            con.Close();
+        }
     }
-}
+    }
+

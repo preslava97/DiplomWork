@@ -146,7 +146,7 @@
             this.Controls.Add(this.label5);
             this.MinimumSize = new System.Drawing.Size(900, 500);
             this.Name = "LoginForm";
-            this.Text = "LoginForm";
+            this.Text = " ";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.ResumeLayout(false);
             this.PerformLayout();

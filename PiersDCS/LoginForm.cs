@@ -25,7 +25,7 @@ namespace PiersDCS
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            string CommandText = "select * from [dbo].[LogInTable] Where Username = @Username and Password = @Password";
+              string CommandText = "select * from [dbo].[Register] Where Username = @Username and Password = @Password";
             con.Open();
             SqlCommand com = new SqlCommand(CommandText, con);
             com.Parameters.AddWithValue("@Username", txtUser.Text.Trim());
@@ -40,7 +40,7 @@ namespace PiersDCS
                     this.Hide();
                     Flights frm = new Flights("Welcome " +txtUser.Text);
                     frm.Show();
-                }
+                } 
                 else
                 {
                     MessageBox.Show("Please input valid Username and Password!", "Invalid input", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -53,6 +53,13 @@ namespace PiersDCS
         private void btn_Exit_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void btn_Register_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Register frm = new Register();
+            frm.Show();
         }
     }
 }

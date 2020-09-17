@@ -42,9 +42,9 @@
             this.piersDCSdatabaseDataSet = new PiersDCS.PiersDCSdatabaseDataSet();
             this.btnLogout = new System.Windows.Forms.Button();
             this.btnHome = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.flightTableTableAdapter1 = new PiersDCS.PiersDCSdatabaseDataSetTableAdapters.FlightTableTableAdapter();
             this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.FlightdataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.flightTableBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.piersDCSdatabaseDataSet)).BeginInit();
@@ -58,8 +58,9 @@
             this.btnMap.Name = "btnMap";
             this.btnMap.Size = new System.Drawing.Size(79, 37);
             this.btnMap.TabIndex = 20;
-            this.btnMap.Text = "Seatmap";
+            this.btnMap.Text = "Preview";
             this.btnMap.UseVisualStyleBackColor = false;
+            this.btnMap.Click += new System.EventHandler(this.btnMap_Click);
             // 
             // btnFlights
             // 
@@ -167,19 +168,6 @@
             this.btnHome.TabIndex = 18;
             this.btnHome.UseVisualStyleBackColor = false;
             // 
-            // button2
-            // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button2.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.button2.Font = new System.Drawing.Font("Pangolin", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button2.Location = new System.Drawing.Point(12, 353);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(156, 42);
-            this.button2.TabIndex = 25;
-            this.button2.Text = "GET Flight";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
             // flightTableTableAdapter1
             // 
             this.flightTableTableAdapter1.ClearBeforeFill = true;
@@ -190,11 +178,24 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Modern No. 20", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.label1.Location = new System.Drawing.Point(533, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(57, 21);
             this.label1.TabIndex = 26;
             this.label1.Text = "label1";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Modern No. 20", 8.999999F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.label2.Location = new System.Drawing.Point(12, 49);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(117, 15);
+            this.label2.TabIndex = 27;
+            this.label2.Text = "Double click on flight:";
             // 
             // Flights
             // 
@@ -203,8 +204,8 @@
             this.BackColor = System.Drawing.Color.LightCyan;
             this.BackgroundImage = global::PiersDCS.Properties.Resources.FinallyBack;
             this.ClientSize = new System.Drawing.Size(686, 407);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.FlightdataGridView1);
             this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.btnMap);
@@ -229,14 +230,13 @@
         private System.Windows.Forms.Button btnFlights;
         private System.Windows.Forms.Button btnHome;
         private System.Windows.Forms.DataGridView FlightdataGridView1;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.DataGridViewTextBoxColumn flightNumberDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn destinationDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn cityDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn timeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn gateDataGridViewTextBoxColumn;
         private PiersDCSdatabaseDataSet1 piersDCSdatabaseDataSet1;
-        private PiersDCSdatabaseDataSet1TableAdapters.FlightTableTableAdapter flightTableTableAdapter;
+ //       private PiersDCSdatabaseDataSet1TableAdapters.FlightTableTableAdapter flightTableTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
@@ -253,5 +253,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }

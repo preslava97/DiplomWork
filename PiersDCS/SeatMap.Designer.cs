@@ -30,10 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SeatMap));
             this.Preview_btn = new System.Windows.Forms.Button();
-            this.btn_map = new System.Windows.Forms.Button();
+            this.btn_board = new System.Windows.Forms.Button();
             this.btnFlights = new System.Windows.Forms.Button();
             this.btnSHOW = new System.Windows.Forms.Button();
-            this.btn_logout = new System.Windows.Forms.Button();
             this.home_btn = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
             this.btn2e = new System.Windows.Forms.Button();
@@ -136,7 +135,7 @@
             this.Preview_btn.AutoSize = true;
             this.Preview_btn.BackColor = System.Drawing.Color.PaleTurquoise;
             this.Preview_btn.Font = new System.Drawing.Font("Modern No. 20", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Preview_btn.Location = new System.Drawing.Point(179, 1);
+            this.Preview_btn.Location = new System.Drawing.Point(186, 0);
             this.Preview_btn.Name = "Preview_btn";
             this.Preview_btn.Size = new System.Drawing.Size(82, 37);
             this.Preview_btn.TabIndex = 15;
@@ -144,17 +143,18 @@
             this.Preview_btn.UseVisualStyleBackColor = false;
             this.Preview_btn.Click += new System.EventHandler(this.Preview_btn_Click);
             // 
-            // btn_map
+            // btn_board
             // 
-            this.btn_map.AutoSize = true;
-            this.btn_map.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.btn_map.Font = new System.Drawing.Font("Modern No. 20", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_map.Location = new System.Drawing.Point(103, 1);
-            this.btn_map.Name = "btn_map";
-            this.btn_map.Size = new System.Drawing.Size(79, 37);
-            this.btn_map.TabIndex = 14;
-            this.btn_map.Text = "Seatmap";
-            this.btn_map.UseVisualStyleBackColor = false;
+            this.btn_board.AutoSize = true;
+            this.btn_board.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.btn_board.Font = new System.Drawing.Font("Modern No. 20", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_board.Location = new System.Drawing.Point(103, 1);
+            this.btn_board.Name = "btn_board";
+            this.btn_board.Size = new System.Drawing.Size(86, 37);
+            this.btn_board.TabIndex = 14;
+            this.btn_board.Text = "Boarding";
+            this.btn_board.UseVisualStyleBackColor = false;
+            this.btn_board.Click += new System.EventHandler(this.btn_board_Click);
             // 
             // btnFlights
             // 
@@ -171,32 +171,20 @@
             // 
             // btnSHOW
             // 
-            this.btnSHOW.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnSHOW.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnSHOW.AutoSize = true;
             this.btnSHOW.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnSHOW.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnSHOW.FlatAppearance.BorderSize = 0;
             this.btnSHOW.Font = new System.Drawing.Font("Pangolin", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnSHOW.ForeColor = System.Drawing.Color.Black;
-            this.btnSHOW.Location = new System.Drawing.Point(688, 190);
+            this.btnSHOW.Location = new System.Drawing.Point(172, 434);
             this.btnSHOW.Name = "btnSHOW";
             this.btnSHOW.Size = new System.Drawing.Size(108, 42);
             this.btnSHOW.TabIndex = 39;
             this.btnSHOW.Text = "Show list";
             this.btnSHOW.UseVisualStyleBackColor = false;
             this.btnSHOW.Click += new System.EventHandler(this.btnSHOW_Click);
-            // 
-            // btn_logout
-            // 
-            this.btn_logout.AutoSize = true;
-            this.btn_logout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.btn_logout.BackgroundImage = global::PiersDCS.Properties.Resources.катинар;
-            this.btn_logout.Location = new System.Drawing.Point(256, 2);
-            this.btn_logout.Name = "btn_logout";
-            this.btn_logout.Size = new System.Drawing.Size(31, 37);
-            this.btn_logout.TabIndex = 17;
-            this.btn_logout.UseVisualStyleBackColor = false;
-            this.btn_logout.Click += new System.EventHandler(this.btn_logout_Click);
             // 
             // home_btn
             // 
@@ -208,17 +196,18 @@
             this.home_btn.Size = new System.Drawing.Size(38, 37);
             this.home_btn.TabIndex = 12;
             this.home_btn.UseVisualStyleBackColor = false;
+            this.home_btn.Click += new System.EventHandler(this.home_btn_Click);
             // 
             // btnBack
             // 
-            this.btnBack.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnBack.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnBack.AutoSize = true;
             this.btnBack.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnBack.FlatAppearance.BorderSize = 0;
             this.btnBack.Font = new System.Drawing.Font("Pangolin", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnBack.ForeColor = System.Drawing.Color.Black;
-            this.btnBack.Location = new System.Drawing.Point(688, 283);
+            this.btnBack.Location = new System.Drawing.Point(404, 434);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(108, 42);
             this.btnBack.TabIndex = 68;
@@ -228,6 +217,7 @@
             // 
             // btn2e
             // 
+            this.btn2e.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btn2e.AutoSize = true;
             this.btn2e.Image = ((System.Drawing.Image)(resources.GetObject("btn2e.Image")));
             this.btn2e.Location = new System.Drawing.Point(88, 168);
@@ -240,6 +230,7 @@
             // 
             // btn2f
             // 
+            this.btn2f.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btn2f.AutoSize = true;
             this.btn2f.Image = ((System.Drawing.Image)(resources.GetObject("btn2f.Image")));
             this.btn2f.Location = new System.Drawing.Point(88, 202);
@@ -252,6 +243,7 @@
             // 
             // btn1d
             // 
+            this.btn1d.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btn1d.AutoSize = true;
             this.btn1d.Image = ((System.Drawing.Image)(resources.GetObject("btn1d.Image")));
             this.btn1d.Location = new System.Drawing.Point(46, 136);
@@ -264,6 +256,7 @@
             // 
             // btn1c
             // 
+            this.btn1c.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btn1c.AutoSize = true;
             this.btn1c.Image = ((System.Drawing.Image)(resources.GetObject("btn1c.Image")));
             this.btn1c.Location = new System.Drawing.Point(46, 102);
@@ -276,6 +269,7 @@
             // 
             // btn1f
             // 
+            this.btn1f.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btn1f.AutoSize = true;
             this.btn1f.Image = ((System.Drawing.Image)(resources.GetObject("btn1f.Image")));
             this.btn1f.Location = new System.Drawing.Point(46, 201);
@@ -288,6 +282,7 @@
             // 
             // btn1e
             // 
+            this.btn1e.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btn1e.AutoSize = true;
             this.btn1e.Image = ((System.Drawing.Image)(resources.GetObject("btn1e.Image")));
             this.btn1e.Location = new System.Drawing.Point(44, 167);
@@ -300,6 +295,7 @@
             // 
             // btn2c
             // 
+            this.btn2c.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btn2c.AutoSize = true;
             this.btn2c.Image = ((System.Drawing.Image)(resources.GetObject("btn2c.Image")));
             this.btn2c.Location = new System.Drawing.Point(88, 102);
@@ -312,6 +308,7 @@
             // 
             // btn2a
             // 
+            this.btn2a.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btn2a.AutoSize = true;
             this.btn2a.Image = ((System.Drawing.Image)(resources.GetObject("btn2a.Image")));
             this.btn2a.Location = new System.Drawing.Point(88, 40);
@@ -324,6 +321,7 @@
             // 
             // btn2d
             // 
+            this.btn2d.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btn2d.AutoSize = true;
             this.btn2d.Image = ((System.Drawing.Image)(resources.GetObject("btn2d.Image")));
             this.btn2d.Location = new System.Drawing.Point(88, 136);
@@ -336,6 +334,7 @@
             // 
             // btn2b
             // 
+            this.btn2b.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btn2b.AutoSize = true;
             this.btn2b.Image = ((System.Drawing.Image)(resources.GetObject("btn2b.Image")));
             this.btn2b.Location = new System.Drawing.Point(88, 71);
@@ -348,6 +347,7 @@
             // 
             // btn1b
             // 
+            this.btn1b.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btn1b.AutoSize = true;
             this.btn1b.Image = ((System.Drawing.Image)(resources.GetObject("btn1b.Image")));
             this.btn1b.Location = new System.Drawing.Point(46, 71);
@@ -360,6 +360,7 @@
             // 
             // btn1a
             // 
+            this.btn1a.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btn1a.AutoSize = true;
             this.btn1a.Image = ((System.Drawing.Image)(resources.GetObject("btn1a.Image")));
             this.btn1a.Location = new System.Drawing.Point(46, 40);
@@ -372,6 +373,7 @@
             // 
             // label33
             // 
+            this.label33.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label33.AutoSize = true;
             this.label33.BackColor = System.Drawing.Color.Transparent;
             this.label33.Font = new System.Drawing.Font("Pangolin", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -383,6 +385,7 @@
             // 
             // label34
             // 
+            this.label34.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label34.AutoSize = true;
             this.label34.BackColor = System.Drawing.Color.Transparent;
             this.label34.Font = new System.Drawing.Font("Pangolin", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -394,6 +397,7 @@
             // 
             // label35
             // 
+            this.label35.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label35.AutoSize = true;
             this.label35.BackColor = System.Drawing.Color.Transparent;
             this.label35.Font = new System.Drawing.Font("Pangolin", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -405,6 +409,7 @@
             // 
             // label36
             // 
+            this.label36.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label36.AutoSize = true;
             this.label36.BackColor = System.Drawing.Color.Transparent;
             this.label36.Font = new System.Drawing.Font("Pangolin", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -416,6 +421,7 @@
             // 
             // label37
             // 
+            this.label37.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label37.AutoSize = true;
             this.label37.BackColor = System.Drawing.Color.Transparent;
             this.label37.Font = new System.Drawing.Font("Pangolin", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -427,6 +433,7 @@
             // 
             // label38
             // 
+            this.label38.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label38.AutoSize = true;
             this.label38.BackColor = System.Drawing.Color.Transparent;
             this.label38.Font = new System.Drawing.Font("Pangolin", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -438,9 +445,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.groupBox1.AutoSize = true;
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
             this.groupBox1.Controls.Add(this.label40);
@@ -541,6 +546,7 @@
             // 
             // label40
             // 
+            this.label40.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label40.AutoSize = true;
             this.label40.BackColor = System.Drawing.Color.Transparent;
             this.label40.Font = new System.Drawing.Font("Pangolin", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -552,6 +558,7 @@
             // 
             // label47
             // 
+            this.label47.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label47.AutoSize = true;
             this.label47.BackColor = System.Drawing.Color.Transparent;
             this.label47.Font = new System.Drawing.Font("Pangolin", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -563,6 +570,7 @@
             // 
             // label46
             // 
+            this.label46.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label46.AutoSize = true;
             this.label46.BackColor = System.Drawing.Color.Transparent;
             this.label46.Font = new System.Drawing.Font("Pangolin", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -574,6 +582,7 @@
             // 
             // label45
             // 
+            this.label45.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label45.AutoSize = true;
             this.label45.BackColor = System.Drawing.Color.Transparent;
             this.label45.Font = new System.Drawing.Font("Pangolin", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -585,6 +594,7 @@
             // 
             // label44
             // 
+            this.label44.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label44.AutoSize = true;
             this.label44.BackColor = System.Drawing.Color.Transparent;
             this.label44.Font = new System.Drawing.Font("Pangolin", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -596,6 +606,7 @@
             // 
             // label43
             // 
+            this.label43.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label43.AutoSize = true;
             this.label43.BackColor = System.Drawing.Color.Transparent;
             this.label43.Font = new System.Drawing.Font("Pangolin", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -607,6 +618,7 @@
             // 
             // label42
             // 
+            this.label42.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label42.AutoSize = true;
             this.label42.BackColor = System.Drawing.Color.Transparent;
             this.label42.Font = new System.Drawing.Font("Pangolin", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -618,6 +630,7 @@
             // 
             // label41
             // 
+            this.label41.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label41.AutoSize = true;
             this.label41.BackColor = System.Drawing.Color.Transparent;
             this.label41.Font = new System.Drawing.Font("Pangolin", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -629,6 +642,7 @@
             // 
             // label39
             // 
+            this.label39.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label39.AutoSize = true;
             this.label39.BackColor = System.Drawing.Color.Transparent;
             this.label39.Font = new System.Drawing.Font("Pangolin", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -640,6 +654,7 @@
             // 
             // label32
             // 
+            this.label32.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label32.AutoSize = true;
             this.label32.BackColor = System.Drawing.Color.Transparent;
             this.label32.Font = new System.Drawing.Font("Pangolin", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -651,6 +666,7 @@
             // 
             // label31
             // 
+            this.label31.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label31.AutoSize = true;
             this.label31.BackColor = System.Drawing.Color.Transparent;
             this.label31.Font = new System.Drawing.Font("Pangolin", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -662,6 +678,7 @@
             // 
             // label48
             // 
+            this.label48.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label48.AutoSize = true;
             this.label48.BackColor = System.Drawing.Color.Transparent;
             this.label48.Font = new System.Drawing.Font("Pangolin", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -673,6 +690,7 @@
             // 
             // btn12e
             // 
+            this.btn12e.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btn12e.AutoSize = true;
             this.btn12e.Image = ((System.Drawing.Image)(resources.GetObject("btn12e.Image")));
             this.btn12e.Location = new System.Drawing.Point(580, 169);
@@ -685,6 +703,7 @@
             // 
             // btn12f
             // 
+            this.btn12f.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btn12f.AutoSize = true;
             this.btn12f.Image = ((System.Drawing.Image)(resources.GetObject("btn12f.Image")));
             this.btn12f.Location = new System.Drawing.Point(579, 203);
@@ -697,6 +716,7 @@
             // 
             // btn11d
             // 
+            this.btn11d.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btn11d.AutoSize = true;
             this.btn11d.Image = ((System.Drawing.Image)(resources.GetObject("btn11d.Image")));
             this.btn11d.Location = new System.Drawing.Point(531, 138);
@@ -709,6 +729,7 @@
             // 
             // btn11c
             // 
+            this.btn11c.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btn11c.AutoSize = true;
             this.btn11c.Image = ((System.Drawing.Image)(resources.GetObject("btn11c.Image")));
             this.btn11c.Location = new System.Drawing.Point(530, 102);
@@ -721,6 +742,7 @@
             // 
             // btn11f
             // 
+            this.btn11f.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btn11f.AutoSize = true;
             this.btn11f.Image = ((System.Drawing.Image)(resources.GetObject("btn11f.Image")));
             this.btn11f.Location = new System.Drawing.Point(530, 202);
@@ -733,6 +755,7 @@
             // 
             // btn11e
             // 
+            this.btn11e.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btn11e.AutoSize = true;
             this.btn11e.Image = ((System.Drawing.Image)(resources.GetObject("btn11e.Image")));
             this.btn11e.Location = new System.Drawing.Point(531, 168);
@@ -745,6 +768,7 @@
             // 
             // btn12c
             // 
+            this.btn12c.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btn12c.AutoSize = true;
             this.btn12c.Image = ((System.Drawing.Image)(resources.GetObject("btn12c.Image")));
             this.btn12c.Location = new System.Drawing.Point(579, 102);
@@ -757,6 +781,7 @@
             // 
             // btn12a
             // 
+            this.btn12a.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btn12a.AutoSize = true;
             this.btn12a.Image = ((System.Drawing.Image)(resources.GetObject("btn12a.Image")));
             this.btn12a.Location = new System.Drawing.Point(579, 40);
@@ -769,6 +794,7 @@
             // 
             // btn12d
             // 
+            this.btn12d.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btn12d.AutoSize = true;
             this.btn12d.Image = ((System.Drawing.Image)(resources.GetObject("btn12d.Image")));
             this.btn12d.Location = new System.Drawing.Point(580, 138);
@@ -781,6 +807,7 @@
             // 
             // btn12b
             // 
+            this.btn12b.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btn12b.AutoSize = true;
             this.btn12b.Image = ((System.Drawing.Image)(resources.GetObject("btn12b.Image")));
             this.btn12b.Location = new System.Drawing.Point(579, 71);
@@ -793,6 +820,7 @@
             // 
             // btn5a
             // 
+            this.btn5a.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btn5a.AutoSize = true;
             this.btn5a.Image = ((System.Drawing.Image)(resources.GetObject("btn5a.Image")));
             this.btn5a.Location = new System.Drawing.Point(231, 40);
@@ -805,6 +833,7 @@
             // 
             // btn11b
             // 
+            this.btn11b.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btn11b.AutoSize = true;
             this.btn11b.Image = ((System.Drawing.Image)(resources.GetObject("btn11b.Image")));
             this.btn11b.Location = new System.Drawing.Point(530, 71);
@@ -817,6 +846,7 @@
             // 
             // btn5b
             // 
+            this.btn5b.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btn5b.AutoSize = true;
             this.btn5b.Image = ((System.Drawing.Image)(resources.GetObject("btn5b.Image")));
             this.btn5b.Location = new System.Drawing.Point(230, 71);
@@ -829,6 +859,7 @@
             // 
             // btn11a
             // 
+            this.btn11a.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btn11a.AutoSize = true;
             this.btn11a.Image = ((System.Drawing.Image)(resources.GetObject("btn11a.Image")));
             this.btn11a.Location = new System.Drawing.Point(530, 40);
@@ -841,6 +872,7 @@
             // 
             // btn6b
             // 
+            this.btn6b.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btn6b.AutoSize = true;
             this.btn6b.Image = ((System.Drawing.Image)(resources.GetObject("btn6b.Image")));
             this.btn6b.Location = new System.Drawing.Point(280, 71);
@@ -853,6 +885,7 @@
             // 
             // btn10e
             // 
+            this.btn10e.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btn10e.AutoSize = true;
             this.btn10e.Image = ((System.Drawing.Image)(resources.GetObject("btn10e.Image")));
             this.btn10e.Location = new System.Drawing.Point(482, 169);
@@ -865,6 +898,7 @@
             // 
             // btn6d
             // 
+            this.btn6d.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btn6d.AutoSize = true;
             this.btn6d.Image = ((System.Drawing.Image)(resources.GetObject("btn6d.Image")));
             this.btn6d.Location = new System.Drawing.Point(281, 138);
@@ -877,6 +911,7 @@
             // 
             // btn10f
             // 
+            this.btn10f.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btn10f.AutoSize = true;
             this.btn10f.Image = ((System.Drawing.Image)(resources.GetObject("btn10f.Image")));
             this.btn10f.Location = new System.Drawing.Point(481, 203);
@@ -889,6 +924,7 @@
             // 
             // btn6a
             // 
+            this.btn6a.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btn6a.AutoSize = true;
             this.btn6a.Image = ((System.Drawing.Image)(resources.GetObject("btn6a.Image")));
             this.btn6a.Location = new System.Drawing.Point(280, 40);
@@ -901,6 +937,7 @@
             // 
             // btn9d
             // 
+            this.btn9d.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btn9d.AutoSize = true;
             this.btn9d.Image = ((System.Drawing.Image)(resources.GetObject("btn9d.Image")));
             this.btn9d.Location = new System.Drawing.Point(432, 138);
@@ -913,6 +950,7 @@
             // 
             // btn6c
             // 
+            this.btn6c.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btn6c.AutoSize = true;
             this.btn6c.Image = ((System.Drawing.Image)(resources.GetObject("btn6c.Image")));
             this.btn6c.Location = new System.Drawing.Point(280, 102);
@@ -925,6 +963,7 @@
             // 
             // btn9c
             // 
+            this.btn9c.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btn9c.AutoSize = true;
             this.btn9c.Image = ((System.Drawing.Image)(resources.GetObject("btn9c.Image")));
             this.btn9c.Location = new System.Drawing.Point(431, 102);
@@ -937,6 +976,7 @@
             // 
             // btn5e
             // 
+            this.btn5e.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btn5e.AutoSize = true;
             this.btn5e.Image = ((System.Drawing.Image)(resources.GetObject("btn5e.Image")));
             this.btn5e.Location = new System.Drawing.Point(231, 169);
@@ -949,6 +989,7 @@
             // 
             // btn9f
             // 
+            this.btn9f.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btn9f.AutoSize = true;
             this.btn9f.Image = ((System.Drawing.Image)(resources.GetObject("btn9f.Image")));
             this.btn9f.Location = new System.Drawing.Point(431, 202);
@@ -961,6 +1002,7 @@
             // 
             // btn5f
             // 
+            this.btn5f.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btn5f.AutoSize = true;
             this.btn5f.Image = ((System.Drawing.Image)(resources.GetObject("btn5f.Image")));
             this.btn5f.Location = new System.Drawing.Point(230, 202);
@@ -973,6 +1015,7 @@
             // 
             // btn9e
             // 
+            this.btn9e.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btn9e.AutoSize = true;
             this.btn9e.Image = ((System.Drawing.Image)(resources.GetObject("btn9e.Image")));
             this.btn9e.Location = new System.Drawing.Point(432, 169);
@@ -985,6 +1028,7 @@
             // 
             // btn5c
             // 
+            this.btn5c.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btn5c.AutoSize = true;
             this.btn5c.Image = ((System.Drawing.Image)(resources.GetObject("btn5c.Image")));
             this.btn5c.Location = new System.Drawing.Point(231, 102);
@@ -997,6 +1041,7 @@
             // 
             // btn10c
             // 
+            this.btn10c.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btn10c.AutoSize = true;
             this.btn10c.Image = ((System.Drawing.Image)(resources.GetObject("btn10c.Image")));
             this.btn10c.Location = new System.Drawing.Point(481, 102);
@@ -1009,6 +1054,7 @@
             // 
             // btn5d
             // 
+            this.btn5d.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btn5d.AutoSize = true;
             this.btn5d.Image = ((System.Drawing.Image)(resources.GetObject("btn5d.Image")));
             this.btn5d.Location = new System.Drawing.Point(231, 138);
@@ -1021,6 +1067,7 @@
             // 
             // btn10a
             // 
+            this.btn10a.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btn10a.AutoSize = true;
             this.btn10a.Image = ((System.Drawing.Image)(resources.GetObject("btn10a.Image")));
             this.btn10a.Location = new System.Drawing.Point(481, 40);
@@ -1033,6 +1080,7 @@
             // 
             // btn6f
             // 
+            this.btn6f.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btn6f.AutoSize = true;
             this.btn6f.Image = ((System.Drawing.Image)(resources.GetObject("btn6f.Image")));
             this.btn6f.Location = new System.Drawing.Point(280, 202);
@@ -1045,6 +1093,7 @@
             // 
             // btn10d
             // 
+            this.btn10d.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btn10d.AutoSize = true;
             this.btn10d.Image = ((System.Drawing.Image)(resources.GetObject("btn10d.Image")));
             this.btn10d.Location = new System.Drawing.Point(482, 138);
@@ -1057,6 +1106,7 @@
             // 
             // btn6e
             // 
+            this.btn6e.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btn6e.AutoSize = true;
             this.btn6e.Image = ((System.Drawing.Image)(resources.GetObject("btn6e.Image")));
             this.btn6e.Location = new System.Drawing.Point(280, 169);
@@ -1069,6 +1119,7 @@
             // 
             // btn10b
             // 
+            this.btn10b.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btn10b.AutoSize = true;
             this.btn10b.Image = ((System.Drawing.Image)(resources.GetObject("btn10b.Image")));
             this.btn10b.Location = new System.Drawing.Point(481, 71);
@@ -1081,6 +1132,7 @@
             // 
             // btn3a
             // 
+            this.btn3a.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btn3a.AutoSize = true;
             this.btn3a.Image = ((System.Drawing.Image)(resources.GetObject("btn3a.Image")));
             this.btn3a.Location = new System.Drawing.Point(135, 40);
@@ -1093,6 +1145,7 @@
             // 
             // btn9b
             // 
+            this.btn9b.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btn9b.AutoSize = true;
             this.btn9b.Image = ((System.Drawing.Image)(resources.GetObject("btn9b.Image")));
             this.btn9b.Location = new System.Drawing.Point(431, 71);
@@ -1105,6 +1158,7 @@
             // 
             // btn3b
             // 
+            this.btn3b.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btn3b.AutoSize = true;
             this.btn3b.Image = ((System.Drawing.Image)(resources.GetObject("btn3b.Image")));
             this.btn3b.Location = new System.Drawing.Point(135, 71);
@@ -1117,6 +1171,7 @@
             // 
             // btn9a
             // 
+            this.btn9a.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btn9a.AutoSize = true;
             this.btn9a.Image = ((System.Drawing.Image)(resources.GetObject("btn9a.Image")));
             this.btn9a.Location = new System.Drawing.Point(431, 40);
@@ -1129,6 +1184,7 @@
             // 
             // btn4b
             // 
+            this.btn4b.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btn4b.AutoSize = true;
             this.btn4b.Image = ((System.Drawing.Image)(resources.GetObject("btn4b.Image")));
             this.btn4b.Location = new System.Drawing.Point(184, 71);
@@ -1141,6 +1197,7 @@
             // 
             // btn8e
             // 
+            this.btn8e.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btn8e.AutoSize = true;
             this.btn8e.Image = ((System.Drawing.Image)(resources.GetObject("btn8e.Image")));
             this.btn8e.Location = new System.Drawing.Point(381, 168);
@@ -1153,6 +1210,7 @@
             // 
             // btn4d
             // 
+            this.btn4d.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btn4d.AutoSize = true;
             this.btn4d.Image = ((System.Drawing.Image)(resources.GetObject("btn4d.Image")));
             this.btn4d.Location = new System.Drawing.Point(185, 138);
@@ -1165,6 +1223,7 @@
             // 
             // btn8f
             // 
+            this.btn8f.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btn8f.AutoSize = true;
             this.btn8f.Image = ((System.Drawing.Image)(resources.GetObject("btn8f.Image")));
             this.btn8f.Location = new System.Drawing.Point(380, 202);
@@ -1177,6 +1236,7 @@
             // 
             // btn4a
             // 
+            this.btn4a.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btn4a.AutoSize = true;
             this.btn4a.Image = ((System.Drawing.Image)(resources.GetObject("btn4a.Image")));
             this.btn4a.Location = new System.Drawing.Point(184, 40);
@@ -1189,6 +1249,7 @@
             // 
             // btn7d
             // 
+            this.btn7d.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btn7d.AutoSize = true;
             this.btn7d.Image = ((System.Drawing.Image)(resources.GetObject("btn7d.Image")));
             this.btn7d.Location = new System.Drawing.Point(331, 137);
@@ -1201,6 +1262,7 @@
             // 
             // btn4c
             // 
+            this.btn4c.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btn4c.AutoSize = true;
             this.btn4c.Image = ((System.Drawing.Image)(resources.GetObject("btn4c.Image")));
             this.btn4c.Location = new System.Drawing.Point(184, 102);
@@ -1213,6 +1275,7 @@
             // 
             // btn7c
             // 
+            this.btn7c.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btn7c.AutoSize = true;
             this.btn7c.Image = ((System.Drawing.Image)(resources.GetObject("btn7c.Image")));
             this.btn7c.Location = new System.Drawing.Point(330, 102);
@@ -1225,6 +1288,7 @@
             // 
             // btn3e
             // 
+            this.btn3e.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btn3e.AutoSize = true;
             this.btn3e.Image = ((System.Drawing.Image)(resources.GetObject("btn3e.Image")));
             this.btn3e.Location = new System.Drawing.Point(136, 168);
@@ -1237,6 +1301,7 @@
             // 
             // btn7f
             // 
+            this.btn7f.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btn7f.AutoSize = true;
             this.btn7f.Image = ((System.Drawing.Image)(resources.GetObject("btn7f.Image")));
             this.btn7f.Location = new System.Drawing.Point(329, 202);
@@ -1249,6 +1314,7 @@
             // 
             // btn3f
             // 
+            this.btn3f.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btn3f.AutoSize = true;
             this.btn3f.Image = ((System.Drawing.Image)(resources.GetObject("btn3f.Image")));
             this.btn3f.Location = new System.Drawing.Point(135, 202);
@@ -1261,6 +1327,7 @@
             // 
             // btn7e
             // 
+            this.btn7e.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btn7e.AutoSize = true;
             this.btn7e.Image = ((System.Drawing.Image)(resources.GetObject("btn7e.Image")));
             this.btn7e.Location = new System.Drawing.Point(330, 168);
@@ -1273,6 +1340,7 @@
             // 
             // btn3c
             // 
+            this.btn3c.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btn3c.AutoSize = true;
             this.btn3c.Image = ((System.Drawing.Image)(resources.GetObject("btn3c.Image")));
             this.btn3c.Location = new System.Drawing.Point(135, 102);
@@ -1285,6 +1353,7 @@
             // 
             // btn8c
             // 
+            this.btn8c.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btn8c.AutoSize = true;
             this.btn8c.Image = ((System.Drawing.Image)(resources.GetObject("btn8c.Image")));
             this.btn8c.Location = new System.Drawing.Point(381, 102);
@@ -1297,6 +1366,7 @@
             // 
             // btn3d
             // 
+            this.btn3d.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btn3d.AutoSize = true;
             this.btn3d.Image = ((System.Drawing.Image)(resources.GetObject("btn3d.Image")));
             this.btn3d.Location = new System.Drawing.Point(136, 137);
@@ -1309,6 +1379,7 @@
             // 
             // btn8a
             // 
+            this.btn8a.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btn8a.AutoSize = true;
             this.btn8a.Image = ((System.Drawing.Image)(resources.GetObject("btn8a.Image")));
             this.btn8a.Location = new System.Drawing.Point(381, 40);
@@ -1321,6 +1392,7 @@
             // 
             // btn4f
             // 
+            this.btn4f.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btn4f.AutoSize = true;
             this.btn4f.Image = ((System.Drawing.Image)(resources.GetObject("btn4f.Image")));
             this.btn4f.Location = new System.Drawing.Point(184, 202);
@@ -1333,6 +1405,7 @@
             // 
             // btn8d
             // 
+            this.btn8d.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btn8d.AutoSize = true;
             this.btn8d.Image = ((System.Drawing.Image)(resources.GetObject("btn8d.Image")));
             this.btn8d.Location = new System.Drawing.Point(382, 137);
@@ -1345,6 +1418,7 @@
             // 
             // btn4e
             // 
+            this.btn4e.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btn4e.AutoSize = true;
             this.btn4e.Image = ((System.Drawing.Image)(resources.GetObject("btn4e.Image")));
             this.btn4e.Location = new System.Drawing.Point(185, 168);
@@ -1357,6 +1431,7 @@
             // 
             // btn8b
             // 
+            this.btn8b.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btn8b.AutoSize = true;
             this.btn8b.Image = ((System.Drawing.Image)(resources.GetObject("btn8b.Image")));
             this.btn8b.Location = new System.Drawing.Point(381, 71);
@@ -1369,6 +1444,7 @@
             // 
             // btn7a
             // 
+            this.btn7a.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btn7a.AutoSize = true;
             this.btn7a.Image = ((System.Drawing.Image)(resources.GetObject("btn7a.Image")));
             this.btn7a.Location = new System.Drawing.Point(330, 40);
@@ -1381,6 +1457,7 @@
             // 
             // btn7b
             // 
+            this.btn7b.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btn7b.AutoSize = true;
             this.btn7b.Image = ((System.Drawing.Image)(resources.GetObject("btn7b.Image")));
             this.btn7b.Location = new System.Drawing.Point(330, 71);
@@ -1396,7 +1473,7 @@
             this.txtDestMap.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtDestMap.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.txtDestMap.Font = new System.Drawing.Font("Pangolin", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.txtDestMap.Location = new System.Drawing.Point(28, 50);
+            this.txtDestMap.Location = new System.Drawing.Point(340, 3);
             this.txtDestMap.Name = "txtDestMap";
             this.txtDestMap.Size = new System.Drawing.Size(163, 26);
             this.txtDestMap.TabIndex = 390;
@@ -1411,9 +1488,8 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnSHOW);
-            this.Controls.Add(this.btn_logout);
             this.Controls.Add(this.Preview_btn);
-            this.Controls.Add(this.btn_map);
+            this.Controls.Add(this.btn_board);
             this.Controls.Add(this.btnFlights);
             this.Controls.Add(this.home_btn);
             this.MinimumSize = new System.Drawing.Size(600, 570);
@@ -1429,9 +1505,8 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button btn_logout;
         private System.Windows.Forms.Button Preview_btn;
-        private System.Windows.Forms.Button btn_map;
+        private System.Windows.Forms.Button btn_board;
         private System.Windows.Forms.Button btnFlights;
         private System.Windows.Forms.Button home_btn;
         private System.Windows.Forms.Button btnSHOW;

@@ -8,74 +8,110 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Configuration;
+
 
 namespace PiersDCS
 {
     public partial class Boarding : Form
     {
-
         SqlConnection con = new SqlConnection(@"Data Source=ACER-575G\SQL2019;Initial Catalog=PiersDCSdatabase;Integrated Security=True");
-        SqlCommand cmd;
-        DataTable dt;
-        SqlDataAdapter sda;
-        DataSet ds;
-
+      
         public Boarding()
         {
             InitializeComponent();
         }
-
-        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        
+        private void Boarding_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'piersDCSdatabaseDataSet1.PassengerTable' table. You can move, or remove it, as needed.
+            this.passengerTableTableAdapter.Fill(this.piersDCSdatabaseDataSet1.PassengerTable);
+
+            string mainconn = ConfigurationManager.ConnectionStrings["PiersDCS.Properties.Settings.PiersDCSdatabaseConnectionString"].ConnectionString;
+
+            SqlConnection con = new SqlConnection(mainconn);
+            string sqlquery = "Select City from [dbo].[FlightTable]";
+            SqlCommand cmd = new SqlCommand(sqlquery,con);
+            con.Open();
+            SqlDataAdapter sda = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+            comboBox1.DisplayMember = "City";
+            comboBox1.DataSource = dt;
+
+            con.Close();
+
+            DataGridViewCheckBoxColumn check = new DataGridViewCheckBoxColumn();
+            check.HeaderText = "Select";
+            check.Width = 25;
+            check.Name = "dgvCheckb";
+            check.DefaultCellStyle.BackColor = Color.LavenderBlush;
+            dgvNonBoarded.Columns.Insert(0,check);
 
         }
 
-        private void listView1_MouseDoubleClick(object sender, MouseEventArgs e)
-        {/*
-            if (listView1.SelectedItems.Count < 1) return;
-            var item = listView1.SelectedItems[0];
-            listView2.Items.Add((ListViewItem)item.Clone());
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Flights fs = new Flights();
+            this.Close();
+            fs.Show();
+        }
 
-            ListView sourceListView = new ListView();
-            ListView destListView = new ListView();
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string mainconn = ConfigurationManager.ConnectionStrings["PiersDCS.Properties.Settings.PiersDCSdatabaseConnectionString"].ConnectionString;
 
-            var selected = sourceListView.Items
-                                          .Cast<ListViewItem>()
-                                          .Where(x => x.Selected)
-                                          .ToList();
+            SqlConnection con = new SqlConnection(mainconn);
+            string sqlquery = "Select * from [dbo].[PassengerTable] where Destination = '"+comboBox1.Text.ToString()+"' ";
+            SqlCommand cmd = new SqlCommand(sqlquery, con);
+            con.Open();
+            SqlDataAdapter sda = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+            dgvNonBoarded.DataSource = dt;
 
-            foreach (var item in selected)
-            {
-                sourceListView.Items.Remove(item);
-                destListView.Items.Add(item);
-            }*/
+            con.Close();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            listPassengers.Columns.Add("ID_Board", 60);
-            listPassengers.Columns.Add("Seat", 60, HorizontalAlignment.Center);
-            listPassengers.Columns.Add("Name", 180, HorizontalAlignment.Center);
-            listPassengers.Columns.Add("Status", 60, HorizontalAlignment.Center);
+            DataTable dt = new DataTable();
+            dt.Columns.Add("Destination");
+            dt.Columns.Add("Name");
+            dt.Columns.Add("Seat");
 
-            listPassengers.View = View.Details;
-
-            con.Open();
-            cmd = new SqlCommand("select * from PassengerTable", con);
-            sda = new SqlDataAdapter(cmd);
-            ds = new DataSet();
-            sda.Fill(ds, "Boarding");
-            con.Close();
-
-            dt = ds.Tables["Boarding"];
-            int i;
-            for(i=0;i<=dt.Rows.Count - 1; i++)
+            foreach(DataGridViewRow drv in dgvNonBoarded.Rows)
             {
-                listPassengers.Items.Add(dt.Rows[i].ItemArray[0].ToString());
-                listPassengers.Items[i].SubItems.Add(dt.Rows[i].ItemArray[3].ToString());
-                listPassengers.Items[i].SubItems.Add(dt.Rows[i].ItemArray[2].ToString());
-              //  listPassengers.Items[i].SubItems.Add(dt.Rows[i].ItemArray[3].ToString());
+                bool checkselect = Convert.ToBoolean(drv.Cells["dgvCheckb"].Value);
+                if (checkselect)
+                {
+                    dt.Rows.Add(drv.Cells[1].Value, drv.Cells[2].Value, drv.Cells[3].Value);
+                    drv.DefaultCellStyle.BackColor = Color.Gray;
+                    drv.DefaultCellStyle.ForeColor = Color.SkyBlue;
+                }
+                dataGridView2.DataSource = dt;
             }
+
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            FlightReport reportfl = new FlightReport();
+            reportfl.Show();
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            PassengerRepo pasr = new PassengerRepo();
+            pasr.Show();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            FormRepoMos mos = new FormRepoMos();
+            mos.Show();
         }
     }
 }

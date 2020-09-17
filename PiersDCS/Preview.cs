@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Configuration;
 
 namespace PiersDCS
 {
@@ -17,18 +18,15 @@ namespace PiersDCS
         public static List<Passenger> passengers;
         public Passenger passenger;
 
-        //  private List<Passenger> foundPassengers;
-        //  private string viewMode;
+        
 
         public Preview()
         {
             InitializeComponent();
 
-           // con.ConnectionString = (@"Data Source=ACER-575G\SQL2019;Initial Catalog=PiersDCSdatabase;Integrated Security=True");
             passenger = new Passenger();
             passengers = new List<Passenger>();
 
-            //this.viewMode = viewMode;
 
         }
 
@@ -36,20 +34,31 @@ namespace PiersDCS
 
         private void Preview_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'piersDCSdatabaseDataSet6.PassengerTable' table. You can move, or remove it, as needed.
-            this.passengerTableTableAdapter.Fill(this.piersDCSdatabaseDataSet6.PassengerTable);
-            
+            // TODO: This line of code loads data into the 'piersDCSdatabaseDataSet2.PassengerTable' table. You can move, or remove it, as needed.
+            this.passengerTableTableAdapter.Fill(this.piersDCSdatabaseDataSet2.PassengerTable);
+           
             //  foundPassengers = foundPassengers.OrderBy(c => c.Seat).ToList();
 
-            var select = "SELECT * FROM PassengerTable";
+            var select = "SELECT * FROM FlightTable";
             var c = new SqlConnection(@"Data Source=ACER-575G\SQL2019;Initial Catalog=PiersDCSdatabase;Integrated Security=True");
             var dataAdapter = new SqlDataAdapter(select, c);
-
             var commandBuilder = new SqlCommandBuilder(dataAdapter);
             var ds = new DataSet();
             dataAdapter.Fill(dt);
-
             dgvPrevPassenger.DataSource = dt;
+
+            string mainconn = ConfigurationManager.ConnectionStrings["PiersDCS.Properties.Settings.PiersDCSdatabaseConnectionString"].ConnectionString;
+            SqlConnection con = new SqlConnection(mainconn);
+            string sqlquery = "Select City from [dbo].[FlightTable] ";
+            SqlCommand cmd = new SqlCommand(sqlquery, con);
+            con.Open();
+            SqlDataAdapter sda = new SqlDataAdapter(cmd);
+           // DataTable dt = new DataTable();
+            sda.Fill(dt);
+
+            comboBox1.DisplayMember = "City";
+            comboBox1.DataSource = dt;
+            con.Close();
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -86,6 +95,57 @@ namespace PiersDCS
 
 
            }*/
+        }
+
+        //private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        //{
+        //    string mainconn = ConfigurationManager.ConnectionStrings["PiersDCS.Properties.Settings.PiersDCSdatabaseConnectionString"].ConnectionString;
+
+        //    SqlConnection con = new SqlConnection(mainconn);
+        //    string sqlquery = "Select * from [dbo].[PassengerTable] where Destination = '" + comboBox1.Text.ToString() + "' ";
+        //    SqlCommand cmd = new SqlCommand(sqlquery, con);
+        //    con.Open();
+        //    SqlDataAdapter sda = new SqlDataAdapter(cmd);
+        //    DataTable dt = new DataTable();
+        //    sda.Fill(dt);
+        //    dgvPrevPassenger.DataSource = dt;
+
+        //    con.Close();
+        //}
+
+        private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            string mainconn = ConfigurationManager.ConnectionStrings["PiersDCS.Properties.Settings.PiersDCSdatabaseConnectionString"].ConnectionString;
+
+            SqlConnection con = new SqlConnection(mainconn);
+            string sqlquery = "Select * from [dbo].[PassengerTable] where Destination = '" + comboBox1.Text.ToString() + "' ";
+            SqlCommand cmd = new SqlCommand(sqlquery, con);
+            con.Open();
+            SqlDataAdapter sda = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+            dgvPrevPassenger.DataSource = dt;
+
+            con.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            con.Open();
+            SqlDataAdapter sda = new SqlDataAdapter("SELECT * FROM PassengerTable order by ID", con);
+            con.Close();
+
+            SqlCommandBuilder cb = new SqlCommandBuilder(sda);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+            dgvPrevPassenger.DataSource = dt;
+            
+        }
+
+        private void dgvPrevPassenger_Click(object sender, EventArgs e)
+        {
+           
+
         }
     }
 }
